@@ -1,0 +1,2 @@
+[32m [INFO] [03/26/2025 13:25] | USER: niek | IP: ::ffff:127.0.0.1 | ROUTE: /DownloadProject | FILE: F:\github\final-cms\server\edit\ftpServices.ts | FUNCTION: Structure | MESSAGE: FTPError: 550 Failed to change directory. [0m 
+[32m [INFO] [03/26/2025 13:27] | USER: niek | IP: ::ffff:127.0.0.1 | ROUTE: /DownloadProject | FILE: F:\github\final-cms\server\edit\ftpServices.ts | FUNCTION: Structure | MESSAGE: Remote folder structure download [0m 

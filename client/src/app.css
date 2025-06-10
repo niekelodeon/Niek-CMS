@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+* {
+    font-size: 18px;
+}
+
+body { 
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.blob {
+    position: relative;
+    right: 150px;
+
+    scale: 0.8;
+
+    filter:
+      drop-shadow(0 0 30px rgba(81, 226, 252, 0.6))
+      drop-shadow(0 0 30px rgba(81, 226, 252, 0.4));
+    transition: filter 1s ease-out;
+
+    animation: RandomMovement1 5s infinite ease-in-out alternate;
+}
+
+.blob:hover {
+    filter:
+      drop-shadow(0px 0px 50px rgba(98, 231, 255, 0.7))
+      drop-shadow(0px 0px 50px rgba(119, 235, 255, 0.5));
+    transition: filter 1s ease-in;
+}
+
+@keyframes RandomMovement1 {
+    0% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(calc(100vw - 225px))
+    }
+}
