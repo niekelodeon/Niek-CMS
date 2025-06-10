@@ -13,13 +13,13 @@ This project is still being worked on. <br/>
 
 ## Features
 
-🔗 FTP
+🔗  FTP
 ---------
 • Pull / push files via FTP <br/>
 • Local editing <br/>
 • Folder management <br/>
 
-📁 Operations
+📁  Operations
 ---------
 • File editor <br/>
 • Adding files & folders <br/>
