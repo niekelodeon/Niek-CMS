@@ -40,7 +40,7 @@ create a SQL MariaDB database, put connection credentials in .env and Sequalize 
 ### FTP Configuration
 
 ```
-create a custom FTP for testing with docker or use your own.
+create a custom FTP client for testing with docker or use your own.
 add a new User in the database with your FTP credentials.
 ```
 
