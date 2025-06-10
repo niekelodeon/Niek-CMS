@@ -13,7 +13,6 @@ Included is a custom ASCII logger, mail service, error handler & more
 This project is still being worked on.
 
 ## Features
------------------
 
 🔗 FTP
 ---------
