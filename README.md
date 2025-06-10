@@ -1,15 +1,15 @@
 # Web CMS / Niek CMS
 
-a Web-based CMS used with FTP for remote file management.
-When users pull their website trough FTP and selected from which folder they want to pull, users then will be able to: add, edit, download, delete & save files just like they would in other editors.
-An automated backup will be made for version control.
-Push will replace all files and folders from the selected path on the remote webhost.
+a Web-based CMS used with FTP for remote file management. <br/>
+When users pull their website trough FTP and selected from which folder they want to pull, users then will be able to: add, edit, download, delete & save files just like they would in other editors. <br/>
+An automated backup will be made for version control. <br/>
+Push will replace all files and folders from the selected path on the remote webhost. <br/>
 
-Pulling will automatically filter files for unwanted file extensions in memory, so will uploading.
+Pulling will automatically filter files for unwanted file extensions in memory, so will uploading. <br/>
 
-Included is a custom ASCII logger, mail service, error handler & more
+Included is a custom ASCII logger, mail service, error handler & more.  <br/>
 
-This project is still being worked on.
+This project is still being worked on. <br/>
 
 ## Features
 
