@@ -7,7 +7,7 @@ Push will replace all files and folders from the selected path on the remote web
 
 Pulling will automatically filter files for unwanted file extensions in memory, so will uploading. <br/>
 
-Included is a custom ASCII logger, mail service, error handler & more.  <br/>
+Included is a custom logger with different levels in ASCII, mail service, error handler & more.  <br/>
 
 This project is still being worked on. <br/>
 
