@@ -11,6 +11,8 @@ Included is a custom logger with different levels in ASCII, mail service, error 
 
 This project is still being worked on. <br/>
 
+Figma design: https://www.figma.com/design/Gd2qxspnrKTQLjloc0GOSF/Untitled?node-id=2-1712&t=bMNxkeNylUel6EAX-1
+
 ## Features
 
 🔗  FTP
