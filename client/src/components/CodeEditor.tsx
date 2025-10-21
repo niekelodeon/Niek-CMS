@@ -1,14 +1,12 @@
 import React, { useRef, useEffect, useState, useLayoutEffect, useMemo } from 'react'
 import { useAtom } from 'jotai'
 
+import { filePathAtom, fileContentAtom } from '../utils/atoms'
+
 import { EditorFunctions } from '../utils/functions/EditorFunctions'
 
 import hljs from 'highlight.js'
 import '../assets/EditorTheme.css'
-
-import type { Node, FolderData } from '../utils/interfaces'
-
-import { filePathAtom, fileContentAtom } from '../utils/atoms'
 
 export default function CodeEditor() {
     const [filePath, setFilePath] = useAtom(filePathAtom)

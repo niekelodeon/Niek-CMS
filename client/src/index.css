@@ -24,3 +24,8 @@ main {
     padding: 0;
     box-sizing: border-box;
 }
+
+textarea::selection {
+    background: #d2aa7d;
+    color: #272334;
+}

@@ -1,4 +1,4 @@
-import express, { Request, Response, Router } from "express"
+import express, { Request, Response, Router } from 'express'
 
 import { loggerService } from '../global/logger'
 import { Token } from '../global/token'
@@ -21,8 +21,8 @@ authRoutes.post('/Register', async (req: Request, res: Response) => {
             res.redirect('auth/Login')
         }
     } catch (err) {
-        loggerService.Logger('WARNING', req.body.username, req.ip, req.route.path, "authServices.ts", authServices.Register.name, err.message) 
-        res.status(500).json("Something went wrong, please try again")
+        loggerService.Logger('WARNING', req.body.username, req.ip, req.route.path, 'authServices.ts', authServices.Register.name, err.message)
+        res.status(500).json('Something went wrong, please try again')
     }
 })
 
@@ -40,8 +40,8 @@ authRoutes.post('/Login', async (req: Request, res: Response) => {
             res.status(400).json(result)
         }
     } catch (err) {
-        loggerService.Logger('WARNING', req.body.username, req.ip, req.route.path, "authServices.ts", authServices.Login.name, err.message)
-        res.status(500).json("Something went wrong, please try again")
+        loggerService.Logger('WARNING', req.body.username, req.ip, req.route.path, 'authServices.ts', authServices.Login.name, err.message)
+        res.status(500).json('Something went wrong, please try again')
     }
 })
 
