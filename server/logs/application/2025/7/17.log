@@ -1,0 +1,58 @@
+[32m [INFO] [07/17/2025 11:41] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 11:41] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 11:41] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 11:42] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 11:45] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 11:49] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:02] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:28] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:35] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/final-cms/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Email invalid [0m 
+[32m [INFO] [07/17/2025 12:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:40] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/final-cms/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Login succesful [0m 
+[32m [INFO] [07/17/2025 12:42] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File does not exist [0m 
+[32m [INFO] [07/17/2025 12:42] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File does not exist [0m 
+[32m [INFO] [07/17/2025 12:42] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 12:43] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 12:43] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 12:43] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 12:43] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 13:23] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/17/2025 13:23] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 13:24] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/17/2025 13:27] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:28] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:29] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:31] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:31] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:33] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:34] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:36] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:43] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:46] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:47] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:48] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:48] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:49] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:51] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:51] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:54] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:54] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:54] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:55] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:55] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:55] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/17/2025 14:55] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 

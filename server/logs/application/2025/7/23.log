@@ -1,0 +1,16 @@
+[32m [INFO] [07/23/2025 15:23] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/final-cms/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Login succesful [0m 
+[32m [INFO] [07/23/2025 15:23] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /GetFile | FILE: routes/editRoutes.ts | FUNCTION: GetFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [07/23/2025 15:27] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /FolderStructure | FILE: routes/editRoutes.ts | FUNCTION: undefined | MESSAGE: undefined [0m 
+[32m [INFO] [07/23/2025 15:28] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /FolderStructure | FILE: routes/editRoutes.ts | FUNCTION: undefined | MESSAGE: undefined [0m 
+[32m [INFO] [07/23/2025 15:28] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /FolderStructure | FILE: routes/editRoutes.ts | FUNCTION: undefined | MESSAGE: undefined [0m 
+[32m [INFO] [07/23/2025 15:29] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/23/2025 15:29] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/23/2025 15:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/23/2025 15:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/23/2025 15:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: The string to be decoded is not correctly encoded. [0m 
+[32m [INFO] [07/23/2025 15:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/23/2025 15:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/23/2025 15:30] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/23/2025 15:31] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/23/2025 15:32] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 
+[32m [INFO] [07/23/2025 15:37] | USER: nogeens@goedtesten.com | IP: ::ffff:127.0.0.1 | ROUTE: /SaveFile | FILE: routes/editRoutes.ts | FUNCTION: SaveFile | MESSAGE: File content changed [0m 

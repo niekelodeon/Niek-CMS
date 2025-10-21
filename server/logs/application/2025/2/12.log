@@ -1,0 +1,41 @@
+[35m 12:17 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m
+[35m 12:17 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m
+[35m 12:18 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m
+[35m 12:46 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m
+[35m 12:47 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m
+[35m 12:49 [0m 	[93mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: TypeError: Cannot read properties of undefined (reading 'replace')
+    at Function.<anonymous> (F:\github\final-cms\server\edit\uploadServices.ts:38:46)
+    at Generator.next (<anonymous>)
+    at F:\github\final-cms\server\edit\uploadServices.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (F:\github\final-cms\server\edit\uploadServices.ts:4:12)
+    at Function.checkStream (F:\github\final-cms\server\edit\uploadServices.ts:40:16)
+    at F:\github\final-cms\server\routes\editRoutes.ts:142:39
+    at Generator.next (<anonymous>)
+    at F:\github\final-cms\server\routes\editRoutes.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (F:\github\final-cms\server\routes\editRoutes.ts:4:12)
+    at F:\github\final-cms\server\routes\editRoutes.ts:137:95
+    at Layer.handle [as handle_request] (F:\github\final-cms\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\final-cms\server\node_modules\express\lib\router\route.js:149:13)
+    at done (F:\github\final-cms\server\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (F:\github\final-cms\server\node_modules\multer\lib\make-middleware.js:49:68)[0m
+[35m 12:49 [0m 	[93mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: TypeError: Cannot read properties of undefined (reading 'replace')
+    at Function.<anonymous> (F:\github\final-cms\server\edit\uploadServices.ts:38:46)
+    at Generator.next (<anonymous>)
+    at F:\github\final-cms\server\edit\uploadServices.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (F:\github\final-cms\server\edit\uploadServices.ts:4:12)
+    at Function.checkStream (F:\github\final-cms\server\edit\uploadServices.ts:40:16)
+    at F:\github\final-cms\server\routes\editRoutes.ts:142:39
+    at Generator.next (<anonymous>)
+    at F:\github\final-cms\server\routes\editRoutes.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (F:\github\final-cms\server\routes\editRoutes.ts:4:12)
+    at F:\github\final-cms\server\routes\editRoutes.ts:137:95
+    at Layer.handle [as handle_request] (F:\github\final-cms\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (F:\github\final-cms\server\node_modules\express\lib\router\route.js:149:13)
+    at done (F:\github\final-cms\server\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (F:\github\final-cms\server\node_modules\multer\lib\make-middleware.js:49:68)[0m
+[35m 12:51 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m
+[35m 12:53 [0m 	[32mUsername: 'whoever' : IP: ::1 : Route: /edit/Upload : Function: undefined : File: editRoutes.ts : Result: [object Object][0m

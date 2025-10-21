@@ -1,0 +1,112 @@
+[32m [INFO] [04/08/2025 13:07] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: File / Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:09] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:10] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:10] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:10] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:10] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: File / Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:11] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: EEXIST [0m 
+[32m [INFO] [04/08/2025 13:11] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: EEXIST [0m 
+[32m [INFO] [04/08/2025 13:11] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: EEXIST [0m 
+[32m [INFO] [04/08/2025 13:11] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: EEXIST [0m 
+[32m [INFO] [04/08/2025 13:12] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: No file extension given [0m 
+[32m [INFO] [04/08/2025 13:12] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: EEXIST [0m 
+[32m [INFO] [04/08/2025 13:14] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Given file extension not allowed [0m 
+[32m [INFO] [04/08/2025 13:14] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: No file extension given [0m 
+[32m [INFO] [04/08/2025 13:25] | USER: undefined | IP: ::1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: File / Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:26] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: File / Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:27] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:29] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:32] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:32] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:33] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:33] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: New name to long [0m 
+[32m [INFO] [04/08/2025 13:34] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:46] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:47] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:47] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:49] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 13:49] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 13:50] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:51] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:52] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:53] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 13:54] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:54] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:55] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 13:57] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:00] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:00] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:01] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:01] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:02] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:02] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:03] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:05] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:11] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:14] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:14] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:15] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:15] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:15] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:16] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:24] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:24] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:25] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:25] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: ERR_FS_EISDIR [0m 
+[32m [INFO] [04/08/2025 14:26] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: ERR_FS_EISDIR [0m 
+[32m [INFO] [04/08/2025 14:26] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:26] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: ERR_FS_EISDIR [0m 
+[32m [INFO] [04/08/2025 14:27] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:29] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:29] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:30] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:31] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:33] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:34] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:35] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:36] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:36] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:36] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: ERR_FS_EISDIR [0m 
+[32m [INFO] [04/08/2025 14:37] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:37] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:38] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:39] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: undefined [0m 
+[32m [INFO] [04/08/2025 14:39] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:39] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:40] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:45] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:45] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:47] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:47] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:49] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:49] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[32m [INFO] [04/08/2025 14:50] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:50] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:50] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:51] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:52] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:53] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:54] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:54] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:54] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:56] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 14:58] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 15:00] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 15:38] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 15:38] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: Folder renamed [0m 
+[32m [INFO] [04/08/2025 15:39] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Rename | MESSAGE: [object Object] [0m 
+[93m [WARNING] [04/08/2025 15:43] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[93m [WARNING] [04/08/2025 15:43] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[32m [INFO] [04/08/2025 15:44] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Move | MESSAGE:  Failed to move: test/555/123/test22.y to test/, Path does not exist [0m 
+[32m [INFO] [04/08/2025 15:44] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Move | MESSAGE:  Failed to move: test/555/123/test22.y to test, Path does not exist [0m 
+[93m [WARNING] [04/08/2025 15:45] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[93m [WARNING] [04/08/2025 15:46] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[32m [INFO] [04/08/2025 15:46] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Move | MESSAGE:  Failed to move: test/test/test.txt to test/test.txt, Path does not exist [0m 
+[32m [INFO] [04/08/2025 15:46] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Move | MESSAGE:  Failed to move: test/test/test.txt to test, Path does not exist [0m 
+[93m [WARNING] [04/08/2025 15:47] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[93m [WARNING] [04/08/2025 15:47] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[93m [WARNING] [04/08/2025 15:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[93m [WARNING] [04/08/2025 15:49] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: fsServices.ts | FUNCTION: Move | MESSAGE: Cannot read properties of undefined (reading 'msg') [0m 
+[32m [INFO] [04/08/2025 15:50] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Delete | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Delete | MESSAGE: Succes to delete: test/test  [0m 
+[32m [INFO] [04/08/2025 15:52] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: F:\github\final-cms\server\edit\fsServices.ts | FUNCTION: Move | MESSAGE: Succes to move: test/wp-config.php to test/ha/wp-config.php  [0m 
