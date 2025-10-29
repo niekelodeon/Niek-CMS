@@ -1,0 +1,4 @@
+[32m [INFO] [10/23/2025 00:27] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [10/23/2025 00:27] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [10/23/2025 13:13] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [10/23/2025 13:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 

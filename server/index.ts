@@ -14,13 +14,15 @@ const port = process.env.serverPort || 8000
 Database.Sync()
 
 // calling middleware
-app.use(cors({
-    // use .env to get origins
-    origin: ['http://localhost:5173'], 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-    credentials: true, 
-}))
+app.use(
+    cors({
+        // use .env to get origins
+        origin: ['http://localhost:5173'],
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+        credentials: true,
+    }),
+)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -36,10 +38,10 @@ app.use('/edit', tokenMiddleware.updateBody)
 // app.use(MiddlewareLogger as any)
 
 // calling routes as middleware
-import { authRoutes } from "./routes/authRoutes"
+import { authRoutes } from './routes/authRoutes'
 app.use('/auth/', authRoutes)
 
-import { editRoutes } from "./routes/editRoutes"
+import { editRoutes } from './routes/editRoutes'
 app.use('/edit/', editRoutes)
 
 app.listen(port, () => {

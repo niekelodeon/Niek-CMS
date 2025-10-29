@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useLayoutEffect, useMemo } from 'react'
 import { useAtom } from 'jotai'
 
-import { filePathAtom, fileContentAtom } from '../utils/atoms'
+import { filePathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
 
 import { EditorFunctions } from '../utils/functions/EditorFunctions'
 
@@ -11,6 +11,8 @@ import '../assets/EditorTheme.css'
 export default function CodeEditor() {
     const [filePath, setFilePath] = useAtom(filePathAtom)
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
+
+    const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
 
     const preRef = useRef<HTMLPreElement>(null)
     const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -24,6 +26,10 @@ export default function CodeEditor() {
         }
     }, [filePath, fileContent])
 
+    function editorOnChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        setFileContent(e.target.value)
+    }
+
     useLayoutEffect(() => {
         if (preRef.current && textareaRef.current) {
             const pre = preRef.current
@@ -36,10 +42,6 @@ export default function CodeEditor() {
             textarea.style.width = `${newWidth}px`
         }
     }, [highlightedCode])
-
-    function editorOnChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-        setFileContent(e.target.value)
-    }
 
     return (
         <div id="container-editor" className="flex flex-col max-h-[85vh] max-w-[90vw]">

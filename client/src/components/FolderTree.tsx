@@ -2,13 +2,13 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useAtom } from 'jotai'
 
 import { FolderTreeFunctions } from '../utils/functions/TreeFunctions'
-import { editAPI } from '../utils/API'
 
+import { filePathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
+
+import { editAPI } from '../utils/API'
 import { Variables } from '../utils/variables'
 
 import { Node, type FolderData, type FolderTreeMethods } from '../utils/interfaces'
-
-import { filePathAtom, fileContentAtom } from '../utils/atoms'
 
 export default function FolderTree() {
     const [folderTree, setFolderTree] = useState<Node<FolderData>>()
@@ -16,6 +16,25 @@ export default function FolderTree() {
     const [filePath, setFilePath] = useAtom(filePathAtom)
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
+    const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
+
+    function clickFile(filePath: string) {
+        const fetchFileContent = async () => {
+            const fileContent: any = await editAPI.getFile(filePath)
+            setFileContent(atob(fileContent.data))
+            setFilePath(filePath)
+            setIsOnFile(true)
+        }
+
+        fetchFileContent()
+    }
+
+    interface FileItemProps {
+        currentNode: Node<FolderData>
+        clickFile: (filePath: string) => void
+    }
+
+    // on load:
     useEffect(() => {
         const fetchTree = async () => {
             const path = 'Dir1'
@@ -27,165 +46,121 @@ export default function FolderTree() {
         fetchTree()
     }, [])
 
-    function clickFile(filePath: string) {
-        const fetchFileContent = async () => {
-            const fileContent: any = await editAPI.getFile(filePath)
-            console.log(fileContent)
-            setFileContent(atob(fileContent.data))
-
-            setFilePath(filePath)
-        }
-
-        fetchFileContent()
-    }
-
-    interface FileItemProps {
-        currentNode: Node<FolderData>
-        clickFile: (filePath: string) => void
-    }
-
     function FileItem({ currentNode, clickFile }: FileItemProps) {
-        const [isRenaming, setIsRenaming] = useState(false)
-        const [name, setName] = useState(currentNode.data.name)
-        const inputRef = useRef<HTMLInputElement>(null)
-
-        useEffect(() => {
-            if (isRenaming && inputRef.current) {
-                inputRef.current.focus()
-            }
-        }, [isRenaming])
-
-        async function onLeave(path: string, newName: string, currentNode: Node<FolderData>) {
-            if (await FolderTreeFunctions.Rename(path, newName, currentNode)) setFolderTree(new Node<FolderData>(folderTree.data, null, folderTree.children))
-        }
-
-        if (isRenaming) {
-            return (
-                <input
-                    id="rename"
-                    ref={inputRef}
-                    onChange={e => setName(e.target.value)}
-                    onBlur={() => setIsRenaming(false)}
-                    onKeyDown={e => {
-                        if (e.key === 'Enter' || e.key === 'Escape') {
-                            onLeave(currentNode.data.path, name, currentNode)
-                        }
-                    }}
-                    value={name}
-                    key={currentNode.data.name}
-                />
-            )
-        }
-
         return (
-            <div id="file" className="cursor-pointer" onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`)} onDoubleClick={() => setIsRenaming(true)} key={currentNode.data.name}>
+            <div id="file" className="cursor-pointer" onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`)}>
                 {currentNode.data.name}
             </div>
         )
+    }
 
-        // do the renaming here, visually
-        // then call updateTree with the new name and method "rename"
-        // if that returns true, update it visually permanently / release the edit
-        // else show a red border or something
+    function test() {
+        console.log('button test')
     }
 
     function renderTree(folderTree: Node<FolderData>): React.ReactElement {
         if (folderTree.data.type === 'file') {
-            return <FileItem currentNode={folderTree} clickFile={clickFile} />
+            return (
+                <div id="container-file">
+                    <FileItem currentNode={folderTree} clickFile={clickFile} />
+                </div>
+            )
         }
 
         return (
-            <div id="container-structure" className="cursor-default" key={folderTree.data.name} draggable>
-                <div id="" className="">
+            <div id="container" className="flex flex-col">
+                <div id="container-structure" className="cursor-default" key={folderTree.data.name} draggable>
                     <div id="container-directory" className="flex flex-row">
-                        {/* if Directory: */}
                         <span>{folderTree.data.name}</span>
-
-                        <div id="container-tools">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.33331 10L7.4581 14.1248L16.2973 5.28595" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
                     </div>
-                </div>
 
-                {folderTree.children && folderTree.children.length > 0 ? (
-                    <div id="" className="flex flex-row">
-                        {/* if File: */}
-                        <div id="container-file" className="">
+                    {folderTree.children && folderTree.children.length > 0 ? (
+                        <div id="container-file" className="ml-4">
                             <span>{folderTree.children.map(child => renderTree(child))}</span>
-
-                            <div id="container-tools">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10 15V10M7.50002 12.5H12.5M15.8335 7.5H13.5002C12.5668 7.5 12.0997 7.49997 11.7432 7.31832C11.4296 7.15853 11.1748 6.90358 11.015 6.58997C10.8334 6.23345 10.8334 5.76675 10.8334 4.83333V2.5M15.8334 14.8333V7.77125C15.8334 7.3636 15.833 7.15974 15.787 6.96793C15.7461 6.79787 15.6789 6.63531 15.5876 6.48619C15.4845 6.318 15.3408 6.17387 15.0525 5.88562L12.4479 3.28105C12.1597 2.9928 12.0155 2.84869 11.8474 2.74562C11.6982 2.65423 11.5357 2.58688 11.3656 2.54605C11.1738 2.5 10.9699 2.5 10.5623 2.5H6.83352C5.9001 2.5 5.43304 2.5 5.07652 2.68166C4.76291 2.84144 4.50813 3.09643 4.34834 3.41003C4.16669 3.76655 4.16669 4.23326 4.16669 5.16668V14.8333C4.16669 15.7668 4.16669 16.2335 4.34834 16.59C4.50813 16.9036 4.76291 17.1585 5.07652 17.3183C5.43304 17.5 5.9001 17.5 6.83352 17.5H13.1669C14.1003 17.5 14.5667 17.5 14.9232 17.3183C15.2368 17.1585 15.4921 16.9036 15.6519 16.59C15.8335 16.2335 15.8334 15.7668 15.8334 14.8333Z"
-                                        stroke="white"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                </svg>
-                            </div>
                         </div>
-                    </div>
-                ) : (
-                    ''
-                )}
+                    ) : (
+                        ''
+                    )}
+                </div>
             </div>
-
-            // <div id="container-tools" className="flex flex-row">
-            //             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //                 <path
-            //                     d="M11.6666 8.33333V14.1667M8.33331 8.33333L8.33331 14.1667M3.33331 5H16.6666M15 5V14.8333C15 15.7668 15.0002 16.2335 14.8185 16.59C14.6587 16.9036 14.4034 17.1585 14.0898 17.3183C13.7333 17.5 13.2669 17.5 12.3335 17.5H7.66681C6.73339 17.5 6.26633 17.5 5.90981 17.3183C5.59621 17.1585 5.34142 16.9036 5.18164 16.59C4.99998 16.2335 4.99998 15.7668 4.99998 14.8333V5H15ZM13.3333 5H6.66665C6.66665 4.22343 6.66665 3.83513 6.79351 3.52885C6.96267 3.12047 7.28691 2.79602 7.69529 2.62687C8.00158 2.5 8.39008 2.5 9.16665 2.5H10.8333C11.6099 2.5 11.9982 2.5 12.3045 2.62687C12.7128 2.79602 13.0372 3.12047 13.2064 3.52885C13.3332 3.83513 13.3333 4.22343 13.3333 5Z"
-            //                     stroke="white"
-            //                     stroke-width="2"
-            //                     stroke-linecap="round"
-            //                     stroke-linejoin="round"
-            //                 />
-            //             </svg>
-
-            //             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //                 <path
-            //                     d="M10 15V10M7.50002 12.5H12.5M15.8335 7.5H13.5002C12.5668 7.5 12.0997 7.49997 11.7432 7.31832C11.4296 7.15853 11.1748 6.90358 11.015 6.58997C10.8334 6.23345 10.8334 5.76675 10.8334 4.83333V2.5M15.8334 14.8333V7.77125C15.8334 7.3636 15.833 7.15974 15.787 6.96793C15.7461 6.79787 15.6789 6.63531 15.5876 6.48619C15.4845 6.318 15.3408 6.17387 15.0525 5.88562L12.4479 3.28105C12.1597 2.9928 12.0155 2.84869 11.8474 2.74562C11.6982 2.65423 11.5357 2.58688 11.3656 2.54605C11.1738 2.5 10.9699 2.5 10.5623 2.5H6.83352C5.9001 2.5 5.43304 2.5 5.07652 2.68166C4.76291 2.84144 4.50813 3.09643 4.34834 3.41003C4.16669 3.76655 4.16669 4.23326 4.16669 5.16668V14.8333C4.16669 15.7668 4.16669 16.2335 4.34834 16.59C4.50813 16.9036 4.76291 17.1585 5.07652 17.3183C5.43304 17.5 5.9001 17.5 6.83352 17.5H13.1669C14.1003 17.5 14.5667 17.5 14.9232 17.3183C15.2368 17.1585 15.4921 16.9036 15.6519 16.59C15.8335 16.2335 15.8334 15.7668 15.8334 14.8333Z"
-            //                     stroke="white"
-            //                     stroke-width="2"
-            //                     stroke-linecap="round"
-            //                     stroke-linejoin="round"
-            //                 />
-            //             </svg>
-
-            //             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //                 <path
-            //                     d="M10 13.3333V8.33333M7.5 10.8333H12.5M2.5 4.99999V14C2.5 14.9334 2.5 15.4001 2.68166 15.7566C2.84144 16.0702 3.09623 16.3252 3.40983 16.485C3.76635 16.6666 4.23341 16.6667 5.16683 16.6667H14.8335C15.7669 16.6667 16.2333 16.6666 16.5898 16.485C16.9034 16.3252 17.1587 16.0702 17.3185 15.7566C17.5002 15.4001 17.5002 14.9334 17.5002 14L17.5002 7.66668C17.5002 6.73326 17.5002 6.26655 17.3185 5.91003C17.1587 5.59643 16.9034 5.34144 16.5898 5.18165C16.2333 4.99999 15.7668 4.99999 14.8333 4.99999H2.5ZM2.5 4.99999C2.5 4.07952 3.24619 3.33333 4.16667 3.33333H7.22876C7.63641 3.33333 7.84007 3.33333 8.03189 3.37938C8.20195 3.42021 8.36488 3.48756 8.514 3.57894C8.68219 3.68201 8.82633 3.82612 9.11458 4.11437L10.0002 4.99999"
-            //                     stroke="white"
-            //                     stroke-width="2"
-            //                     stroke-linecap="round"
-            //                     stroke-linejoin="round"
-            //                 />
-            //             </svg>
-
-            //             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //                 <path
-            //                     d="M10 8.33334L10 13.3333M10 13.3333L12.5 11.6667M10 13.3333L7.5 11.6667M2.5 5.00001V14C2.5 14.9334 2.5 15.4001 2.68166 15.7567C2.84144 16.0703 3.09623 16.3252 3.40983 16.485C3.76635 16.6667 4.23341 16.6667 5.16683 16.6667H14.8335C15.7669 16.6667 16.2333 16.6667 16.5898 16.485C16.9034 16.3252 17.1587 16.0703 17.3185 15.7567C17.5002 15.4001 17.5002 14.9334 17.5002 14L17.5002 7.6667C17.5002 6.73327 17.5002 6.26656 17.3185 5.91004C17.1587 5.59644 16.9034 5.34145 16.5898 5.18167C16.2333 5.00001 15.7668 5.00001 14.8333 5.00001H2.5ZM2.5 5.00001C2.5 4.07954 3.24619 3.33334 4.16667 3.33334H7.22876C7.63641 3.33334 7.84048 3.33334 8.03229 3.37939C8.20235 3.42022 8.36488 3.48758 8.514 3.57896C8.68219 3.68203 8.82633 3.82614 9.11458 4.11439L10.0002 5.00001"
-            //                     stroke="white"
-            //                     stroke-width="2"
-            //                     stroke-linecap="round"
-            //                     stroke-linejoin="round"
-            //                 />
-            //             </svg>
-
-            //             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //                 <path
-            //                     d="M10 13.3333L10 8.33334M10 8.33334L7.5 10M10 8.33334L12.5 10M2.5 5.00001V14C2.5 14.9334 2.5 15.4001 2.68166 15.7567C2.84144 16.0703 3.09623 16.3252 3.40983 16.485C3.76635 16.6667 4.23341 16.6667 5.16683 16.6667H14.8335C15.7669 16.6667 16.2333 16.6667 16.5898 16.485C16.9034 16.3252 17.1587 16.0703 17.3185 15.7567C17.5002 15.4001 17.5002 14.9334 17.5002 14L17.5002 7.6667C17.5002 6.73327 17.5002 6.26656 17.3185 5.91004C17.1587 5.59644 16.9034 5.34145 16.5898 5.18167C16.2333 5.00001 15.7668 5.00001 14.8333 5.00001H2.5ZM2.5 5.00001C2.5 4.07954 3.24619 3.33334 4.16667 3.33334H7.22876C7.63641 3.33334 7.84048 3.33334 8.03229 3.37939C8.20235 3.42022 8.36488 3.48758 8.514 3.57896C8.68219 3.68203 8.82633 3.82614 9.11458 4.11439L10.0002 5.00001"
-            //                     stroke="white"
-            //                     stroke-width="2"
-            //                     stroke-linecap="round"
-            //                     stroke-linejoin="round"
-            //                 />
-            //             </svg>
-            //         </div>
         )
     }
 
-    return <div className="">{folderTree ? renderTree(folderTree) : <div>Loading...</div>}</div>
+    function renderTools() {
+        if (!isOnFile) {
+            return (
+                <div id="container-tools">
+                    <button id="button-edit" onClick={() => test()}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 16V20L8 20L18.8686 9.13134C19.2646 8.73532 19.4627 8.53728 19.5369 8.30895C19.6021 8.10811 19.6021 7.89184 19.5369 7.691C19.4627 7.46267 19.2646 7.26462 18.8686 6.8686L17.1313 5.13134L17.1307 5.13067C16.7351 4.7351 16.5373 4.53727 16.3091 4.46313C16.1082 4.39787 15.8919 4.39787 15.691 4.46313C15.4627 4.53732 15.2646 4.73532 14.8686 5.13134L4 16Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+
+                    <button id="button-copy" onClick={() => test()}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 15H17.8C18.9201 15 19.48 15 19.9078 14.782C20.2841 14.5902 20.5905 14.2844 20.7822 13.908C21.0002 13.4802 21.0002 12.9202 21.0002 11.8V6.20002C21.0002 5.07992 21.0002 4.51986 20.7822 4.09204C20.5905 3.71572 20.2841 3.40973 19.9078 3.21799C19.48 3 18.9203 3 17.8002 3H12.2002C11.0801 3 10.5196 3 10.0918 3.21799C9.71547 3.40973 9.40973 3.71572 9.21799 4.09204C9 4.51986 9 5.07997 9 6.20007V9.00007M3 17.8001V12.2001C3 11.08 3 10.5199 3.21799 10.092C3.40973 9.71572 3.71547 9.40973 4.0918 9.21799C4.51962 9 5.08009 9 6.2002 9H11.8002C12.9203 9 13.48 9 13.9078 9.21799C14.2841 9.40973 14.5905 9.71572 14.7822 10.092C15.0002 10.5199 15.0002 11.0799 15.0002 12.2V17.8C15.0002 18.9202 15.0002 19.4802 14.7822 19.908C14.5905 20.2844 14.2841 20.5902 13.9078 20.782C13.48 21 12.9203 21 11.8002 21H6.2002C5.08009 21 4.51962 21 4.0918 20.782C3.71547 20.5902 3.40973 20.2844 3.21799 19.908C3 19.4802 3 18.9202 3 17.8001Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+
+                    <button id="button-download" onClick={() => test()}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 10L12 16M12 16L15 14M12 16L9 14M3 6V16.8C3 17.9201 3 18.4801 3.21799 18.908C3.40973 19.2843 3.71547 19.5902 4.0918 19.782C4.51962 20 5.08009 20 6.2002 20H17.8002C18.9203 20 19.48 20 19.9078 19.782C20.2841 19.5902 20.5905 19.2843 20.7822 18.908C21.0002 18.4801 21.0002 17.9201 21.0002 16.8L21.0002 9.20002C21.0002 8.07992 21.0002 7.51986 20.7822 7.09204C20.5905 6.71572 20.2841 6.40973 19.9078 6.21799C19.48 6 18.9201 6 17.8 6H3ZM3 6C3 4.89543 3.89543 4 5 4H8.67452C9.1637 4 9.40858 4 9.63875 4.05526C9.84282 4.10425 10.0379 4.18508 10.2168 4.29474C10.4186 4.41842 10.5916 4.59135 10.9375 4.93726L12.0002 6"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+
+                    <button id="button-add-file" onClick={() => test()}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 18V12M9 15H15M19.0002 9H16.2002C15.0801 9 14.5196 8.99997 14.0918 8.78198C13.7155 8.59024 13.4097 8.28429 13.218 7.90797C13 7.48014 13 6.9201 13 5.8V3M19 17.8V9.3255C19 8.83632 18.9996 8.59169 18.9443 8.36151C18.8953 8.15744 18.8147 7.96238 18.705 7.78343C18.5814 7.5816 18.4089 7.40864 18.063 7.06274L14.9375 3.93726C14.5916 3.59135 14.4186 3.41842 14.2168 3.29474C14.0379 3.18508 13.8428 3.10425 13.6388 3.05526C13.4086 3 13.1639 3 12.6747 3H8.2002C7.08009 3 6.51962 3 6.0918 3.21799C5.71547 3.40973 5.40973 3.71572 5.21799 4.09204C5 4.51986 5 5.07991 5 6.20001V17.8C5 18.9201 5 19.4801 5.21799 19.908C5.40973 20.2843 5.71547 20.5902 6.0918 20.782C6.51962 21 7.08009 21 8.2002 21H15.8002C16.9203 21 17.48 21 17.9078 20.782C18.2841 20.5902 18.5905 20.2843 18.7822 19.908C19.0002 19.4801 19 18.9201 19 17.8Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+
+                    <button id="button-delete" onClick={() => test()}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 10V17M10 10L10 17M4 6H20M18 6V17.8C18 18.9201 18.0002 19.4802 17.7822 19.908C17.5905 20.2844 17.2841 20.5902 16.9078 20.782C16.48 21 15.9203 21 14.8002 21H9.2002C8.08009 21 7.51962 21 7.0918 20.782C6.71547 20.5902 6.40973 20.2844 6.21799 19.908C6 19.4802 6 18.9201 6 17.8V6H18ZM16 6H8C8 5.06812 8 4.60216 8.15224 4.23462C8.35523 3.74456 8.74432 3.35523 9.23438 3.15224C9.60192 3 10.0681 3 11 3H13C13.9319 3 14.3978 3 14.7654 3.15224C15.2554 3.35523 15.6447 3.74456 15.8477 4.23462C15.9999 4.60216 16 5.06812 16 6Z"
+                                stroke="white"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            )
+        } else {
+            return <div id="container-tools">Folder tools</div>
+        }
+    }
+
+    return (
+        <div className="">
+            {folderTree ? renderTree(folderTree) : <div>Loading...</div>}
+
+            {renderTools()}
+        </div>
+    )
 }
