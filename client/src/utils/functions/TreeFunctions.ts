@@ -8,7 +8,25 @@ import type { Node, FolderData } from '../interfaces'
 // console.log(folderTree, "folderTree from TreeFunctions")
 
 export class FolderTreeFunctions {
+    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>) {
+        const result: any = await editAPI.Rename(path, newName)
+
+        console.log(result.success)
+
+        // console.log(parentNode)
+
+        if (!result.result) {
+            // dont change the node
+            return false
+        } else {
+            currentNode.data.name = newName
+            // renaming the node
+            return true
+        }
+    }
+
     public static async addFile(path: string, fileName: string, folderTree: Node<FolderData>, parentNode: string, newNode: Node<FolderData>): Promise<Node<FolderData> | string> {
+        console.log('test!')
         console.log(path, fileName, 'log')
         const result: any = await editAPI.addFile(path, fileName)
 
@@ -20,23 +38,6 @@ export class FolderTreeFunctions {
             // update store with new tree
 
             return `Success adding file: ${result.message}`
-        }
-    }
-
-    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>) {
-        const result: any = await editAPI.Rename(path, newName)
-
-        console.log(result.success)
-
-        //console.log(parentNode)
-
-        if (!result.result) {
-            // dont change the node
-            return false
-        } else {
-            currentNode.data.name = newName
-            // renaming the node
-            return true
         }
     }
 

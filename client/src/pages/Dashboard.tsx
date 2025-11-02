@@ -3,13 +3,13 @@ import FolderTree from '../components/FolderTree'
 
 export default function Dashboard() {
     return (
-        <div id="container-page" className="min-height-full">
-            <div id="container-layout" className="grid grid-cols-2 grid-rows-[1fr_auto] min-height-full px-30 pt-15">
-                <div id="container-folderTree" className="">
+        <div id="container-page" className="min-height-screen">
+            <div id="container-layout" className="grid grid-cols-2 grid-rows-[1fr_auto] px-30 pt-15">
+                <div id="container-folderTree" className="height-screen">
                     <FolderTree />
                 </div>
 
-                <div id="container-codeEditor" className="">
+                <div id="container-codeEditor" className="height-screen">
                     <CodeEditor />
                 </div>
             </div>
