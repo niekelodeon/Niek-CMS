@@ -26,7 +26,6 @@ export class FolderTreeFunctions {
     }
 
     public static async addFile(path: string, fileName: string, folderTree: Node<FolderData>, parentNode: string, newNode: Node<FolderData>): Promise<Node<FolderData> | string> {
-        console.log('test!')
         console.log(path, fileName, 'log')
         const result: any = await editAPI.addFile(path, fileName)
 
