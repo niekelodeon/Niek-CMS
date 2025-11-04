@@ -3,7 +3,7 @@ import { useAtom } from 'jotai'
 
 import { FolderTreeFunctions } from '../utils/functions/TreeFunctions'
 
-import { selectedProjectAtom, filePathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
+import { selectedProjectAtom, folderPathAtom, filePathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 import { Variables } from '../utils/variables'
@@ -13,7 +13,9 @@ import { Node, type FolderData, type FolderTreeMethods } from '../utils/interfac
 export default function FolderTree() {
     const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
     const [folderTree, setFolderTree] = useState<Node<FolderData>>()
+    const [currentNode, setCurrentNode] = useState<Node<FolderData>>()
 
+    const [folderPath, setFolderPath] = useAtom(folderPathAtom)
     const [filePath, setFilePath] = useAtom(filePathAtom)
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
@@ -21,14 +23,29 @@ export default function FolderTree() {
 
     interface FileItemProps {
         currentNode: Node<FolderData>
-        clickFile: (filePath: string) => void
+        clickFile: (filePath: string, currentNode: Node<FolderData>) => void
     }
 
-    async function clickFile(filePath: string) {
+    async function clickFile(filePath: string, currentNode: Node<FolderData>) {
         const fileContent: any = await editAPI.getFile(filePath)
         setFileContent(atob(fileContent.data))
+        setCurrentNode(currentNode)
+        setFolderPath(null)
         setFilePath(filePath)
         setIsOnFile(true)
+
+        console.log(filePath, currentNode.data.path + '/' + currentNode.data.name)
+    }
+
+    async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
+        console.log('log anything')
+
+        setCurrentNode(currentNode)
+        setFilePath('')
+        setFolderPath(folderPath)
+        setIsOnFile(false)
+
+        console.log(currentNode.data.path + '/' + currentNode.data.name, 'test')
     }
 
     // on load:
@@ -47,37 +64,37 @@ export default function FolderTree() {
 
     function FileItem({ currentNode, clickFile }: FileItemProps) {
         return (
-            <div id="file-container" className="cursor-pointer" onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`)}>
+            <div
+                id="file-container"
+                className={`cursor-pointer px-2 py-1 rounded transition-all duration-150 ${filePath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#EDC79B]' : 'text-white'}`}
+                onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`, currentNode)}
+            >
                 {currentNode.data.name}
             </div>
         )
     }
 
-    function renderTree(folderTree: Node<FolderData>): React.ReactElement {
-        if (folderTree.data.type === 'file') {
+    function renderTree(nextNode: Node<FolderData>): React.ReactElement {
+        if (nextNode.data.type === 'file') {
             return (
                 <div id="container-file">
-                    <FileItem currentNode={folderTree} clickFile={clickFile} />
+                    <FileItem currentNode={nextNode} clickFile={clickFile} />
                 </div>
             )
         }
 
         return (
             <div id="container" className="flex flex-col">
-                <div id="container-structure" className="cursor-default" key={folderTree.data.name} draggable>
-                    <div
-                        id="container-directory"
-                        className="flex flex-row"
-                        onClick={() => {
-                            setIsOnFile(false)
-                        }}
-                    >
-                        <span>{folderTree.data.name}</span>
+                <div id="container-structure" className="cursor-default" key={nextNode.data.name} draggable>
+                    <div id="container-directory" className="flex flex-row">
+                        <div onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)} className={folderPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#EDC79B]' : 'text-white'}>
+                            {nextNode.data.name}
+                        </div>
                     </div>
 
-                    {folderTree.children && folderTree.children.length > 0 ? (
+                    {nextNode.children && nextNode.children.length > 0 ? (
                         <div id="container-file" className="ml-4">
-                            {folderTree.children.map(child => renderTree(child))}
+                            {nextNode.children.map(child => renderTree(child))}
                         </div>
                     ) : (
                         ''
@@ -91,7 +108,13 @@ export default function FolderTree() {
         if (isOnFile === true) {
             return (
                 <div id="container-tools-file" className="flex flex-row gap-2">
-                    <button id="button-edit-name" className="hover:scale-115 duration-350 cursor-pointer">
+                    <button
+                        id="button-rename"
+                        className="hover:scale-115 duration-350 cursor-pointer"
+                        onClick={() => {
+                            editAPI.Rename(filePath, 'fileRename7.ts', currentNode, setCurrentNode)
+                        }}
+                    >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M4 16V20L8 20L18.8686 9.13134C19.2646 8.73532 19.4627 8.53728 19.5369 8.30895C19.6021 8.10811 19.6021 7.89184 19.5369 7.691C19.4627 7.46267 19.2646 7.26462 18.8686 6.8686L17.1313 5.13134L17.1307 5.13067C16.7351 4.7351 16.5373 4.53727 16.3091 4.46313C16.1082 4.39787 15.8919 4.39787 15.691 4.46313C15.4627 4.53732 15.2646 4.73532 14.8686 5.13134L4 16Z"
@@ -131,7 +154,7 @@ export default function FolderTree() {
         } else if (isOnFile === false) {
             return (
                 <div id="container-tools-folder" className="flex flex-row gap-2">
-                    <button id="button-edit-name" className="hover:scale-115 duration-350 cursor-pointer" onClick={() => FolderTreeFunctions.Rename(filePath, 'folder', folderTree)}>
+                    <button id="button-edit-name" className="hover:scale-115 duration-350 cursor-pointer">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M4 16V20L8 20L18.8686 9.13134C19.2646 8.73532 19.4627 8.53728 19.5369 8.30895C19.6021 8.10811 19.6021 7.89184 19.5369 7.691C19.4627 7.46267 19.2646 7.26462 18.8686 6.8686L17.1313 5.13134L17.1307 5.13067C16.7351 4.7351 16.5373 4.53727 16.3091 4.46313C16.1082 4.39787 15.8919 4.39787 15.691 4.46313C15.4627 4.53732 15.2646 4.73532 14.8686 5.13134L4 16Z"

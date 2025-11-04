@@ -11,3 +11,290 @@
 [32m [INFO] [11/03/2025 11:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
 [32m [INFO] [11/03/2025 11:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
 [32m [INFO] [11/03/2025 11:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 11:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 11:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 11:51] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: No file extension given [0m 
+[32m [INFO] [11/03/2025 11:51] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:02] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:02] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:02] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:05] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:05] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:05] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:05] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:05] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:06] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:06] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:06] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:08] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: No file extension given [0m 
+[32m [INFO] [11/03/2025 12:11] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:11] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:11] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: No file extension given [0m 
+[32m [INFO] [11/03/2025 12:12] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:12] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:12] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: New name too long [0m 
+[32m [INFO] [11/03/2025 12:12] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:13] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:13] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:13] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:14] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:14] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:14] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:14] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:14] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:14] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:15] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:16] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:21] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:21] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:21] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:21] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:22] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:22] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:24] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:24] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:24] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:24] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:27] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:30] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:35] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:36] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:36] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:36] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:36] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:36] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:36] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:37] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:37] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:37] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:37] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:37] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:37] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:39] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:40] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:40] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:40] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:40] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:40] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: ENOENT: no such file or directory, stat 'projects/13/Dir1/fileRename11.ts' [0m 
+[32m [INFO] [11/03/2025 12:40] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:42] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 12:59] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 13:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 13:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 13:41] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 13:53] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 14:28] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 14:28] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 14:28] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:06] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:06] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:07] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:10] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:10] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:10] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:12] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:15] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:16] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:16] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:16] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:16] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:16] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:17] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:18] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:19] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:20] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:20] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:20] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:20] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:20] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:20] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:23] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:24] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:24] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:26] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:27] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:28] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:28] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:28] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:30] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:30] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:30] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:30] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 15:32] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:33] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:33] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 15:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 15:34] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /Rename | FILE: routes/editRoutes.ts | FUNCTION: Rename | MESSAGE: File renamed [0m 
+[32m [INFO] [11/03/2025 16:56] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/03/2025 16:56] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/03/2025 17:49] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 

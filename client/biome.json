@@ -18,6 +18,6 @@
         "includes": ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx", "**/*.json", "**/*.jsonc", "**/*.css", "**/*.scss"]
     },
     "linter": {
-    "enabled": false
+        "enabled": false
     }
 }
