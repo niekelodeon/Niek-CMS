@@ -3,7 +3,7 @@ import { useAtom } from 'jotai'
 
 import { FolderTreeFunctions } from '../utils/functions/TreeFunctions'
 
-import { selectedProjectAtom, folderPathAtom, filePathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
+import { selectedProjectAtom, folderPathAtom, filePathAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 import { Variables } from '../utils/variables'
@@ -20,6 +20,8 @@ export default function FolderTree() {
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
+    const [result, setResult] = useState<string>()
+    const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
 
     interface FileItemProps {
         currentNode: Node<FolderData>
@@ -112,7 +114,9 @@ export default function FolderTree() {
                         id="button-rename"
                         className="hover:scale-115 duration-350 cursor-pointer"
                         onClick={() => {
-                            editAPI.Rename(filePath, 'fileRename7.ts', currentNode, setCurrentNode)
+                            editAPI.Rename(filePath, 'fileRename7.ts', currentNode, setCurrentNode).then(result => {
+                                if (result) setResultMessages(prev => [...prev, result as string])
+                            })
                         }}
                     >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -232,11 +236,25 @@ export default function FolderTree() {
         }
     }
 
+    function showMessages() {
+        console.log(resultMessages)
+
+        if (resultMessages.length <= 0) {
+            return ''
+        } else {
+            // display the messages correctly here, scrolling goes up once and it should always show the most recent message
+            return <div id="container-messages">Messages</div>
+        }
+    }
+
     return (
         <div className="h-full flex flex-col justify-between">
             {folderTree ? renderTree(folderTree) : <div>Loading...</div>}
 
-            {renderTools(isOnFile)}
+            <div id="container" className="flex flex-col gap-2">
+                {renderTools(isOnFile)}
+                {showMessages()}
+            </div>
         </div>
     )
 }

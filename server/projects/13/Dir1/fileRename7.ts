@@ -1,281 +1,212 @@
-import path from 'path'
+import sequelize from 'sequelize'
+import dotenv from 'dotenv'
+import bcrypt from 'bcrypt'
 
-import { loggerService } from '../../../global/logger'
-import { UploadServices } from '../../../edit/uploadServices'
+import { Sequelize, DataTypes } from '@sequelize/core'
+import { MariaDbDialect } from '@sequelize/mariadb'
 
-import { ftpServices } from '../../../edit/ftpServices'
-import { fsServices } from '../../../edit/fsServices'
-import { dashboardServices } from '../../../edit/dashboardServices'
-import { GlobalServices } from '../../../global/services'
+dotenv.config()
 
-import { Router, Request, Response } from 'express'
-import { FolderData, Node } from '../../../global/interfaces'
+export class Database {
+    
+    public static sequelize = new Sequelize({
+            dialect: MariaDbDialect,
+            host: String(process.env.host),
+            port: Number(process.env.databasePort),
+            database: String(process.env.database),
+            user: String(process.env.user),
+            password: String(process.env.password),
+            showWarnings: Boolean(true),
+            connectTimeout: Number(1000)
+    })  
 
-import { stringify } from 'flatted'
-
-export const editRoutes = Router()
-
-// renaming middleware
-const memoryUpload = UploadServices.Filter()
-
-// Projects:
-// show the projects the user has
-
-// Settings:
-// show the settings of the user
-
-// ftpServices:
-editRoutes.post('/RemoteStructure', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        result = await ftpServices.RemoteStructure(req.body.config)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, data: result.data })
+    public static User = this.sequelize.define(
+        'User',
+        {
+            id: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+            },
+            email: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                unique: true,
+            },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+        },
+        {
+            tableName: 'Users',
+            timestamps: true,
+            paranoid: true,
+            hooks: {
+                beforeCreate: (user, options) => {
+                    // user.password = hashPassword(user.password)
+                }
+            }
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), ftpServices.RemoteStructure.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
-    }
-})
+    )
 
-editRoutes.post('/DownloadProject', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        const projectPath = req.body.localDir + req.body.projectName
-
-        result = await ftpServices.DownloadProject(req.body.config, req.body.remoteDir, projectPath)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage.success + '\t' + result.logMessage.failed)
-            res.status(400).json({ result: result.success, data: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage.success + '\t' + result.logMessage.failed)
-            res.status(200).json({ result: result.success, data: result.data })
+    public static Connection = this.sequelize.define(
+        'User Connection',
+        {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
+            userId: {
+                type: DataTypes.INTEGER,
+                references: {
+                    model: this.User, 
+                    key: 'id',
+                },
+            },
+            host: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            user: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            port: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
+        },
+        {
+            tableName: 'User Connection',
+            timestamps: true,
+            paranoid: false,
+            hooks: {
+                beforeCreate: (user, options) => {
+                    // user.password = hashPassword(user.password)
+                }
+            }
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), ftpServices.DownloadProject.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
-    }
-})
+    )
 
-editRoutes.post('/PublishProject', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        const projectPath = req.body.localDir + req.body.projectName
-
-        result = await ftpServices.PublishProject(req.body.config, projectPath, req.body.remoteDir)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, message: result.message })
+    public static async Sync () {
+        try {
+            Database.sequelize.sync()
+            console.log(`Database synchronized successful`)
+        } catch (err) {
+            console.log(`Database synchronized unsuccessful`, err)
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), ftpServices.PublishProject.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/folderTree', async (req: Request, res: Response) => {
-    try {
-        const projectName = req.body.localDir + req.body.projectName
+}
 
-        let rootNode: Node<FolderData> = new Node<FolderData>({
-            path: projectName,
-            type: 'directory',
-            depth: 0,
-            name: 'root',
-        })
-        rootNode.children = await fsServices.folderTree(projectName, rootNode)
+export class Queries {
+    // auth
+    public static async createUser (email: string, password: string) {
+        try {
+            const exists = await Database.User.findOne({ where: { email } })
 
-        // fix logs here
-        loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), 'folderTree', '')
-        res.status(200).send(stringify(rootNode))
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.folderTree.name, stringify(err))
-        res.status(500).send('Something went wrong, please try again')
-    }
-})
+            if (exists) return false
+            else {
+                await Database.User.create({
+                    email,
+                    password
+                })
 
-editRoutes.post('/getFile', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        result = await fsServices.getFile(req.body.path)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ data: result.data })
+                return true
+            }
+        } catch (err) {
+            return err
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.getFile.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/saveFile', async (req: Request, res: Response) => {
-    let result = null
+    public static async getUser (identifier: string | number) {
+        try {
+            const where = typeof identifier === 'string' 
+            ? { email: identifier } 
+            : { id: identifier }
 
-    try {
-        result = await fsServices.saveFile(req.body.localDir + req.body.path, req.body.content)
+            const user = await Database.User.findOne({ where: where })
 
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, message: result.message })
+            if (!user) return false
+            else return user    
+        } catch (err) {
+            return err
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.saveFile.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/addFile', async (req: Request, res: Response) => {
-    let result = null
+    public static async updateEmail (id: number, email: string) {
+        try {
+            await Database.User.update(
+                { email: email },
+                { where: {id} }
+            )
 
-    try {
-        result = await fsServices.addFile(req.body.localDir + req.body.path, req.body.name)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, message: result.message })
+            return true
+        } catch (err) {
+            return err
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.addFile.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/addFolder', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        result = await fsServices.addFolder(req.body.path)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, message: result.message })
+    public static async updatePassword (id: number, password: string) {
+        try {
+            await Database.User.update(
+                { password: password }, 
+                { where: { id } }
+            )
+            
+            return true
+        } catch (err) {
+            return err
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.addFolder.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/Rename', async (req: Request, res: Response) => {
-    let result = null
 
-    console.log(req.body)
+    public static async deleteUser (id: number, userId: number) {
+        try {
+            const destroyUser = await Database.User.destroy({ where: { id } })
+            const destroyConnection = await Database.Connection.destroy({ where: { userId } })
 
-    try {
-        result = await fsServices.Rename(req.body.path, req.body.newName)
+            if (!destroyUser && !destroyConnection) return false 
+            else return true
+        } catch (err) {
+            return err
+        }        
+    }
 
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, message: result.message })
+    // connections
+    public static async createConnection (userId: number, host: string, user: string, password: string, port: number) {
+        try {
+            await Database.Connection.create({
+                userId,
+                host,
+                user,
+                password,
+                port
+            })
+
+            return true
+        } catch (err) {
+            return err
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Rename.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/Move', async (req: Request, res: Response) => {
-    let result = null
+    public static async getConnection (userId: number) {
+        try {
+            const connection = await Database.Connection.findOne({ where: { userId } })
 
-    try {
-        result = await fsServices.Move(req.body.paths)
-
-        if (result.message.success > 0) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(400).json(result.message)
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(200).json(result.message)
+            if (!connection) return false
+            else return connection
+        } catch (err) {
+            return err
         }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Move.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
     }
-})
 
-editRoutes.post('/Upload', memoryUpload.single('file'), async (req: Request, res: Response) => {
-    let result = null
+}
 
-    try {
-        result = await UploadServices.uploadStream(req.file.buffer, req.body.path)
-
-        if (result.message.success > 0) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(400).json(result.message)
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(200).json(result.message)
-        }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), UploadServices.uploadStream.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
-    }
-})
-
-editRoutes.post('/Delete', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        result = await fsServices.Delete(req.body.paths)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(400).json(result.message)
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(200).json(result.message)
-        }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Delete.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
-    }
-})
-
-editRoutes.post('/Download', async (req: Request, res: Response) => {
-    let result = null
-
-    try {
-        result = await fsServices.Download(req.body.paths, res)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(400).json(result.message)
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(200).json(result.message)
-        }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Download.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
-    }
-})
