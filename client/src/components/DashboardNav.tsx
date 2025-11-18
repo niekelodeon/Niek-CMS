@@ -7,12 +7,6 @@ export default function DashboardNav() {
     const location: Location = useLocation()
     const navigate: NavigateFunction = useNavigate()
 
-    const [infoOpen, setInfoOpen] = useState(false)
-
-    const toggleInfo = () => {
-        setInfoOpen(prev => !prev)
-    }
-
     return (
         <div id="container" className="">
             <div id="container-menu" className={'fixed top-[-3rem] left-[-4rem] flex h-full pr-35 group'}>
@@ -66,25 +60,6 @@ export default function DashboardNav() {
                         />
                     </svg>
                 </div>
-
-                <svg
-                    id="info"
-                    className={`absolute bottom-[0] transition-transform duration-500 ${location.pathname !== '/edit/dashboard' ? 'hidden' : ''} ${infoOpen ? 'translate-x-20' : 'translate-x-0 group-hover:translate-x-20'} ${location.pathname != '/edit/dashboard'}`}
-                    onClick={() => toggleInfo()}
-                    width="52"
-                    height="52"
-                    viewBox="0 0 52 52"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M26 23.8333V34.6667M26 45.5C15.2304 45.5 6.5 36.7696 6.5 26C6.5 15.2304 15.2304 6.5 26 6.5C36.7696 6.5 45.5 15.2304 45.5 26C45.5 36.7696 36.7696 45.5 26 45.5ZM26.1079 17.3333V17.55L25.8921 17.5499V17.3333H26.1079Z"
-                        stroke={infoOpen ? '#EDC79B' : 'white'}
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                </svg>
             </div>
         </div>
     )
