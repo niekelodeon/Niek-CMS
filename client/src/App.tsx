@@ -33,7 +33,7 @@ function Layout() {
         <>
             {nav}
 
-            <main className="p-6">
+            <main className="">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />

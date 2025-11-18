@@ -1,7 +1,7 @@
 export default function Login() {
     return (
-        <div id="container-page" className="w-full">
-            <div id="container-login" className="flex flex-row bg-[#272334] my-[3%] mx-[5%] rounded-3xl">
+        <div id="container-page" className="w-screen h-screen bg-[linear-gradient(-45deg,#7F7EFF_30%,#1B1E24_40%)]">
+            <div id="container-login" className="hidden flex flex-row bg-[#272334] my-[3%] mx-[5%] rounded-3xl">
                 <div id="container-left" className="w-1/2 flex flex-col items-center gap-[6.25rem] m-[5%]">
                     <h1 id="header-login" className="text-2xl font-medium text-[#7F7EFF]">
                         Login
@@ -33,7 +33,7 @@ export default function Login() {
                             </a>
                         </div>
 
-                        <button className="flex flex-start px-[2.5rem] w-[21.25rem] rounded-md py-3 bg-[#7F7EFF] hover:bg-[#5D5CC9] transition-[900ms]" typeof="submit">
+                        <button className="flex flex-start px-[2.5rem] w-[21.25rem] rounded-md py-3 bg-[#7F7EFF] hover:bg-[#5D5CC9] transition-[900ms] cursor-pointer" typeof="submit">
                             Go!
                         </button>
                     </form>

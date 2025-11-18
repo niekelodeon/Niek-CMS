@@ -40,3 +40,5 @@
 [32m [INFO] [11/18/2025 12:25] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
 [32m [INFO] [11/18/2025 13:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
 [32m [INFO] [11/18/2025 13:31] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [11/18/2025 15:50] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/18/2025 15:50] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
