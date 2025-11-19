@@ -15,7 +15,8 @@ export default function Login() {
     async function login(e: any) {
         e.preventDefault()
         console.log(email, password)
-        // const login: string = await authAPI.Login(email, password)
+
+        const login: string = await authAPI.Login(email, password)
     }
 
     return (
@@ -105,7 +106,7 @@ export default function Login() {
                             </div>
                         </div>
 
-                        <button className="flex flex-start px-[2.5rem] w-[21.25rem] rounded-md py-3 bg-[#7F7EFF] hover:bg-[#5D5CC9] transition-[900ms] cursor-pointer" type="submit">
+                        <button className="flex flex-start px-[2.5rem] w-[21.25rem] rounded-md py-3 bg-[#7F7EFF] hover:bg-[#5D5CC9] font-medium transition-[900ms] cursor-pointer" type="submit">
                             Go!
                         </button>
                     </form>
