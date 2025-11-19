@@ -24,6 +24,23 @@ class APIBase {
     }
 }
 
+export class authAPI {
+    public static async Login(email: string, password: string): Promise<boolean | string> {
+        const body: any = { email: email, password: password }
+
+        try {
+            let response = await APIBase.fetchData('/auth/Login', 'POST', body)
+
+            if (response) {
+            }
+
+            return JSON.parse(response)
+        } catch (err) {
+            return `Route: ${this.Login.name} API fetch error: ${err}`
+        }
+    }
+}
+
 export class editAPI {
     public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any): Promise<boolean | string> {
         const body: any = { path: path, newName: newName }
