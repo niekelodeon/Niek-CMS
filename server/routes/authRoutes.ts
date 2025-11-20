@@ -34,10 +34,10 @@ authRoutes.post('/Login', async (req: Request, res: Response) => {
 
         if (result.success) {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)
-            res.status(200).json(result)
+            res.status(200).json({ result: result.success, message: result.message, token: result.token })
         } else {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)
-            res.status(400).json(result)
+            res.status(200).json({ result: result.succes, message: result.message })
         }
     } catch (err) {
         loggerService.Logger('WARNING', req.body.username, req.ip, req.route.path, 'authServices.ts', authServices.Login.name, err.message)

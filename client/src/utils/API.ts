@@ -1,6 +1,6 @@
 import { parse } from 'flatted'
 
-import { Node, type FolderData } from '../utils/interfaces'
+import { Node, type FolderData, type LoginResponse } from '../utils/interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000' // get from env
@@ -25,18 +25,19 @@ class APIBase {
 }
 
 export class authAPI {
-    public static async Login(email: string, password: string): Promise<boolean | string> {
+    public static async Login(email: string, password: string): Promise<LoginResponse> {
         const body: any = { email: email, password: password }
 
         try {
             let response = await APIBase.fetchData('/auth/Login', 'POST', body)
 
             if (response) {
+                return JSON.parse(response)
             }
 
             return JSON.parse(response)
         } catch (err) {
-            return `Route: ${this.Login.name} API fetch error: ${err}`
+            return { success: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }
         }
     }
 }

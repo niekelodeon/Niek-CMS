@@ -25,3 +25,10 @@ export interface FolderTreeMethods {
     MOVE: string
     DELETE: string
 }
+
+// Authentication:
+export interface LoginResponse {
+    success: boolean
+    message?: string
+    token?: string
+}

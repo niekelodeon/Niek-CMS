@@ -1,8 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { type LoginResponse } from '../utils/interfaces'
 
 import { authAPI } from '../utils/API'
 
 export default function Login() {
+    const navigate = useNavigate() // gives an invallid hook call, replace.
+
     const [showPassword, setShowPassword] = useState<boolean>()
 
     function toggleShowPassword() {
@@ -12,11 +17,18 @@ export default function Login() {
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
 
+    const [loginMessage, setLoginMessage] = useState<string>()
+
     async function login(e: any) {
         e.preventDefault()
-        console.log(email, password)
 
-        const login: string = await authAPI.Login(email, password)
+        const result: LoginResponse = await authAPI.Login(email, password)
+
+        if (result.success) {
+            navigate('/edit/dashboard')
+        } else {
+            setLoginMessage(result.message)
+        }
     }
 
     return (
@@ -106,9 +118,15 @@ export default function Login() {
                             </div>
                         </div>
 
-                        <button className="flex flex-start px-[2.5rem] w-[21.25rem] rounded-md py-3 bg-[#7F7EFF] hover:bg-[#5D5CC9] font-medium transition-[900ms] cursor-pointer" type="submit">
-                            Go!
-                        </button>
+                        <div id="container-button" className="flex flex-col gap-[1rem] transition-all duration-[900ms]">
+                            <div id="message" className="text-sm text-[#ff8082]">
+                                {loginMessage}
+                            </div>
+
+                            <button className="flex flex-start px-[2.5rem] w-[21.25rem] rounded-md py-3 bg-[#7F7EFF] hover:bg-[#5D5CC9] font-medium transition-[900ms] cursor-pointer" type="submit">
+                                Go!
+                            </button>
+                        </div>
                     </form>
                 </div>
 
