@@ -32,3 +32,13 @@ export interface LoginResponse {
     message?: string
     token?: string
 }
+
+export interface RegisterResponse {
+    result: boolean
+    message?: string
+    token?: string
+}
+
+export interface ForgotResponse {
+    message: string
+}

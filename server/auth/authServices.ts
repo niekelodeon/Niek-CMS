@@ -22,7 +22,7 @@ export class authServices {
             if (!success) return { success: false, file: __filename, function: this.Register.name, message: 'Email already exists', logMessage: 'Email already exists' }
             return { success: true, file: __filename, function: this.Register.name, message: 'Register succesful', logMessage: 'Register succesful' }
         } catch (err) {
-            return { success: false, file: __filename, function: this.Register.name, message: 'Something went wrong, please try again', logMessage: err }
+            return { success: false, message: 'Something went wrong, please try again', logMessage: err.message }
         }
     }
 

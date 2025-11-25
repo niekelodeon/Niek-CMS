@@ -13,12 +13,12 @@ authRoutes.post('/Register', async (req: Request, res: Response) => {
     try {
         result = await authServices.Register(req.body.email, req.body.password)
 
-        if (!result.success) {
+        if (result.success) {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)
-            res.status(400).json(result.message)
+            res.status(200).json({ result: result.success, message: result.message, token: result.token })
         } else {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)
-            res.redirect('auth/Login')
+            res.status(400).json({ result: result.success, message: result.message })
         }
     } catch (err) {
         loggerService.Logger('WARNING', req.body.username, req.ip, req.route.path, 'authServices.ts', authServices.Register.name, err.message)
@@ -45,6 +45,10 @@ authRoutes.post('/Login', async (req: Request, res: Response) => {
     }
 })
 
+// Forgot (Password)
+
+// Reset (Password)
+
 authRoutes.post('/Logout', async (req: Request, res: Response) => {
-    // remove token
+    // remove token on the frontend
 })

@@ -7,7 +7,9 @@ import type { Location } from 'react-router-dom'
 
 // pages:
 import Home from './pages/Landing'
-import Login from './pages/Login'
+import Register from './pages/auth/Register'
+import Login from './pages/auth/Login'
+import Forgot from './pages/auth/Forgot'
 import Dashboard from './pages/Dashboard'
 import Settings from './pages/Settings'
 import PageNotFound from './pages/PageNotFound'
@@ -36,7 +38,9 @@ function Layout() {
             <main className="">
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/forgot" element={<Forgot />} />
                     <Route path="/edit/dashboard" element={<Dashboard />} />
                     <Route path="/edit/settings" element={<Settings />} />
                     <Route path="*" element={<PageNotFound />} />

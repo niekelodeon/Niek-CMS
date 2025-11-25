@@ -1,6 +1,6 @@
 import { parse } from 'flatted'
 
-import { Node, type FolderData, type LoginResponse } from '../utils/interfaces'
+import { Node, type FolderData, type LoginResponse, type RegisterResponse, type ForgotResponse } from '../utils/interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000' // get from env
@@ -25,16 +25,39 @@ class APIBase {
 }
 
 export class authAPI {
+    public static async Register(email: string, password: string): Promise<RegisterResponse> {
+        const body: any = { email: email, password: password }
+
+        try {
+            let response = await APIBase.fetchData('/auth/Register', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            return { result: false, message: `Route: ${this.Register.name} API fetch error: ${err}` }
+        }
+    }
+
     public static async Login(email: string, password: string): Promise<LoginResponse> {
         const body: any = { email: email, password: password }
 
         try {
             let response = await APIBase.fetchData('/auth/Login', 'POST', body)
 
-            console.log(response)
             return JSON.parse(response)
         } catch (err) {
-            return { success: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }
+            return { result: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }
+        }
+    }
+
+    public static async Forgot(email: string): Promise<ForgotResponse> {
+        const body: any = { email: email, password: password }
+
+        try {
+            let response = await APIBase.fetchData('/auth/Login', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            return { result: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }
         }
     }
 }
