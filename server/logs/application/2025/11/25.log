@@ -1,0 +1,8 @@
+[32m [INFO] [11/25/2025 12:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/Niek-CMS/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Login succesful [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/Niek-CMS/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Incorrect password [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/Niek-CMS/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Incorrect password [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/Niek-CMS/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Email does not exist [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/Niek-CMS/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Incorrect password [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: undefined | IP: ::ffff:127.0.0.1 | ROUTE: /Login | FILE: /Users/niek/Documents/code/github/Niek-CMS/server/auth/authServices.ts | FUNCTION: Login | MESSAGE: Login succesful [0m 
+[32m [INFO] [11/25/2025 12:48] | USER: niek@niek1.com | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 

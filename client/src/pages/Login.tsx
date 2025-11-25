@@ -5,8 +5,10 @@ import { type LoginResponse } from '../utils/interfaces'
 
 import { authAPI } from '../utils/API'
 
+import Spline from '@splinetool/react-spline'
+
 export default function Login() {
-    const navigate = useNavigate() // gives an invallid hook call, replace.
+    const navigate = useNavigate()
 
     const [showPassword, setShowPassword] = useState<boolean>()
 
@@ -131,7 +133,9 @@ export default function Login() {
                 </div>
 
                 <div id="container-right" className="w-1/2 flex justify-center my-[5%] mx-[5%]">
-                    <div id="container-image" className="h-full w-full bg-[#7F7EFF] rounded-3xl"></div>
+                    <div id="container-image" className="h-full w-full rounded-3xl">
+                        <Spline scene="https://prod.spline.design/SSrk4wMwV7g-0eW6/scene.splinecode" />
+                    </div>
                 </div>
             </div>
         </div>
