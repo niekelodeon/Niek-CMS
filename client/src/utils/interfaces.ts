@@ -28,7 +28,7 @@ export interface FolderTreeMethods {
 
 // Authentication:
 export interface LoginResponse {
-    success: boolean
+    result: boolean
     message?: string
     token?: string
 }

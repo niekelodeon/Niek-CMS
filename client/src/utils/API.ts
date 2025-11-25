@@ -31,10 +31,7 @@ export class authAPI {
         try {
             let response = await APIBase.fetchData('/auth/Login', 'POST', body)
 
-            if (response) {
-                return JSON.parse(response)
-            }
-
+            console.log(response)
             return JSON.parse(response)
         } catch (err) {
             return { success: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }

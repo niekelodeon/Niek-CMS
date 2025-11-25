@@ -22,12 +22,12 @@ export default function Login() {
     async function login(e: any) {
         e.preventDefault()
 
-        const result: LoginResponse = await authAPI.Login(email, password)
+        const loginObject: LoginResponse = await authAPI.Login(email, password)
 
-        if (result.success) {
+        if (loginObject.result) {
             navigate('/edit/dashboard')
         } else {
-            setLoginMessage(result.message)
+            setLoginMessage(loginObject.message)
         }
     }
 
