@@ -29,7 +29,7 @@ export class authAPI {
         const body: any = { email: email, password: password }
 
         try {
-            let response = await APIBase.fetchData('/auth/Register', 'POST', body)
+            let response = await APIBase.fetchData('/auth/register', 'POST', body)
 
             return JSON.parse(response)
         } catch (err) {
@@ -41,7 +41,7 @@ export class authAPI {
         const body: any = { email: email, password: password }
 
         try {
-            let response = await APIBase.fetchData('/auth/Login', 'POST', body)
+            let response = await APIBase.fetchData('/auth/login', 'POST', body)
 
             return JSON.parse(response)
         } catch (err) {
@@ -50,14 +50,14 @@ export class authAPI {
     }
 
     public static async Forgot(email: string): Promise<ForgotResponse> {
-        const body: any = { email: email, password: password }
+        const body: any = { email: email }
 
         try {
-            let response = await APIBase.fetchData('/auth/Login', 'POST', body)
+            let response = await APIBase.fetchData('/auth/forgot', 'POST', body)
 
             return JSON.parse(response)
         } catch (err) {
-            return { result: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }
+            return { message: `Route: ${this.Login.name} API fetch error: ${err}` }
         }
     }
 }

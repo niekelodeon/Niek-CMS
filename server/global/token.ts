@@ -4,8 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export class Token {
-
-    public static Create (id: number, email: string) {
+    public static Create(id: number, email: string) {
         try {
             const privateKey: string = process.env.privateKey
 
@@ -14,11 +13,11 @@ export class Token {
             const expirationTime: number = currentTime + tenDaysInMs
 
             const claims = {
-                'exp': expirationTime, 
-                'iat': currentTime, 
-                'iss': String(process.env.websiteName), 
-                'id': id,
-                'email': email 
+                exp: expirationTime,
+                iat: currentTime,
+                iss: String(process.env.websiteName),
+                id: id,
+                email: email,
             }
 
             const token = jwt.sign(claims, privateKey, { algorithm: 'HS256' })
@@ -29,12 +28,31 @@ export class Token {
         }
     }
 
-    // public static getLoad (token: string) {
-    //     const decoded: string = jwt.decode(token)
-    //     return decoded
-    // }
+    public static CreatePasswordToken(id: number, email: string) {
+        try {
+            const privateKey = process.env.privateKey
 
-    public static Verify (token: string) {
+            const token = jwt.sign(
+                {
+                    sub: id,
+                    email: email,
+                    purpose: 'password-reset',
+                },
+                privateKey,
+                {
+                    algorithm: 'HS256',
+                    expiresIn: '15m',
+                    issuer: process.env.websiteName,
+                },
+            )
+
+            return token
+        } catch (err) {
+            return err
+        }
+    }
+
+    public static Verify(token: string) {
         if (!token) return false
         else {
             const verify: boolean = jwt.verify(token, process.env.privateKey)
@@ -43,25 +61,23 @@ export class Token {
             else return false
         }
     }
-
 }
 
 export class mailToken {
+    private static privateKey: string = 'mail-random' // get privateKey trough .env
 
-    private static privateKey: string = "mail-random" // get privateKey trough .env
-
-    public static async Create (type: string) {
+    public static async Create(type: string) {
         try {
             const currentTime: number = Math.floor(Date.now() / 1000)
             const expirationTime: number = currentTime + 432000 // five days
             const privateKey: string = this.privateKey
             const username: string = ''
             const claims = {
-                'exp': expirationTime, // expiration at time
-                'iat': currentTime, // issued at time
-                'iss': 'website-name', // get the domain name trough .env
-                'username': username, // get username from database
-                'type': type // type of email
+                exp: expirationTime, // expiration at time
+                iat: currentTime, // issued at time
+                iss: 'website-name', // get the domain name trough .env
+                username: username, // get username from database
+                type: type, // type of email
             }
 
             const token = jwt.sign(claims, privateKey, { algorithm: 'HS256' })
@@ -72,7 +88,7 @@ export class mailToken {
         }
     }
 
-    public static Verify (token: string) {
+    public static Verify(token: string) {
         if (!token) return 'wrong'
         else {
             const verify: boolean = jwt.verify(token, this.privateKey)

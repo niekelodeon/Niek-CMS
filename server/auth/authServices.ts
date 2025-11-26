@@ -22,11 +22,11 @@ export class authServices {
             if (!success) return { success: false, file: __filename, function: this.Register.name, message: 'Email already exists', logMessage: 'Email already exists' }
             return { success: true, file: __filename, function: this.Register.name, message: 'Register succesful', logMessage: 'Register succesful' }
         } catch (err) {
-            return { success: false, message: 'Something went wrong, please try again', logMessage: err.message }
+            return { success: false, file: __filename, function: this.Register.name, message: 'Something went wrong, please try again', logMessage: err.message }
         }
     }
 
-    public static async Login(email: string, id: number, password: string) {
+    public static async Login(id: number, email: string, password: string) {
         try {
             const user = await Queries.getUser(email || id)
 
@@ -43,7 +43,29 @@ export class authServices {
                 return { success: true, file: __filename, function: this.Login.name, token: token, message: 'Login succesful', logMessage: 'Login succesful' }
             }
         } catch (err) {
-            return { success: false, message: 'Something went wrong, please try again', logMessage: err.message }
+            return { success: false, file: __filename, function: this.Login.name, message: 'Something went wrong, please try again', logMessage: err.message }
+        }
+    }
+
+    public static async Forgot(id: number, email: string) {
+        try {
+            const user = await Queries.getUser(email || id)
+
+            if (!user) return { success: false, file: __filename, function: this.Forgot.name, message: 'Email does not exist', logMessage: 'Email does not exist' }
+
+            if (!this.validEmail(String(email))) return { success: false, file: __filename, function: this.Forgot.name, message: 'Email invalid', logMessage: 'Email invalid' }
+
+            const token = Token.CreatePasswordToken(user.id, user.email)
+
+            if (!Token || token instanceof Error) {
+                return { success: false, file: __filename, function: this.Forgot.name, message: 'Something went wrong, please try again', logMessage: 'Could not generate reset token' }
+            } else {
+                mailServices.sendResetMail(email, token)
+
+                return { success: true, file: __filename, function: this.Forgot.name, message: 'Reset email sent', logMessage: 'Reset email sent' }
+            }
+        } catch (err) {
+            return { success: false, file: __filename, function: this.Login.name, message: 'Something went wrong, please try again', logMessage: err.message }
         }
     }
 
