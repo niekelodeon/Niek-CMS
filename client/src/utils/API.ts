@@ -1,9 +1,9 @@
 import { parse } from 'flatted'
 
-import { Node, type FolderData, type LoginResponse, type RegisterResponse, type ForgotResponse } from '../utils/interfaces'
+import { Node, type FolderData, type LoginResponse, type RegisterResponse, type ForgotResponse, type ResetResponse } from '../utils/interfaces'
 
 class APIBase {
-    public static baseUrl: string = 'http://localhost:8000' // get from env
+    public static baseUrl: string = 'http://localhost:8000'
 
     public static async fetchData(endpoint: string, method: string, body?: any): Promise<any> {
         try {
@@ -20,6 +20,7 @@ class APIBase {
             return response.text()
         } catch (err) {
             console.error('API fetch error: ', err)
+            return 'Something went wrong. If it keeps happening, contact the admin.'
         }
     }
 }
@@ -33,7 +34,8 @@ export class authAPI {
 
             return JSON.parse(response)
         } catch (err) {
-            return { result: false, message: `Route: ${this.Register.name} API fetch error: ${err}` }
+            console.error('API fetch error: ', err)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 
@@ -45,7 +47,8 @@ export class authAPI {
 
             return JSON.parse(response)
         } catch (err) {
-            return { result: false, message: `Route: ${this.Login.name} API fetch error: ${err}` }
+            console.error('API fetch error: ', err)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 
@@ -57,7 +60,21 @@ export class authAPI {
 
             return JSON.parse(response)
         } catch (err) {
-            return { message: `Route: ${this.Login.name} API fetch error: ${err}` }
+            console.error('API fetch error: ', err)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    public static async Reset(email: string): Promise<ResetResponse> {
+        const body: any = { email: email }
+
+        try {
+            let response = await APIBase.fetchData('/auth/forgot', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error('API fetch error: ', err)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 }

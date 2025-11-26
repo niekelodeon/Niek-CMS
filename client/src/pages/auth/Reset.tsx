@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { type RegisterResponse } from '../../utils/interfaces'
+import { type ResetResponse } from '../../utils/interfaces'
 
 import { authAPI } from '../../utils/API'
 
 import Spline from '@splinetool/react-spline'
 
-export default function Register() {
+export default function Reset() {
     const navigate = useNavigate()
 
     const [showPassword, setShowPassword] = useState<boolean>()
@@ -17,56 +17,36 @@ export default function Register() {
     }
 
     const [email, setEmail] = useState<string>()
+    const [token, setToken] = useState<string>()
 
     const [password, setPassword] = useState<string>()
     const [comparePassword, setComparePassword] = useState<string>()
 
-    const [registerMessage, setRegisterMessage] = useState<string>()
+    const [success, setSuccess] = useState<boolean>(false)
+    const [resetMessage, setResetMessage] = useState<string>()
 
     function comparePasswords(e: any) {
-        if (password != comparePassword) setRegisterMessage("Passwords don't match")
+        if (password != comparePassword) setResetMessage("Passwords don't match")
         else setPassword(password)
     }
 
-    async function register(e: any) {
+    async function reset(e: any) {
         e.preventDefault()
 
-        if (password != comparePassword) {
-            setRegisterMessage("Passwords don't match")
-        } else {
-            setPassword(password)
-
-            const registerObject: RegisterResponse = await authAPI.Register(email, password)
-
-            if (registerObject.result) {
-                document.cookie = `token=${registerObject.token}; path=/; max-age=86400; SameSite=Lax`
-                navigate('/login')
-            } else {
-                setRegisterMessage(registerObject.message)
-            }
-        }
+        const resetObject: ResetResponse = await authAPI.Reset(email, token)
+        setSuccess(resetObject.result)
+        setResetMessage(resetObject.message)
     }
 
     return (
         <div id="container-page" className="flex w-screen h-screen bg-[linear-gradient(-45deg,#7F7EFF_30%,#1B1E24_40%)] items-center justify-center">
-            <div id="container-register" className="flex flex-row h-[80%] w-[70%] mx-[5%] bg-[#272334] rounded-3xl">
+            <div id="container-reset" className="flex flex-row h-[80%] w-[70%] mx-[5%] bg-[#272334] rounded-3xl">
                 <div id="container-left" className="flex flex-col w-1/2 my-[10%] m-[5%] items-center gap-[15%]">
-                    <h1 id="header-register" className="text-2xl font-medium text-[#7F7EFF]">
-                        Register
+                    <h1 id="header-reset" className="text-2xl font-medium text-[#7F7EFF]">
+                        Reset
                     </h1>
 
-                    <form onSubmit={register} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
-                        <div id="container-input" className="flex flex-col">
-                            <input
-                                onChange={e => setEmail(e.target.value)}
-                                placeholder="email"
-                                type="text"
-                                id="username"
-                                name="username"
-                                className="w-[21.25rem] px-[0.8rem] py-[0.5rem] placeholder-[#868686] border-[#3D3A67] border rounded-md transition-[900ms] focus:border-[#EDC79B] focus:outline-none"
-                            />
-                        </div>
-
+                    <form onSubmit={reset} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
                         <div id="container-input" className="flex flex-col relative gap-[0.6rem]">
                             <div id="container-passwords" className="flex flex-col gap-[1.875rem]">
                                 <div id="container-password" className="relative flex flex-row">
@@ -190,13 +170,19 @@ export default function Register() {
                             </div>
                         </div>
 
-                        <div id="container-button" className="flex flex-col w-[21.25rem] transition-all gap-[1rem] duration-[900ms]">
-                            <div id="message" className="text-sm text-[#ff8082]">
-                                {registerMessage}
-                            </div>
+                        <div id="container-reset" className="flex flex-col w-[21.25rem] transition-all gap-[1rem] duration-[900ms]">
+                            {success ? (
+                                <div id="message" className="text-sm text-[#63ff80]">
+                                    {resetMessage}
+                                </div>
+                            ) : (
+                                <div id="message" className="text-sm text-[#ff808a]">
+                                    {resetMessage}
+                                </div>
+                            )}
 
                             <button type="submit" className="flex flex-start w-[21.25rem] px-[2.5rem] py-3 font-medium bg-[#7F7EFF] rounded-md transition-[900ms] cursor-pointer hover:bg-[#5D5CC9]">
-                                Register!
+                                Change!
                             </button>
                         </div>
                     </form>

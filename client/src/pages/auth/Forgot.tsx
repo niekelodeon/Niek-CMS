@@ -12,12 +12,14 @@ export default function Forgot() {
 
     const [email, setEmail] = useState<string>()
 
+    const [success, setSuccess] = useState<boolean>(false)
     const [forgotMessage, setForgotMessage] = useState<string>()
 
     async function forgot(e: any) {
         e.preventDefault()
 
         const forgotObject: ForgotResponse = await authAPI.Forgot(email)
+        setSuccess(forgotObject.result)
         setForgotMessage(forgotObject.message)
     }
 
@@ -41,10 +43,16 @@ export default function Forgot() {
                             />
                         </div>
 
-                        <div id="container-button" className="flex flex-col transition-all gap-[1rem] duration-[900ms]">
-                            <div id="message" className="text-sm text-[#ff8082]">
-                                {forgotMessage}
-                            </div>
+                        <div id="container-button" className="flex flex-col w-[21.25rem] transition-all gap-[1rem] duration-[900ms]">
+                            {success ? (
+                                <div id="message" className="text-sm text-[#63ff80]">
+                                    {forgotMessage}
+                                </div>
+                            ) : (
+                                <div id="message" className="text-sm text-[#ff808a]">
+                                    {forgotMessage}
+                                </div>
+                            )}
 
                             <button type="submit" className="flex flex-start w-[21.25rem] px-[2.5rem] py-3 font-medium bg-[#7F7EFF] rounded-md transition-[900ms] cursor-pointer hover:bg-[#5D5CC9]">
                                 Send!

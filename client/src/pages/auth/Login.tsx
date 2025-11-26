@@ -37,7 +37,7 @@ export default function Login() {
     return (
         <div id="container-page" className="flex w-screen h-screen bg-[linear-gradient(-45deg,#7F7EFF_30%,#1B1E24_40%)] items-center justify-center">
             <div id="container-login" className="flex flex-row h-[80%] w-[70%] mx-[5%] bg-[#272334] rounded-3xl">
-                <div id="container-left" className="flex flex-col w-1/2 my-[10%] m-[5%] items-center gap-[20%]">
+                <div id="container-left" className="flex flex-col w-1/2 my-[10%] m-[5%] items-center gap-[15%]">
                     <h1 id="header-login" className="text-2xl font-medium text-[#7F7EFF]">
                         Login
                     </h1>
@@ -121,7 +121,7 @@ export default function Login() {
                             </div>
                         </div>
 
-                        <div id="container-button" className="flex flex-col transition-all gap-[1rem] duration-[900ms]">
+                        <div id="container-button" className="flex flex-col w-[21.25rem] transition-all gap-[1rem] duration-[900ms]">
                             <div id="message" className="text-sm text-[#ff8082]">
                                 {loginMessage}
                             </div>

@@ -40,5 +40,11 @@ export interface RegisterResponse {
 }
 
 export interface ForgotResponse {
+    result: boolean
+    message: string
+}
+
+export interface ResetResponse {
+    result: boolean
     message: string
 }

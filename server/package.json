@@ -12,7 +12,7 @@
     "check-password-strength": "^3.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.6.1",
     "express": "^4.19.2",
     "express-rate-limit": "^7.5.0",
     "flatted": "^3.3.3",

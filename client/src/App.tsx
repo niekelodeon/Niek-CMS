@@ -10,6 +10,7 @@ import Home from './pages/Landing'
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login'
 import Forgot from './pages/auth/Forgot'
+import Reset from './pages/auth/Reset'
 import Dashboard from './pages/Dashboard'
 import Settings from './pages/Settings'
 import PageNotFound from './pages/PageNotFound'
@@ -41,6 +42,7 @@ function Layout() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/forgot" element={<Forgot />} />
+                    <Route path="/reset" element={<Reset />} />
                     <Route path="/edit/dashboard" element={<Dashboard />} />
                     <Route path="/edit/settings" element={<Settings />} />
                     <Route path="*" element={<PageNotFound />} />
