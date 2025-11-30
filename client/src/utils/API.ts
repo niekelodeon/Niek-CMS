@@ -65,11 +65,11 @@ export class authAPI {
         }
     }
 
-    public static async Reset(email: string): Promise<ResetResponse> {
-        const body: any = { email: email }
+    public static async Reset(token: string, password: string): Promise<ResetResponse> {
+        const body: any = { token: token, password: password }
 
         try {
-            let response = await APIBase.fetchData('/auth/forgot', 'POST', body)
+            let response = await APIBase.fetchData('/auth/reset', 'POST', body)
 
             return JSON.parse(response)
         } catch (err) {

@@ -34,7 +34,7 @@ export class Token {
 
             const token = jwt.sign(
                 {
-                    sub: id,
+                    id: id,
                     email: email,
                     purpose: 'password-reset',
                 },
@@ -49,6 +49,20 @@ export class Token {
             return token
         } catch (err) {
             return err
+        }
+    }
+
+    public static verifyPasswordToken(token: string) {
+        try {
+            const privateKey = process.env.privateKey
+
+            const payload = jwt.verify(token, privateKey)
+
+            console.log(payload)
+
+            return { result: true, payload }
+        } catch (err) {
+            return { result: false, error: err }
         }
     }
 

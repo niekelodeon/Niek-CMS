@@ -43,6 +43,7 @@ function Layout() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/forgot" element={<Forgot />} />
                     <Route path="/reset" element={<Reset />} />
+                    <Route path="/reset/:token" element={<Reset />} />
                     <Route path="/edit/dashboard" element={<Dashboard />} />
                     <Route path="/edit/settings" element={<Settings />} />
                     <Route path="*" element={<PageNotFound />} />

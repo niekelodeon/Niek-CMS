@@ -35,7 +35,7 @@ export class mailServices {
                     <p>You requested a password reset.</p>
                     <p>Click below to reset your password:</p>
 
-                    <a href="http://localhost:5173/reset/${resetToken}" 
+                    <a href="http://localhost:5173/reset/${resetToken}"
                         style="background:#6366f1;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;">
                         Reset Password
                     </a>

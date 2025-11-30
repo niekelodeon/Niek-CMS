@@ -26,9 +26,9 @@ export class authServices {
         }
     }
 
-    public static async Login(id: number, email: string, password: string) {
+    public static async Login(email: string, password: string) {
         try {
-            const user = await Queries.getUser(email || id)
+            const user = await Queries.getUser(email)
 
             if (!user) return { success: false, file: __filename, function: this.Login.name, message: 'Email does not exist', logMessage: 'Email does not exist' }
 
@@ -47,9 +47,9 @@ export class authServices {
         }
     }
 
-    public static async Forgot(id: number, email: string) {
+    public static async Forgot(email: string) {
         try {
-            const user = await Queries.getUser(email || id)
+            const user = await Queries.getUser(email)
 
             if (!user) return { success: false, file: __filename, function: this.Forgot.name, message: 'Email does not exist', logMessage: 'Email does not exist' }
 
@@ -65,13 +65,25 @@ export class authServices {
                 return { success: true, file: __filename, function: this.Forgot.name, message: 'Reset email sent', logMessage: 'Reset email sent' }
             }
         } catch (err) {
-            return { success: false, file: __filename, function: this.Login.name, message: 'Something went wrong, please try again', logMessage: err.message }
+            return { success: false, file: __filename, function: this.Forgot.name, message: 'Something went wrong, please try again', logMessage: err.message }
         }
     }
 
-    // public static async ForgotPassword (email: string) {
-    //     // user has forgot his password or wants to change it
-    // }
+    public static async Reset(token: string, password: string) {
+        try {
+            const checkToken: any = Token.verifyPasswordToken(token)
+
+            if (!checkToken.result) {
+                return { success: false, file: __filename, function: this.Reset.name, message: 'Token expired / invalid', logMessage: 'Token expired / invalid' }
+            } else {
+                Queries.updatePassword(checkToken.payload.id, password)
+
+                return { success: true, file: __filename, function: this.Reset.name, message: 'Password changed', logMessage: 'Password changed' }
+            }
+        } catch (err) {
+            return { success: false, file: __filename, function: this.Login.name, message: 'Something went wrong, please try again', logMessage: err.message }
+        }
+    }
 
     // public static async ChangeMail (email: string) {
     //     // user wants to change his email

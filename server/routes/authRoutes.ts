@@ -30,7 +30,7 @@ authRoutes.post('/login', async (req: Request, res: Response) => {
     let result = null
 
     try {
-        result = await authServices.Login(req.body.id, req.body.email, req.body.password)
+        result = await authServices.Login(req.body.email, req.body.password)
 
         if (result.success) {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)
@@ -49,7 +49,7 @@ authRoutes.post('/forgot', async (req: Request, res: Response) => {
     let result = null
 
     try {
-        result = await authServices.Forgot(req.body.id, req.body.email)
+        result = await authServices.Forgot(req.body.email)
 
         if (result.success) {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)
@@ -68,7 +68,7 @@ authRoutes.post('/reset', async (req: Request, res: Response) => {
     let result = null
 
     try {
-        result = await authServices.Forgot(req.body.id, req.body.email)
+        result = await authServices.Reset(req.body.token, req.body.password)
 
         if (result.success) {
             loggerService.Logger('INFO', req.body.username, req.ip, req.route.path, result.file, result.function, result.logMessage)

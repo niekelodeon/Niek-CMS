@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { type ResetResponse } from '../../utils/interfaces'
 
@@ -16,8 +16,7 @@ export default function Reset() {
         setShowPassword(prev => !prev)
     }
 
-    const [email, setEmail] = useState<string>()
-    const [token, setToken] = useState<string>()
+    const { token } = useParams<{ token: string }>()
 
     const [password, setPassword] = useState<string>()
     const [comparePassword, setComparePassword] = useState<string>()
@@ -33,7 +32,7 @@ export default function Reset() {
     async function reset(e: any) {
         e.preventDefault()
 
-        const resetObject: ResetResponse = await authAPI.Reset(email, token)
+        const resetObject: ResetResponse = await authAPI.Reset(token, password)
         setSuccess(resetObject.result)
         setResetMessage(resetObject.message)
     }
