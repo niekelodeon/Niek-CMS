@@ -42,10 +42,8 @@ export default function FolderTree() {
     }
 
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
-        console.log('log anything')
-
         setCurrentNode(currentNode)
-        setFilePath('')
+        setFilePath('') // should also be able to be null
         setFolderPath(folderPath)
         setIsOnFile(false)
 
@@ -108,24 +106,12 @@ export default function FolderTree() {
         )
     }
 
-    function showMessages() {
-        console.log(resultMessages)
-
-        if (resultMessages.length <= 0) {
-            return ''
-        } else {
-            // display the messages here, scrolling goes up by one and it should always show the most recent message
-            return <div id="container-messages">Messages</div>
-        }
-    }
-
     return (
         <div className="h-full flex flex-col justify-between">
             {/* if the user didnt select a project / there is no project in the cookie then show: 'please select a project in settings' */}
             {folderTree ? renderTree(folderTree) : <div>Loading...</div>}
 
             <div id="container" className="flex flex-col gap-2">
-                {showMessages()}
                 <ToolsBar />
             </div>
         </div>

@@ -23,8 +23,6 @@ export default function ToolsBar() {
 
     const [inputValue, setInputValue] = useState<string>()
 
-    console.log(isOnFile)
-
     return (
         <div id="container" className="flex flex-col gap-[1rem]">
             {isRenaming || isAdding ? (
@@ -49,8 +47,8 @@ export default function ToolsBar() {
             </div>
 
             <div id="container-tools" className="flex gap-[1rem]">
-                <div id="tools-file" className="flex gap-[0.5rem]">
-                    <img src={Rename} alt="rename" />
+                <div id="tools-file" className="flex gap-[0.5rem] cursor-pointer">
+                    <img onClick={} src={Rename} alt="rename" />
                     <img src={Download} alt="download" />
                     <img src={Delete} alt="delete" />
                 </div>
@@ -59,7 +57,11 @@ export default function ToolsBar() {
                     <span>/</span>
                 </div>
 
-                <div id="tools-folder" className="flex gap-[0.5rem]">
+                <div
+                    id="tools-folder"
+                    className={`flex gap-[0.5rem] transition-opacity
+                    ${isOnFile ? 'opacity-40 cursor-default' : 'opacity-100 cursor-pointer'}`}
+                >
                     <img src={AddFile} alt="addFile" />
                     <img src={AddFolder} alt="addFolder" />
                     <img src={Upload} alt="upload" />
