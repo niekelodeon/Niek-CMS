@@ -48,7 +48,8 @@ export default function ToolsBar() {
 
             <div id="container-tools" className="flex gap-[1rem]">
                 <div id="tools-file" className="flex gap-[0.5rem] cursor-pointer">
-                    <img onClick={} src={Rename} alt="rename" />
+                    {/* Fix onClick */}
+                    <img src={Rename} alt="rename" />
                     <img src={Download} alt="download" />
                     <img src={Delete} alt="delete" />
                 </div>

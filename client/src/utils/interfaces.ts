@@ -26,7 +26,24 @@ export interface FolderTreeMethods {
     DELETE: string
 }
 
+// Edit:
+export interface editAPIResponse {
+    result: boolean
+    message: string
+}
+
+export interface RenameResponse {
+    result: boolean
+    message: string
+}
+
+export interface AddFileResponse {
+    result: boolean
+    message: string
+}
+
 // Authentication:
+// combine into one
 export interface LoginResponse {
     result: boolean
     message?: string
@@ -39,6 +56,7 @@ export interface RegisterResponse {
     token?: string
 }
 
+// combine into one
 export interface ForgotResponse {
     result: boolean
     message: string

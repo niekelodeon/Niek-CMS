@@ -145,6 +145,27 @@ editRoutes.post('/saveFile', async (req: Request, res: Response) => {
     }
 })
 
+editRoutes.post('/Rename', async (req: Request, res: Response) => {
+    let result = null
+
+    console.log(req.body)
+
+    try {
+        result = await fsServices.Rename(req.body.path, req.body.newName)
+
+        if (!result.success) {
+            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
+            res.status(400).json({ result: result.success, message: result.message })
+        } else {
+            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
+            res.status(200).json({ result: result.success, message: result.message })
+        }
+    } catch (err) {
+        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Rename.name, err.message)
+        res.status(500).json('Something went wrong, please try again')
+    }
+})
+
 editRoutes.post('/addFile', async (req: Request, res: Response) => {
     let result = null
 
@@ -179,27 +200,6 @@ editRoutes.post('/addFolder', async (req: Request, res: Response) => {
         }
     } catch (err) {
         loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.addFolder.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
-    }
-})
-
-editRoutes.post('/Rename', async (req: Request, res: Response) => {
-    let result = null
-
-    console.log(req.body)
-
-    try {
-        result = await fsServices.Rename(req.body.path, req.body.newName)
-
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(400).json({ result: result.success, message: result.message })
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ result: result.success, message: result.message })
-        }
-    } catch (err) {
-        loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Rename.name, err.message)
         res.status(500).json('Something went wrong, please try again')
     }
 })

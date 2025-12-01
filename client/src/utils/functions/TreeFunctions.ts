@@ -1,40 +1,53 @@
-// import { useTreeStore } from '../store'
+import { useAtom } from 'jotai'
+
+import { resultMessagesAtom } from '../../utils/atoms'
 
 import { editAPI } from '../API'
 
-import type { Node, FolderData } from '../interfaces'
-
-// const folderTree: Node<FolderData> = useTreeStore((state) => state.folderTree)
-// console.log(folderTree, "folderTree from TreeFunctions")
+import { Node, type FolderData, type editAPIResponse, type RenameResponse, type AddFileResponse } from '../interfaces'
 
 export class FolderTreeFunctions {
-    // public static async Rename(path: string, newName: string, currentNode: Node<FolderData>) {
-    //     const result: any = await editAPI.Rename(path, newName)
+    // folderTree has been left out because of the way it returns a parsed array of Nodes
 
-    //     if (!result.result) {
-    //         // dont change the node
-    //         return false
-    //     } else {
-    //         currentNode.data.name = newName
-    //         // renaming the node
-    //         return true
-    //     }
-    // }
+    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any) {
+        try {
+            const renameObject: RenameResponse = await editAPI.Rename(path, newName)
 
-    public static async addFile(path: string, fileName: string, folderTree: Node<FolderData>, parentNode: string, newNode: Node<FolderData>): Promise<Node<FolderData> | string> {
-        console.log(path, fileName, 'log')
-        const result: any = await editAPI.addFile(path, fileName)
-
-        if (!result.success) {
-            return `Error adding file: ${result.message}`
-        } else {
-            // find parent node
-            // add new node to parent's children array
-            // update store with new tree
-
-            return `Success adding file: ${result.message}`
+            if (!renameObject.result) {
+                return renameObject.message
+            } else {
+                let newNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children)
+                newNode.data.name = newName
+                setCurrentNode(newNode)
+            }
+        } catch (err) {
+            return err
         }
     }
+
+    public static async getFile(path: string): Promise<string> {
+        try {
+            const getFileObject: editAPIResponse
+        } catch (err) {
+            return err
+        }
+    }
+
+    // public static async addFile(path: string, fileName: string, parentNode: string, newNode: Node<FolderData>): Promise<Node<FolderData> | string> {
+    //     try {
+    //         const addFileObject: AddFileResponse = await editAPI.addFile(path, fileName)
+
+    //         if (!addFileObject.result) {
+    //             return addFileObject.message
+    //         } else {
+    //             let newNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children)
+    //             newNode.data.name = newName
+    //             setCurrentNode(newNode)
+    //         }
+    //     } catch (err) {
+    //         return err
+    //     }
+    // }
 
     public static async Download(paths: string) {
         const result: any = await editAPI.Download(paths)

@@ -1,6 +1,7 @@
 import { parse } from 'flatted'
 
-import { Node, type FolderData, type LoginResponse, type RegisterResponse, type ForgotResponse, type ResetResponse } from '../utils/interfaces'
+import { Node, type FolderData, type LoginResponse, type RegisterResponse, type ForgotResponse, type ResetResponse, type RenameResponse, type AddFileResponse } from '../utils/interfaces'
+import type { editAPIResponse } from '../utils/interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000'
@@ -80,25 +81,7 @@ export class authAPI {
 }
 
 export class editAPI {
-    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any): Promise<boolean | string> {
-        const body: any = { path: path, newName: newName }
-
-        try {
-            let response = await APIBase.fetchData('/edit/Rename', 'POST', body)
-
-            if (response) {
-                let newNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children)
-                newNode.data.name = newName
-                setCurrentNode(newNode)
-            }
-
-            return JSON.parse(response)
-        } catch (err) {
-            return `Route: ${this.Rename.name} API fetch error: ${err}`
-        }
-    }
-
-    public static async folderTree(projectName: string): Promise<Node<FolderData> | string> {
+    public static async folderTree(projectName: string): Promise<string> {
         const body: any = { projectName: projectName }
 
         try {
@@ -108,7 +91,8 @@ export class editAPI {
 
             return response
         } catch (err) {
-            return `Route: ${this.folderTree.name} API fetch error: ${err}`
+            console.error('API fetch error: ', err)
+            return err
         }
     }
 
@@ -138,7 +122,20 @@ export class editAPI {
         }
     }
 
-    public static async addFile(path: string, fileName: string): Promise<string> {
+    public static async Rename(path: string, newName: string): Promise<RenameResponse> {
+        const body: any = { path: path, newName: newName }
+
+        try {
+            let response = await APIBase.fetchData('/edit/Rename', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error(`Route: ${this.Rename.name} API fetch error: ${err}`)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    public static async addFile(path: string, fileName: string): Promise<AddFileResponse> {
         const body: any = { path: path, name: fileName }
 
         try {
@@ -146,7 +143,8 @@ export class editAPI {
 
             return JSON.parse(response)
         } catch (err) {
-            return `Route: ${this.addFile.name} API fetch error: ${err}`
+            console.error(`Route: ${this.addFile.name} API fetch error: ${err}`)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 
