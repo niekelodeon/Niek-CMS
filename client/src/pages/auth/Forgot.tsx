@@ -8,7 +8,7 @@ import { authAPI } from '../../utils/API'
 import Spline from '@splinetool/react-spline'
 
 export default function Forgot() {
-    const navigate = useNavigate()
+    const navigate = useNavigate() // navigate to login?
 
     const [email, setEmail] = useState<string>()
 

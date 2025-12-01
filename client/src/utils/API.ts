@@ -1,24 +1,23 @@
 import { parse } from 'flatted'
 
-import {
-    Node,
-    type FolderData,
-    type LoginResponse,
-    type RegisterResponse,
-    type ForgotResponse,
-    type ResetResponse,
-    type RenameResponse,
-    type AddFileResponse,
-    type GetFileResponse,
-    type Move,
-    type MoveResponse,
-    type UploadResponse,
-    type Delete,
-    type DeleteResponse,
-    type Download,
-    type DownloadResponse,
-} from '../utils/interfaces'
-import type { EditAPIResponse } from '../utils/interfaces'
+import { Node } from './interfaces'
+import type {
+    RegisterResponse,
+    LoginResponse,
+    ForgotResponse,
+    ResetResponse,
+    FolderData,
+    EditAPIResponse,
+    RenameResponse,
+    GetFileResponse,
+    Move,
+    MoveResponse,
+    UploadResponse,
+    Delete,
+    DeleteResponse,
+    Download,
+    DownloadResponse,
+} from './interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000'

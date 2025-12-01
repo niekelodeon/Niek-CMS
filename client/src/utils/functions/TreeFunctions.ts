@@ -1,24 +1,7 @@
-import { useAtom } from 'jotai'
-
-import { resultMessagesAtom } from '../../utils/atoms'
-
 import { editAPI } from '../API'
 
-import {
-    Node,
-    type FolderData,
-    type EditAPIResponse,
-    type RenameResponse,
-    type AddFileResponse,
-    type GetFileResponse,
-    type Move,
-    type MoveResponse,
-    type UploadResponse,
-    type Delete,
-    type DeleteResponse,
-    type Download,
-    type DownloadResponse,
-} from '../interfaces'
+import { Node } from '../interfaces'
+import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../interfaces'
 
 export class FolderTreeFunctions {
     public static async getFile(path: string): Promise<string> {
@@ -131,6 +114,7 @@ export class FolderTreeFunctions {
         try {
             const moveObject: MoveResponse = await editAPI.Move(paths)
 
+            // Or it should run FolderTree again to get it from the server instead of keeping track which file is succesfully moved
             const updatedNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children.filter(child => !paths.some(p => p.path === child.data.path)) || [])
 
             setCurrentNode(updatedNode)
@@ -145,6 +129,7 @@ export class FolderTreeFunctions {
             const form = new FormData()
             form.append('file', file)
 
+            // call FolderTree
             const uploadObject: any = await editAPI.Upload(form)
 
             return uploadObject.message
@@ -157,6 +142,7 @@ export class FolderTreeFunctions {
         try {
             const deleteObject: DeleteResponse = await editAPI.Delete(paths)
 
+            // Or it should run FolderTree again to get it from the server instead of keeping track which file is succesfully deleted
             const updatedNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children?.filter(child => child.data.path !== child.data.path) || [])
 
             setCurrentNode(updatedNode)

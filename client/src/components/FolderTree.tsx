@@ -8,9 +8,9 @@ import { FolderTreeFunctions } from '../utils/functions/TreeFunctions'
 import { selectedProjectAtom, folderPathAtom, filePathAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
-import { Variables } from '../utils/variables'
 
-import { Node, type FolderData, type FolderTreeMethods } from '../utils/interfaces'
+import { Node } from '../utils/interfaces'
+import type { FolderData } from '../utils/interfaces'
 
 export default function FolderTree() {
     const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
@@ -38,19 +38,18 @@ export default function FolderTree() {
         setFilePath(filePath)
         setIsOnFile(true)
 
-        console.log(filePath, currentNode.data.path + '/' + currentNode.data.name)
+        console.log('current filePath:', filePath, currentNode.data.path + '/' + currentNode.data.name)
     }
 
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
         setCurrentNode(currentNode)
-        setFilePath('') // should also be able to be null
+        setFilePath('')
         setFolderPath(folderPath)
         setIsOnFile(false)
 
-        console.log(currentNode.data.path + '/' + currentNode.data.name, 'test')
+        console.log('current folderPath:', currentNode.data.path + '/' + currentNode.data.name)
     }
 
-    // on load:
     useEffect(() => {
         const fetchTree = async () => {
             localStorage.setItem('Project', 'Dir1')
