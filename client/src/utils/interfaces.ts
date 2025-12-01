@@ -27,9 +27,15 @@ export interface FolderTreeMethods {
 }
 
 // Edit:
-export interface editAPIResponse {
+export interface EditAPIResponse {
     result: boolean
     message: string
+}
+
+export interface GetFileResponse {
+    result: boolean
+    message?: string
+    data?: string
 }
 
 export interface RenameResponse {
@@ -39,6 +45,36 @@ export interface RenameResponse {
 
 export interface AddFileResponse {
     result: boolean
+    message: string
+}
+
+export interface Move {
+    path: string
+    destination: string
+}
+
+export interface MoveResponse {
+    result: boolean
+    message: string
+}
+
+export interface UploadResponse {
+    message: string
+}
+
+export interface Delete {
+    path: string
+}
+
+export interface DeleteResponse {
+    message: string
+}
+
+export interface Download {
+    path: string
+}
+
+export interface DownloadResponse {
     message: string
 }
 

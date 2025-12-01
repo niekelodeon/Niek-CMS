@@ -118,7 +118,7 @@ editRoutes.post('/getFile', async (req: Request, res: Response) => {
             res.status(400).json({ result: result.success, message: result.message })
         } else {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)
-            res.status(200).json({ data: result.data })
+            res.status(200).json({ result: result, data: result.data })
         }
     } catch (err) {
         loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.getFile.name, err.message)

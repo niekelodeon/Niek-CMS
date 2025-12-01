@@ -1,7 +1,24 @@
 import { parse } from 'flatted'
 
-import { Node, type FolderData, type LoginResponse, type RegisterResponse, type ForgotResponse, type ResetResponse, type RenameResponse, type AddFileResponse } from '../utils/interfaces'
-import type { editAPIResponse } from '../utils/interfaces'
+import {
+    Node,
+    type FolderData,
+    type LoginResponse,
+    type RegisterResponse,
+    type ForgotResponse,
+    type ResetResponse,
+    type RenameResponse,
+    type AddFileResponse,
+    type GetFileResponse,
+    type Move,
+    type MoveResponse,
+    type UploadResponse,
+    type Delete,
+    type DeleteResponse,
+    type Download,
+    type DownloadResponse,
+} from '../utils/interfaces'
+import type { EditAPIResponse } from '../utils/interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000'
@@ -81,7 +98,7 @@ export class authAPI {
 }
 
 export class editAPI {
-    public static async folderTree(projectName: string): Promise<string> {
+    public static async folderTree(projectName: string): Promise<Node<FolderData>> {
         const body: any = { projectName: projectName }
 
         try {
@@ -96,7 +113,7 @@ export class editAPI {
         }
     }
 
-    public static async getFile(path: string): Promise<string> {
+    public static async getFile(path: string): Promise<GetFileResponse> {
         const body: any = { path: path }
 
         console.log(body)
@@ -106,11 +123,12 @@ export class editAPI {
 
             return JSON.parse(response)
         } catch (err) {
-            return `Route: ${this.getFile.name} API fetch error: ${err}`
+            console.error('API fetch error: ', err)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 
-    public static async saveFile(path: string, editedContent: string, currentNode: Node<FolderData>): Promise<string> {
+    public static async saveFile(path: string, editedContent: string): Promise<EditAPIResponse> {
         const body: any = { path: path, content: editedContent }
 
         try {
@@ -118,7 +136,8 @@ export class editAPI {
 
             return JSON.parse(response)
         } catch (err) {
-            return `Route: ${this.saveFile.name} API fetch error: ${err}`
+            console.error('API fetch error: ', err)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 
@@ -135,7 +154,7 @@ export class editAPI {
         }
     }
 
-    public static async addFile(path: string, fileName: string): Promise<AddFileResponse> {
+    public static async addFile(path: string, fileName: string): Promise<EditAPIResponse> {
         const body: any = { path: path, name: fileName }
 
         try {
@@ -148,17 +167,68 @@ export class editAPI {
         }
     }
 
-    public static async Download(paths: string) {
-        const body: any = { paths: paths }
+    public static async addFolder(path: string): Promise<EditAPIResponse> {
+        const body: any = { path: path }
 
         try {
-            let response = await APIBase.fetchData('/edit/Download', 'POST', body)
-
-            console.log(JSON.parse(response))
+            let response = await APIBase.fetchData('/edit/addFolder', 'POST', body)
 
             return JSON.parse(response)
         } catch (err) {
-            return `Route: ${this.Rename.name} API fetch error: ${err}`
+            console.error(`Route: ${this.addFolder.name} API fetch error: ${err}`)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    public static async Move(paths: Move[]): Promise<MoveResponse> {
+        const body: any = { paths: paths }
+
+        try {
+            let response = await APIBase.fetchData('/edit/Move', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error(`Route: ${this.Move.name} API fetch error: ${err}`)
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    public static async Upload(form: FormData): Promise<UploadResponse> {
+        const body: any = { form }
+
+        try {
+            let response = await APIBase.fetchData('/edit/Upload', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error(`Route: ${this.Upload.name} API fetch error: ${err}`)
+            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    public static async Delete(paths: Delete[]): Promise<DeleteResponse> {
+        const body: any = { paths: paths }
+
+        try {
+            let response = await APIBase.fetchData('/edit/Delete', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error(`Route: ${this.Delete.name} API fetch error: ${err}`)
+            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    public static async Download(paths: Download[]): Promise<DownloadResponse> {
+        const body: any = { paths: paths }
+
+        try {
+            let response = await APIBase.fetchData('/edit/Move', 'POST', body)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error(`Route: ${this.Download.name} API fetch error: ${err}`)
+            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 }

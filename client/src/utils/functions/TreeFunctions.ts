@@ -4,10 +4,50 @@ import { resultMessagesAtom } from '../../utils/atoms'
 
 import { editAPI } from '../API'
 
-import { Node, type FolderData, type editAPIResponse, type RenameResponse, type AddFileResponse } from '../interfaces'
+import {
+    Node,
+    type FolderData,
+    type EditAPIResponse,
+    type RenameResponse,
+    type AddFileResponse,
+    type GetFileResponse,
+    type Move,
+    type MoveResponse,
+    type UploadResponse,
+    type Delete,
+    type DeleteResponse,
+    type Download,
+    type DownloadResponse,
+} from '../interfaces'
 
 export class FolderTreeFunctions {
-    // folderTree has been left out because of the way it returns a parsed array of Nodes
+    public static async getFile(path: string): Promise<string> {
+        try {
+            const getFileObject: GetFileResponse = await editAPI.getFile(path)
+
+            if (!getFileObject.result) {
+                return getFileObject.message
+            } else {
+                return getFileObject.data
+            }
+        } catch (err) {
+            return err
+        }
+    }
+
+    public static async saveFile(path: string, editedContent: string): Promise<string> {
+        try {
+            const saveFileObject: EditAPIResponse = await editAPI.saveFile(path, editedContent)
+
+            if (!saveFileObject.result) {
+                return saveFileObject.message
+            } else {
+                return saveFileObject.message
+            }
+        } catch (err) {
+            return err
+        }
+    }
 
     public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any) {
         try {
@@ -25,38 +65,114 @@ export class FolderTreeFunctions {
         }
     }
 
-    public static async getFile(path: string): Promise<string> {
+    public static async addFile(path: string, fileName: string, parentNode: Node<FolderData>, setCurrentNode: (node: Node<FolderData>) => void): Promise<string> {
         try {
-            const getFileObject: editAPIResponse
+            const addFileObject: EditAPIResponse = await editAPI.addFile(path, fileName)
+
+            if (!addFileObject.result) {
+                return addFileObject.message
+            } else {
+                const newPath = path.endsWith('/') ? path + fileName : path + '/' + fileName
+
+                const newFileNode = new Node<FolderData>(
+                    {
+                        name: fileName,
+                        path: newPath,
+                        type: 'file',
+                        depth: parentNode.data.depth + 1,
+                    },
+                    parentNode,
+                    [],
+                )
+
+                const updatedParent = new Node<FolderData>(parentNode.data, parentNode.parent, [...(parentNode.children || []), newFileNode])
+
+                setCurrentNode(updatedParent)
+
+                return 'File created'
+            }
         } catch (err) {
             return err
         }
     }
 
-    // public static async addFile(path: string, fileName: string, parentNode: string, newNode: Node<FolderData>): Promise<Node<FolderData> | string> {
-    //     try {
-    //         const addFileObject: AddFileResponse = await editAPI.addFile(path, fileName)
+    public static async addFolder(path: string, folderName: string, parentNode: Node<FolderData>, setCurrentNode: (node: Node<FolderData>) => void): Promise<string> {
+        try {
+            const addFolderObject: EditAPIResponse = await editAPI.addFolder(path)
 
-    //         if (!addFileObject.result) {
-    //             return addFileObject.message
-    //         } else {
-    //             let newNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children)
-    //             newNode.data.name = newName
-    //             setCurrentNode(newNode)
-    //         }
-    //     } catch (err) {
-    //         return err
-    //     }
-    // }
+            if (!addFolderObject.result) {
+                return addFolderObject.message
+            } else {
+                const newPath = path.endsWith('/') ? path + folderName : path + '/' + folderName
 
-    public static async Download(paths: string) {
-        const result: any = await editAPI.Download(paths)
+                const newFolderNode = new Node<FolderData>(
+                    {
+                        name: folderName,
+                        path: newPath,
+                        type: 'directory',
+                        depth: parentNode.data.depth + 1,
+                    },
+                    parentNode,
+                    [],
+                )
+
+                const updatedParent = new Node<FolderData>(parentNode.data, parentNode.parent, [...(parentNode.children || []), newFolderNode])
+
+                setCurrentNode(updatedParent)
+
+                return 'Folder created'
+            }
+        } catch (err) {
+            return err
+        }
     }
 
-    // pseudo code for adding a node to the tree:
-    // fetch addFile, if it returns success
-    // do:
-    // find the parent node by its path (recursively traverse the tree)
-    // if found, push the new node to the parent's children array
-    // return the updated tree
+    public static async Move(paths: Move[], currentNode: Node<FolderData>, setCurrentNode: any): Promise<string> {
+        try {
+            const moveObject: MoveResponse = await editAPI.Move(paths)
+
+            const updatedNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children.filter(child => !paths.some(p => p.path === child.data.path)) || [])
+
+            setCurrentNode(updatedNode)
+            return moveObject.message
+        } catch (err) {
+            return err
+        }
+    }
+
+    public static async Upload(file: File): Promise<string> {
+        try {
+            const form = new FormData()
+            form.append('file', file)
+
+            const uploadObject: any = await editAPI.Upload(form)
+
+            return uploadObject.message
+        } catch (err) {
+            return err
+        }
+    }
+
+    public static async Delete(paths: Delete[], currentNode: Node<FolderData>, setCurrentNode: any): Promise<string> {
+        try {
+            const deleteObject: DeleteResponse = await editAPI.Delete(paths)
+
+            const updatedNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children?.filter(child => child.data.path !== child.data.path) || [])
+
+            setCurrentNode(updatedNode)
+            return deleteObject.message
+        } catch (err) {
+            return err
+        }
+    }
+
+    public static async Download(paths: Delete[]): Promise<string> {
+        try {
+            const downloadObject: DownloadResponse = await editAPI.Download(paths)
+
+            return downloadObject.message
+        } catch (err) {
+            return err
+        }
+    }
 }
