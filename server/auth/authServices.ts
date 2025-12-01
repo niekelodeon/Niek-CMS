@@ -76,7 +76,7 @@ export class authServices {
             if (!checkToken.result) {
                 return { success: false, file: __filename, function: this.Reset.name, message: 'Token expired / invalid', logMessage: 'Token expired / invalid' }
             } else {
-                Queries.updatePassword(checkToken.payload.id, password)
+                Queries.updatePassword(checkToken.payload.id, await bcrypt.hash(password, 10))
 
                 return { success: true, file: __filename, function: this.Reset.name, message: 'Password changed', logMessage: 'Password changed' }
             }
