@@ -19,11 +19,9 @@ export class Node<T> {
     data: T
 }
 
-export interface FolderTreeMethods {
-    RENAME: string
-    ADD: string
-    MOVE: string
-    DELETE: string
+export interface FileItemProps {
+    currentNode: Node<FolderData>
+    clickFile: (filePath: string, currentNode: Node<FolderData>) => void
 }
 
 // Edit:

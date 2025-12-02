@@ -3,39 +3,35 @@ import { useAtom } from 'jotai'
 
 import ToolsBar from '../components/ToolsBar'
 
-import { FolderTreeFunctions } from '../utils/functions/TreeFunctions'
+import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
 import { selectedProjectAtom, folderPathAtom, filePathAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 
 import { Node } from '../utils/interfaces'
-import type { FolderData } from '../utils/interfaces'
+import type { FolderData, FileItemProps } from '../utils/interfaces'
 
 export default function FolderTree() {
     const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
+
     const [folderTree, setFolderTree] = useState<Node<FolderData>>()
     const [currentNode, setCurrentNode] = useState<Node<FolderData>>()
 
     const [folderPath, setFolderPath] = useAtom(folderPathAtom)
     const [filePath, setFilePath] = useAtom(filePathAtom)
+    // make current path; folderPath, filePath into one
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
-    const [result, setResult] = useState<string>()
     const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
-
-    interface FileItemProps {
-        currentNode: Node<FolderData>
-        clickFile: (filePath: string, currentNode: Node<FolderData>) => void
-    }
 
     async function clickFile(filePath: string, currentNode: Node<FolderData>) {
         const fileContent: any = await editAPI.getFile(filePath)
-        setFileContent(atob(fileContent.data))
         setCurrentNode(currentNode)
         setFolderPath(null)
         setFilePath(filePath)
+        setFileContent(atob(fileContent.data))
         setIsOnFile(true)
 
         console.log('current filePath:', filePath, currentNode.data.path + '/' + currentNode.data.name)
@@ -43,12 +39,15 @@ export default function FolderTree() {
 
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
         setCurrentNode(currentNode)
-        setFilePath('')
         setFolderPath(folderPath)
+        setFilePath('')
+        setFileContent('You selected a folder.') // instead remove the codeEditor.tsx or replace the editor with that text
         setIsOnFile(false)
 
         console.log('current folderPath:', currentNode.data.path + '/' + currentNode.data.name)
     }
+
+    async function toolHandler(action: string) {}
 
     useEffect(() => {
         const fetchTree = async () => {
