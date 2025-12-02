@@ -1,9 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useAtom } from 'jotai'
 
-import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
+import { Actions } from '../utils/interfaces'
+
+import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
+
+// Accept / decline:
+import Accept from '../assets/tools/accept.svg'
+import Decline from '../assets/tools/decline.svg'
 
 // File action tools:
 import Rename from '../assets/tools/fileActions/rename.svg'
@@ -26,27 +32,46 @@ export default function ToolsBar() {
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
+
+    const [currentAction, setCurrentAction] = useAtom(currentActionAtom)
+
     const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
 
     // if one of these is true; put a input field above for the name
-    const [isRenaming, setIsRenaming] = useState<boolean>(true)
+    const [isRenaming, setIsRenaming] = useState<boolean>(false)
     const [isAdding, setIsAdding] = useState<boolean>(false)
 
     const [inputValue, setInputValue] = useState<string>()
 
-    function handleGiveNameTools(action: string) {
-        setIsRenaming(true), setIsAdding(true)
+    function setAction(action: Actions) {
+        console.log(action)
+        console.log(isRenaming, isAdding)
 
-        if (action === 'RENAME') FolderTreeTools.Rename()
+        if (action === Actions.RENAME || action === Actions.ADDFILE || action === Actions.ADDFOLDER) setIsRenaming(true), setIsAdding(true)
+        else setIsRenaming(false), setIsAdding(false)
+
+        setCurrentAction(action)
+    }
+
+    function handleAction(action: Actions) {
+        if (action === Actions.RENAME) FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode)
+        // if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
+        // if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, currentNode, setCurrentNode)
+
+        if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode.parent, setCurrentNode)
+        if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode.parent, setCurrentNode)
+        // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
+
+        setIsRenaming(false), setIsAdding(false)
     }
 
     // option 1:
-    // User clicks on rename, currentToolState = RENAME. Then when the user presses ✅ it goes through currentToolState to see what FolderTreeTools function to call.
+    // User clicks on rename, currentAction = RENAME. Then when the user presses ✅ it goes through currentToolState to see what FolderTreeTools function to call.
 
     return (
         <div id="container" className="flex flex-col gap-[1rem]">
             {isRenaming || isAdding ? (
-                <div className="container-input">
+                <div id="container-input" className="flex gap-[1.2rem]">
                     <input
                         onChange={e => setInputValue(e.target.value)}
                         placeholder="name"
@@ -55,6 +80,13 @@ export default function ToolsBar() {
                         name="name"
                         className="w-[21.25rem] px-[0.8rem] py-[0.5rem] placeholder-[#868686] border-[#3D3A67] border rounded-md transition-[900ms] focus:border-[#7F7EFF] focus:outline-none"
                     />
+
+                    <div id="container-tools" className="self-center">
+                        <div id="tools" className="flex gap-[0.5rem] cursor-pointer">
+                            <img onClick={() => (handleAction(currentAction), setIsRenaming(false), setIsAdding(false))} src={Accept} alt="accept" />
+                            <img onClick={() => (setIsRenaming(false), setIsAdding(false))} src={Decline} alt="decline" />
+                        </div>
+                    </div>
                 </div>
             ) : (
                 ''
@@ -68,9 +100,9 @@ export default function ToolsBar() {
 
             <div id="container-tools" className="flex gap-[1rem]">
                 <div id="tools-file" className="flex gap-[0.5rem] cursor-pointer">
-                    <img onClick={handleGiveNameTools('RENAME')} src={Rename} alt="rename" />
-                    <img src={Download} alt="download" />
-                    <img src={Delete} alt="delete" />
+                    <img onClick={() => setAction(Actions.RENAME)} src={Rename} alt="rename" />
+                    <img onClick={() => setAction(Actions.DOWNLOAD)} src={Download} alt="download" />
+                    <img onClick={() => setAction(Actions.DELETE)} src={Delete} alt="delete" />
                 </div>
 
                 <div id="tools-slash" className="font-extrabold">
@@ -82,9 +114,9 @@ export default function ToolsBar() {
                     className={`flex gap-[0.5rem] transition-opacity
                     ${isOnFile ? 'opacity-40 cursor-default' : 'opacity-100 cursor-pointer'}`}
                 >
-                    <img src={AddFile} alt="addFile" />
-                    <img src={AddFolder} alt="addFolder" />
-                    <img src={Upload} alt="upload" />
+                    <img onClick={() => setAction(Actions.ADDFILE)} src={AddFile} alt="addFile" />
+                    <img onClick={() => setAction(Actions.ADDFOLDER)} src={AddFolder} alt="addFolder" />
+                    <img onClick={() => setAction(Actions.UPLOAD)} src={Upload} alt="upload" />
                 </div>
             </div>
         </div>

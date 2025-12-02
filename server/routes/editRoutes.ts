@@ -148,8 +148,6 @@ editRoutes.post('/saveFile', async (req: Request, res: Response) => {
 editRoutes.post('/Rename', async (req: Request, res: Response) => {
     let result = null
 
-    console.log(req.body)
-
     try {
         result = await fsServices.Rename(req.body.path, req.body.newName)
 

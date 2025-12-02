@@ -115,8 +115,6 @@ export class editAPI {
     public static async getFile(path: string): Promise<GetFileResponse> {
         const body: any = { path: path }
 
-        console.log(body)
-
         try {
             let response = await APIBase.fetchData('/edit/getFile', 'POST', body)
 
@@ -142,6 +140,8 @@ export class editAPI {
 
     public static async Rename(path: string, newName: string): Promise<RenameResponse> {
         const body: any = { path: path, newName: newName }
+
+        console.log(body, 'Rename')
 
         try {
             let response = await APIBase.fetchData('/edit/Rename', 'POST', body)

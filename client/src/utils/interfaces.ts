@@ -24,6 +24,18 @@ export interface FileItemProps {
     clickFile: (filePath: string, currentNode: Node<FolderData>) => void
 }
 
+// FolderTree:
+
+// ToolsBar:
+export enum Actions {
+    RENAME = 'RENAME',
+    DOWNLOAD = 'DOWNLOAD',
+    DELETE = 'DELETE',
+    ADDFILE = 'ADDFILE',
+    ADDFOLDER = 'ADDFOLDER',
+    UPLOAD = 'UPLOAD',
+}
+
 // Edit:
 export interface EditAPIResponse {
     result: boolean
