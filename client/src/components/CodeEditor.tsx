@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useLayoutEffect, useMemo } from 'react'
 import { useAtom } from 'jotai'
 
-import { filePathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
+import { currentPathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
 
 import { EditorFunctions } from '../utils/functions/EditorFunctions'
 
@@ -9,7 +9,7 @@ import hljs from 'highlight.js'
 import '../assets/EditorTheme.css'
 
 export default function CodeEditor() {
-    const [filePath, setFilePath] = useAtom(filePathAtom)
+    const [currentPath, setCurrentPath] = useAtom(currentPathAtom)
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
@@ -18,13 +18,13 @@ export default function CodeEditor() {
     const textareaRef = useRef<HTMLTextAreaElement>(null)
 
     const highlightedCode = useMemo(() => {
-        const language = EditorFunctions.getLanguageFromExtension(filePath)
+        const language = EditorFunctions.getLanguageFromExtension(currentPath)
         try {
             return hljs.highlight(fileContent, { language }).value
         } catch {
             return hljs.highlightAuto(fileContent).value
         }
-    }, [filePath, fileContent])
+    }, [currentPath, fileContent])
 
     function editorOnChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         setFileContent(e.target.value)

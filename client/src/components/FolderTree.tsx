@@ -5,7 +5,7 @@ import ToolsBar from '../components/ToolsBar'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
-import { selectedProjectAtom, folderPathAtom, filePathAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
+import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 
@@ -15,12 +15,11 @@ import type { FolderData, FileItemProps } from '../utils/interfaces'
 export default function FolderTree() {
     const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
 
-    const [folderTree, setFolderTree] = useState<Node<FolderData>>()
-    const [currentNode, setCurrentNode] = useState<Node<FolderData>>()
+    const [folderTree, setFolderTree] = useAtom(folderTreeAtom)
 
-    const [folderPath, setFolderPath] = useAtom(folderPathAtom)
-    const [filePath, setFilePath] = useAtom(filePathAtom)
-    // make current path; folderPath, filePath into one
+    const [currentNode, setCurrentNode] = useAtom(currentNodeAtom)
+    const [currentPath, setCurrentPath] = useAtom(currentPathAtom)
+
     const [fileContent, setFileContent] = useAtom(fileContentAtom)
 
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
@@ -29,8 +28,7 @@ export default function FolderTree() {
     async function clickFile(filePath: string, currentNode: Node<FolderData>) {
         const fileContent: any = await editAPI.getFile(filePath)
         setCurrentNode(currentNode)
-        setFolderPath(null)
-        setFilePath(filePath)
+        setCurrentPath(filePath)
         setFileContent(atob(fileContent.data))
         setIsOnFile(true)
 
@@ -39,15 +37,12 @@ export default function FolderTree() {
 
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
         setCurrentNode(currentNode)
-        setFolderPath(folderPath)
-        setFilePath('')
+        setCurrentPath(folderPath)
         setFileContent('You selected a folder.') // instead remove the codeEditor.tsx or replace the editor with that text
         setIsOnFile(false)
 
         console.log('current folderPath:', currentNode.data.path + '/' + currentNode.data.name)
     }
-
-    async function toolHandler(action: string) {}
 
     useEffect(() => {
         const fetchTree = async () => {
@@ -66,7 +61,7 @@ export default function FolderTree() {
         return (
             <div
                 id="file-container"
-                className={`cursor-pointer px-2 py-1 rounded transition-all duration-150 ${filePath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}
+                className={`cursor-pointer px-2 py-1 rounded transition-all duration-150 ${currentPath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}
                 onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`, currentNode)}
             >
                 {currentNode.data.name}
@@ -87,7 +82,7 @@ export default function FolderTree() {
             <div id="container" className="flex flex-col">
                 <div id="container-structure" className="cursor-default" key={nextNode.data.name} draggable>
                     <div id="container-directory" className="flex flex-row">
-                        <div onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)} className={folderPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}>
+                        <div onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)} className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}>
                             {nextNode.data.name}
                         </div>
                     </div>

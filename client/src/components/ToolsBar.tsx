@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useAtom } from 'jotai'
 
-import { isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
+import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
@@ -16,27 +16,32 @@ import AddFolder from '../assets/tools/folderActions/addFolder.svg'
 import Upload from '../assets/tools/folderActions/Upload.svg'
 
 export default function ToolsBar() {
+    const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
+
+    const [folderTree, setFolderTree] = useAtom(folderTreeAtom)
+
+    const [currentNode, setCurrentNode] = useAtom(currentNodeAtom)
+    const [currentPath, setCurrentPath] = useAtom(currentPathAtom)
+
+    const [fileContent, setFileContent] = useAtom(fileContentAtom)
+
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
     const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
 
-    // // if one of these is true; put a input field above for the name
+    // if one of these is true; put a input field above for the name
     const [isRenaming, setIsRenaming] = useState<boolean>(true)
     const [isAdding, setIsAdding] = useState<boolean>(false)
 
     const [inputValue, setInputValue] = useState<string>()
 
-    // const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
+    function handleGiveNameTools(action: string) {
+        setIsRenaming(true), setIsAdding(true)
 
-    // const [folderTree, setFolderTree] = useState<Node<FolderData>>()
-    // const [currentNode, setCurrentNode] = useState<Node<FolderData>>() // make this a useAtom
+        if (action === 'RENAME') FolderTreeTools.Rename()
+    }
 
-    // const [folderPath, setFolderPath] = useAtom(folderPathAtom)
-    // const [filePath, setFilePath] = useAtom(filePathAtom)
-    // const [fileContent, setFileContent] = useAtom(fileContentAtom)
-
-    // const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
-    // const [result, setResult] = useState<string>()
-    // const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
+    // option 1:
+    // User clicks on rename, currentToolState = RENAME. Then when the user presses ✅ it goes through currentToolState to see what FolderTreeTools function to call.
 
     return (
         <div id="container" className="flex flex-col gap-[1rem]">
@@ -63,7 +68,7 @@ export default function ToolsBar() {
 
             <div id="container-tools" className="flex gap-[1rem]">
                 <div id="tools-file" className="flex gap-[0.5rem] cursor-pointer">
-                    <img onClick={FolderTreeTools.Rename()} src={Rename} alt="rename" />
+                    <img onClick={handleGiveNameTools('RENAME')} src={Rename} alt="rename" />
                     <img src={Download} alt="download" />
                     <img src={Delete} alt="delete" />
                 </div>
