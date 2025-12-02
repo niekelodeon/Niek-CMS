@@ -3,6 +3,8 @@ import { useAtom } from 'jotai'
 
 import { Actions } from '../utils/interfaces'
 
+import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../interfaces'
+
 import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
@@ -46,6 +48,7 @@ export default function ToolsBar() {
     function setAction(action: Actions) {
         console.log(action)
         console.log(isRenaming, isAdding)
+        console.log(resultMessages)
 
         if (action === Actions.RENAME || action === Actions.ADDFILE || action === Actions.ADDFOLDER) setIsRenaming(true), setIsAdding(true)
         else setIsRenaming(false), setIsAdding(false)
@@ -53,14 +56,21 @@ export default function ToolsBar() {
         setCurrentAction(action)
     }
 
-    function handleAction(action: Actions) {
-        if (action === Actions.RENAME) FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode)
+    async function handleAction(action: Actions) {
+        if (action === Actions.RENAME) {
+            const result: boolean = await FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode)
+
+            if (!result) {
+            }
+        }
         // if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
         // if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, currentNode, setCurrentNode)
 
         if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode.parent, setCurrentNode)
         if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode.parent, setCurrentNode)
         // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
+
+        // set currentPath on the renamed file
 
         setIsRenaming(false), setIsAdding(false)
     }

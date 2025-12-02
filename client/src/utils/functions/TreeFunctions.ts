@@ -1,3 +1,7 @@
+import { getDefaultStore } from 'jotai'
+
+import { resultMessagesAtom } from '../atoms'
+
 import { editAPI } from '../API'
 
 import { Node } from '../interfaces'
@@ -32,19 +36,22 @@ export class FolderTreeTools {
         }
     }
 
-    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any) {
+    // !THE CORRECT ONE!
+    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any): Promise<boolean> {
+        const store = getDefaultStore()
+
         try {
             const renameObject: RenameResponse = await editAPI.Rename(path, newName)
+            store.set(resultMessagesAtom, prev => [...prev, renameObject.message])
 
-            if (!renameObject.result) {
-                return renameObject.message
-            } else {
-                let newNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children)
-                newNode.data.name = newName
-                setCurrentNode(newNode)
+            if (renameObject.result) {
+                setCurrentNode(new Node<FolderData>({ ...currentNode.data, name: newName }, currentNode.parent, currentNode.children))
             }
+
+            return renameObject.result
         } catch (err) {
-            return err
+            store.set(resultMessagesAtom, prev => [...prev, err])
+            return false
         }
     }
 
