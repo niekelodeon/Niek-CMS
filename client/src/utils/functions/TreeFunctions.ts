@@ -1,6 +1,6 @@
 import { getDefaultStore } from 'jotai'
 
-import { resultMessagesAtom } from '../atoms'
+import { currentNodeAtom, resultMessagesAtom } from '../atoms'
 
 import { editAPI } from '../API'
 
@@ -36,8 +36,7 @@ export class FolderTreeTools {
         }
     }
 
-    // !THE CORRECT ONE!
-    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any): Promise<boolean> {
+    public static async Rename(path: string, newName: string, currentNode: Node<FolderData>, setCurrentNode: any, setCurrentPath: any): Promise<boolean> {
         const store = getDefaultStore()
 
         try {
@@ -45,23 +44,26 @@ export class FolderTreeTools {
             store.set(resultMessagesAtom, prev => [...prev, renameObject.message])
 
             if (renameObject.result) {
-                setCurrentNode(new Node<FolderData>({ ...currentNode.data, name: newName }, currentNode.parent, currentNode.children))
+                currentNode.data.name = newName
+                setCurrentNode({ ...currentNode })
+                setCurrentPath(currentNode.data.path + '/' + currentNode.data.name)
             }
 
             return renameObject.result
         } catch (err) {
-            store.set(resultMessagesAtom, prev => [...prev, err])
+            store.set(resultMessagesAtom, prev => [...prev, String(err)])
             return false
         }
     }
 
-    public static async addFile(path: string, fileName: string, parentNode: Node<FolderData>, setCurrentNode: (node: Node<FolderData>) => void): Promise<string> {
+    public static async addFile(path: string, fileName: string, parentNode: Node<FolderData>, setCurrentNode: any, setCurrentPath: any, setIsOnFile: any): Promise<boolean> {
+        const store = getDefaultStore()
+
         try {
             const addFileObject: EditAPIResponse = await editAPI.addFile(path, fileName)
+            store.set(resultMessagesAtom, prev => [...prev, addFileObject.message])
 
-            if (!addFileObject.result) {
-                return addFileObject.message
-            } else {
+            if (addFileObject.result) {
                 const newPath = path.endsWith('/') ? path + fileName : path + '/' + fileName
 
                 const newFileNode = new Node<FolderData>(
@@ -75,14 +77,18 @@ export class FolderTreeTools {
                     [],
                 )
 
-                const updatedParent = new Node<FolderData>(parentNode.data, parentNode.parent, [...(parentNode.children || []), newFileNode])
+                parentNode.children.push(newFileNode)
 
-                setCurrentNode(updatedParent)
-
-                return 'File created'
+                console.log(newPath, 'newPath')
+                setIsOnFile(true)
+                setCurrentNode({ ...parentNode })
+                setCurrentPath(newPath)
             }
+
+            return addFileObject.result
         } catch (err) {
-            return err
+            store.set(resultMessagesAtom, prev => [...prev, String(err)])
+            return false
         }
     }
 

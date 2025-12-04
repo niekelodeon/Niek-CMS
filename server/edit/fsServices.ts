@@ -80,7 +80,7 @@ export class fsServices {
             } else if (fileExtension.length === 0) {
                 return { success: false, function: this.addFile.name, message: 'No file extension given', logMessage: 'No file extension given' }
             } else if (allowedExtensions.includes(fileExtension.toLowerCase())) {
-                await fs.writeFile(path + name, '')
+                await fs.writeFile(path + '/' + name, '')
                 return { success: true, function: this.addFile.name, message: 'File created', logMessage: 'File created' }
             } else {
                 return { success: false, function: this.addFile.name, message: 'Given file extension not allowed', logMessage: 'Given file extension not allowed' }
@@ -107,11 +107,7 @@ export class fsServices {
 
             const stats = await fs.stat(oldPath)
 
-            console.log(stats.isFile(oldPath))
-
             const newPath = path.join(path.dirname(oldPath), newName)
-
-            console.log(newPath)
 
             if (stats.isFile()) {
                 const parts = newName.split('.')

@@ -53,6 +53,7 @@ export default function FolderTree() {
             setIsOnFile(null)
 
             const folderTree: Node<FolderData> | string = await editAPI.folderTree(selectedProject)
+            console.log(folderTree, 'FolderTree')
             if (typeof folderTree !== 'string') setFolderTree(folderTree)
         }
 

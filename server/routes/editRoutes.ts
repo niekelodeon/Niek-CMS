@@ -168,7 +168,7 @@ editRoutes.post('/addFile', async (req: Request, res: Response) => {
     let result = null
 
     try {
-        result = await fsServices.addFile(req.body.localDir + req.body.path, req.body.name)
+        result = await fsServices.addFile(req.body.path, req.body.name)
 
         if (!result.success) {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)

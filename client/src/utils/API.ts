@@ -103,6 +103,8 @@ export class editAPI {
         try {
             let response = await APIBase.fetchData('/edit/folderTree', 'POST', body)
 
+            console.log(response)
+
             response = parse(response)
 
             return response
@@ -140,8 +142,6 @@ export class editAPI {
 
     public static async Rename(path: string, newName: string): Promise<RenameResponse> {
         const body: any = { path: path, newName: newName }
-
-        console.log(body, 'Rename')
 
         try {
             let response = await APIBase.fetchData('/edit/Rename', 'POST', body)

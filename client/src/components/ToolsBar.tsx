@@ -3,7 +3,7 @@ import { useAtom } from 'jotai'
 
 import { Actions } from '../utils/interfaces'
 
-import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../interfaces'
+import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../utils/interfaces'
 
 import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, resultMessagesAtom } from '../utils/atoms'
 
@@ -16,7 +16,7 @@ import Decline from '../assets/tools/decline.svg'
 // File action tools:
 import Rename from '../assets/tools/fileActions/rename.svg'
 import Download from '../assets/tools/fileActions/download.svg'
-import Delete from '../assets/tools/fileActions/delete.svg'
+import Erase from '../assets/tools/fileActions/erase.svg'
 
 // Folder action tools:
 import AddFile from '../assets/tools/folderActions/addFile.svg'
@@ -57,16 +57,12 @@ export default function ToolsBar() {
     }
 
     async function handleAction(action: Actions) {
-        if (action === Actions.RENAME) {
-            const result: boolean = await FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode)
+        if (action === Actions.RENAME) await FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath)
 
-            if (!result) {
-            }
-        }
         // if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
         // if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, currentNode, setCurrentNode)
 
-        if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode.parent, setCurrentNode)
+        if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode.parent, setCurrentNode, setCurrentPath, setIsOnFile)
         if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode.parent, setCurrentNode)
         // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
 
@@ -102,17 +98,21 @@ export default function ToolsBar() {
                 ''
             )}
 
-            <div id="container-logs" className="flex gap-[0.5rem] font-medium">
-                <span className="bg-[#D9D9D9] text-[#1B1E24] font-extrabold px-1">log</span>
-                <span className="">~</span>
-                <span id="log">{resultMessages}</span>
+            <div id="container-logs" className="flex flex-col font-medium overflow-y-scroll max-h-[120px] gap-1">
+                {resultMessages.map((msg, i) => (
+                    <div key={i} className="flex gap-[0.5rem]">
+                        <span className="bg-[#D9D9D9] text-[#1B1E24] font-extrabold px-1">log</span>
+                        <span>~</span>
+                        <span>{msg}</span>
+                    </div>
+                ))}
             </div>
 
             <div id="container-tools" className="flex gap-[1rem]">
                 <div id="tools-file" className="flex gap-[0.5rem] cursor-pointer">
                     <img onClick={() => setAction(Actions.RENAME)} src={Rename} alt="rename" />
                     <img onClick={() => setAction(Actions.DOWNLOAD)} src={Download} alt="download" />
-                    <img onClick={() => setAction(Actions.DELETE)} src={Delete} alt="delete" />
+                    <img onClick={() => setAction(Actions.DELETE)} src={Erase} alt="erase" />
                 </div>
 
                 <div id="tools-slash" className="font-extrabold">
