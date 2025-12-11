@@ -205,7 +205,7 @@ export class editAPI {
         }
     }
 
-    public static async Delete(paths: Delete[]): Promise<DeleteResponse> {
+    public static async Delete(paths: string[]): Promise<DeleteResponse> {
         const body: any = { paths: paths }
 
         try {

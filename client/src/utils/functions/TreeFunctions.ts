@@ -160,7 +160,7 @@ export class FolderTreeTools {
         }
     }
 
-    public static async Delete(paths: Delete[], currentNode: Node<FolderData>, setCurrentNode: any): Promise<string> {
+    public static async Delete(paths: string[], currentNode: Node<FolderData>, setCurrentNode: any): Promise<string> {
         try {
             const deleteObject: DeleteResponse = await editAPI.Delete(paths)
 

@@ -40,14 +40,6 @@ export default function FolderTree() {
         console.log('current filePath:', filePath, currentNode.data.path + '/' + currentNode.data.name)
     }
 
-    function toggleSelected(path: string) {
-        setSelectedPaths(prev => {
-            const next = new Set(prev)
-            next.has(path) ? next.delete(path) : next.add(path)
-            return [...next]
-        })
-    }
-
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
         setCurrentNode(currentNode)
         setCurrentPath(folderPath)
@@ -55,6 +47,16 @@ export default function FolderTree() {
         setIsOnFile(false)
 
         console.log('current folderPath:', currentNode.data.path + '/' + currentNode.data.name)
+    }
+
+    function toggleSelected(path: string) {
+        setSelectedPaths(prev => {
+            const next = new Set(prev)
+            next.has(path) ? next.delete(path) : next.add(path)
+            return [...next]
+        })
+
+        console.log(isSelecting, selectedPaths)
     }
 
     useEffect(() => {
@@ -73,12 +75,21 @@ export default function FolderTree() {
 
     function FileItem({ currentNode, clickFile }: FileItemProps) {
         return (
-            <div
-                id="file-container"
-                className={`cursor-pointer py-1 rounded transition-all duration-150 ${currentPath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}
-                onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`, currentNode)}
-            >
-                {currentNode.data.name}
+            <div id="container-file" className={`flex gap-3 cursor-pointer py-1 rounded transition-all duration-150 ${currentPath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}>
+                {isSelecting ? (
+                    <input
+                        type="checkbox"
+                        checked={selectedPaths.includes(currentNode.data.path + '/' + currentNode.data.name)}
+                        onChange={() => toggleSelected(currentNode.data.path + '/' + currentNode.data.name)}
+                        className="flex self-center appearance-none w-4 h-4 border-2 border-white opacity-[40%] rounded cursor-pointer checked:opacity-[100%] checked:bg-[#7F7EFF] checked:border-[#7F7EFF]"
+                    />
+                ) : (
+                    ''
+                )}
+
+                <div id="file" className="" onClick={() => clickFile(currentNode.data.path + '/' + currentNode.data.name, currentNode)}>
+                    {currentNode.data.name}
+                </div>
             </div>
         )
     }
@@ -95,8 +106,19 @@ export default function FolderTree() {
         return (
             <div id="container" className="flex flex-col">
                 <div id="container-structure" className="cursor-default" key={nextNode.data.name} draggable>
-                    <div id="container-directory" className="flex flex-row py-1">
-                        <div onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)} className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}>
+                    <div id="container-directory" className="flex gap-3 cursor-pointer py-1 rounded transition-all duration-150">
+                        {isSelecting ? (
+                            <input
+                                type="checkbox"
+                                checked={selectedPaths.includes(nextNode.data.path + '/' + nextNode.data.name)}
+                                onChange={() => toggleSelected(nextNode.data.path + '/' + nextNode.data.name)}
+                                className="flex self-center appearance-none w-4 h-4 border-2 border-white opacity-[40%] rounded cursor-pointer checked:opacity-[100%] checked:bg-[#7F7EFF] checked:border-[#7F7EFF]"
+                            />
+                        ) : (
+                            ''
+                        )}
+
+                        <div id="folder" className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'} onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)}>
                             {nextNode.data.name}
                         </div>
                     </div>

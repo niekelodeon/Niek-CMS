@@ -16,7 +16,7 @@ export const isOnFileAtom = atom<boolean | null>()
 
 export const currentActionAtom = atom<Actions | null>()
 
-export const setIsSelectAtom = atom<boolean | null>()
+export const setIsSelectingAtom = atom<boolean | null>()
 export const selectedPathsAtom = atom<string[]>([])
 
 export const resultMessagesAtom = atom<string[]>([])
