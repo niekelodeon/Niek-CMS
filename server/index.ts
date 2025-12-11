@@ -32,7 +32,9 @@ app.use(cookieParser())
 app.use(rateLimiter.globalLimiter)
 app.use('/auth', rateLimiter.authLimiter)
 
-// app.use((req, res, next) => { tokenMiddleware.Verify(req, res, next) })
+// app.use((req, res, next) => {
+//     tokenMiddleware.Verify(req, res, next)
+// })
 app.use('/edit', tokenMiddleware.updateBody)
 
 // app.use(MiddlewareLogger as any)

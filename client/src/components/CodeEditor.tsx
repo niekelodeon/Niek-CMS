@@ -46,7 +46,7 @@ export default function CodeEditor() {
     return (
         <div id="container-editor" className="flex flex-col max-h-[85vh] max-w-[90vw]">
             <div className="overflow-auto bg-[#272334] relative">
-                <pre id="highlighted" ref={preRef} spellCheck="false" className="z-1 min-w-[700px] ml-3 mt-3 whitespace-pre-wrap pointer-events-none hljs relative top-0 right-0 bottom-0 wrap-break-word">
+                <pre id="highlighted" ref={preRef} spellCheck="false" className="z-1 min-h-[24px] min-w-[700px] ml-3 mt-3 whitespace-pre-wrap pointer-events-none hljs relative top-0 right-0 bottom-0 wrap-break-word">
                     <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
                 </pre>
 
@@ -58,6 +58,7 @@ export default function CodeEditor() {
                     value={fileContent}
                     className="
                     overflow-hidden z-2
+                    min-h-[24px]
                     min-w-[700px]
                     ml-3 mt-3
                     text-transparent whitespace-pre-wrap

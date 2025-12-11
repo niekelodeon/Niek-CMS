@@ -77,6 +77,8 @@ export class FolderTreeTools {
                     [],
                 )
 
+                console.log(parentNode, 'parentNode')
+
                 parentNode.children.push(newFileNode)
 
                 console.log(newPath, 'newPath')
@@ -92,13 +94,14 @@ export class FolderTreeTools {
         }
     }
 
-    public static async addFolder(path: string, folderName: string, parentNode: Node<FolderData>, setCurrentNode: (node: Node<FolderData>) => void): Promise<string> {
-        try {
-            const addFolderObject: EditAPIResponse = await editAPI.addFolder(path)
+    public static async addFolder(path: string, folderName: string, parentNode: Node<FolderData>, setCurrentNode: any, setCurrentPath: any, setIsOnFile: any): Promise<boolean> {
+        const store = getDefaultStore()
 
-            if (!addFolderObject.result) {
-                return addFolderObject.message
-            } else {
+        try {
+            const addFileObject: EditAPIResponse = await editAPI.addFolder(path + '/' + folderName)
+            store.set(resultMessagesAtom, prev => [...prev, addFileObject.message])
+
+            if (addFileObject.result) {
                 const newPath = path.endsWith('/') ? path + folderName : path + '/' + folderName
 
                 const newFolderNode = new Node<FolderData>(
@@ -112,14 +115,20 @@ export class FolderTreeTools {
                     [],
                 )
 
-                const updatedParent = new Node<FolderData>(parentNode.data, parentNode.parent, [...(parentNode.children || []), newFolderNode])
+                console.log(parentNode, 'parentNode')
 
-                setCurrentNode(updatedParent)
+                parentNode.children.push(newFolderNode)
 
-                return 'Folder created'
+                console.log(newPath, 'newPath')
+                setIsOnFile(true)
+                setCurrentNode({ ...parentNode })
+                setCurrentPath(newPath)
             }
+
+            return addFileObject.result
         } catch (err) {
-            return err
+            store.set(resultMessagesAtom, prev => [...prev, String(err)])
+            return false
         }
     }
 

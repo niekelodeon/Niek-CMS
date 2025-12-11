@@ -5,7 +5,7 @@ import ToolsBar from '../components/ToolsBar'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
-import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, resultMessagesAtom } from '../utils/atoms'
+import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, setIsSelectingAtom, selectedPathsAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 
@@ -25,6 +25,9 @@ export default function FolderTree() {
     const [isOnFile, setIsOnFile] = useAtom(isOnFileAtom)
     const [currentToolState, setcurrentToolState] = useAtom(currentActionAtom)
 
+    const [isSelecting, setIsSelecting] = useAtom(setIsSelectingAtom)
+    const [selectedPaths, setSelectedPaths] = useAtom(selectedPathsAtom)
+
     const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
 
     async function clickFile(filePath: string, currentNode: Node<FolderData>) {
@@ -35,6 +38,14 @@ export default function FolderTree() {
         setIsOnFile(true)
 
         console.log('current filePath:', filePath, currentNode.data.path + '/' + currentNode.data.name)
+    }
+
+    function toggleSelected(path: string) {
+        setSelectedPaths(prev => {
+            const next = new Set(prev)
+            next.has(path) ? next.delete(path) : next.add(path)
+            return [...next]
+        })
     }
 
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
@@ -64,7 +75,7 @@ export default function FolderTree() {
         return (
             <div
                 id="file-container"
-                className={`cursor-pointer px-2 py-1 rounded transition-all duration-150 ${currentPath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}
+                className={`cursor-pointer py-1 rounded transition-all duration-150 ${currentPath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}
                 onClick={() => clickFile(currentNode.data.path + `/${currentNode.data.name}`, currentNode)}
             >
                 {currentNode.data.name}
@@ -84,7 +95,7 @@ export default function FolderTree() {
         return (
             <div id="container" className="flex flex-col">
                 <div id="container-structure" className="cursor-default" key={nextNode.data.name} draggable>
-                    <div id="container-directory" className="flex flex-row">
+                    <div id="container-directory" className="flex flex-row py-1">
                         <div onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)} className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}>
                             {nextNode.data.name}
                         </div>

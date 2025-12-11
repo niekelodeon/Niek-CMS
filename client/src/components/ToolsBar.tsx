@@ -5,7 +5,7 @@ import { Actions } from '../utils/interfaces'
 
 import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../utils/interfaces'
 
-import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, resultMessagesAtom } from '../utils/atoms'
+import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, setIsSelectAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
@@ -37,9 +37,10 @@ export default function ToolsBar() {
 
     const [currentAction, setCurrentAction] = useAtom(currentActionAtom)
 
+    const [isSelecting, setIsSelecting] = useAtom(setIsSelectAtom)
+
     const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
 
-    // if one of these is true; put a input field above for the name
     const [isRenaming, setIsRenaming] = useState<boolean>(false)
     const [isAdding, setIsAdding] = useState<boolean>(false)
 
@@ -51,7 +52,7 @@ export default function ToolsBar() {
         console.log(resultMessages)
 
         if (action === Actions.RENAME || action === Actions.ADDFILE || action === Actions.ADDFOLDER) setIsRenaming(true), setIsAdding(true)
-        else setIsRenaming(false), setIsAdding(false)
+        else setIsRenaming(false), setIsAdding(false), setIsSelecting(true)
 
         setCurrentAction(action)
     }
@@ -60,10 +61,11 @@ export default function ToolsBar() {
         if (action === Actions.RENAME) await FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath)
 
         // if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
+
         // if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, currentNode, setCurrentNode)
 
-        if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode.parent, setCurrentNode, setCurrentPath, setIsOnFile)
-        if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode.parent, setCurrentNode)
+        if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
+        if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
         // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
 
         // set currentPath on the renamed file
