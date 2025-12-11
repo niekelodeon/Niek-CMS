@@ -148,6 +148,7 @@ export default function ToolsBar() {
                 ))}
             </div>
 
+            {/* when it's clicked again: setAction = null */}
             <div id="container-tools" className="flex gap-[1rem]">
                 <div id="tools-file" className={`flex gap-[0.5rem] transition-opacity ${isOnFile === null ? 'opacity-40 cursor-default' : 'opacity-100 cursor-pointer'}`}>
                     <img onClick={() => setAction(Actions.RENAME)} src={Rename} alt="rename" />
