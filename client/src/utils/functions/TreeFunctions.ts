@@ -162,6 +162,7 @@ export class FolderTreeTools {
 
     public static async Delete(paths: string[], currentNode: Node<FolderData>, setCurrentNode: any): Promise<string> {
         try {
+            console.log(paths)
             const deleteObject: DeleteResponse = await editAPI.Delete(paths)
 
             // Or it should run FolderTree again to get it from the server instead of keeping track which file is succesfully deleted

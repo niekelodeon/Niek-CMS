@@ -169,10 +169,8 @@ export class fsServices {
         }
 
         for (const each of paths) {
-            const path: string = each.path
-
             try {
-                fs.rmSync(path, { recursive: true, force: true })
+                fs.rmSync(each, { recursive: true, force: true })
                 results.success.push(`Succes to delete: ${path}`)
             } catch (err) {
                 const error = await errorHandling.getSpecificError(err.code)
