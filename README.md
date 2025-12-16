@@ -19,7 +19,7 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 ## Showcase
 
 ![dashboard](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/dashboard.png "Dashboard page")
-![login](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/dashboard.png "Login page")
+![login](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/login.png "Login page")
 ![selecting](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/selecting.png "Selecting folder view")
 
 ## 🚀 Quick Start  
