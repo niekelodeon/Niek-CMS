@@ -5,7 +5,7 @@ import { Actions } from '../utils/interfaces'
 
 import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../utils/interfaces'
 
-import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, selectedPathsAtom, setIsSelectingAtom, resultMessagesAtom } from '../utils/atoms'
+import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, selectedPathsAtom, setIsSelectingAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
@@ -24,7 +24,7 @@ import AddFolder from '../assets/tools/folderActions/addFolder.svg'
 import Upload from '../assets/tools/folderActions/Upload.svg'
 
 export default function ToolsBar() {
-    const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
+    const [projectName, setProjectName] = useAtom(projectNameAtom)
 
     const [folderTree, setFolderTree] = useAtom(folderTreeAtom)
 
@@ -63,7 +63,7 @@ export default function ToolsBar() {
 
         // if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
 
-        if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, currentNode, setCurrentNode)
+        if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, projectName, setFolderTree)
 
         if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
         if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)

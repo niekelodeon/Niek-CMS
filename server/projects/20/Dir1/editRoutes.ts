@@ -1,15 +1,15 @@
 import path from 'path'
 
-import { loggerService } from '../../../../global/logger'
-import { UploadServices } from '../../../../edit/uploadServices'
+import { loggerService } from '../../../global/logger'
+import { UploadServices } from '../../../edit/uploadServices'
 
-import { ftpServices } from '../../../../edit/ftpServices'
-import { fsServices } from '../../../../edit/fsServices'
-import { dashboardServices } from '../../../../edit/dashboardServices'
-import { GlobalServices } from '../../../../global/services'
+import { ftpServices } from '../../../edit/ftpServices'
+import { fsServices } from '../../../edit/fsServices'
+import { dashboardServices } from '../../../edit/dashboardServices'
+import { GlobalServices } from '../../../global/services'
 
 import { Router, Request, Response } from 'express'
-import { FolderData, Node } from '../../../../global/interfaces'
+import { FolderData, Node } from '../../../global/interfaces'
 
 import { stringify } from 'flatted'
 

@@ -160,15 +160,14 @@ export class FolderTreeTools {
         }
     }
 
-    public static async Delete(paths: string[], currentNode: Node<FolderData>, setCurrentNode: any): Promise<string> {
+    public static async Delete(paths: string[], projectName: string, setFolderTree: any): Promise<string> {
         try {
-            console.log(paths)
             const deleteObject: DeleteResponse = await editAPI.Delete(paths)
 
-            // Or it should run FolderTree again to get it from the server instead of keeping track which file is succesfully deleted
-            const updatedNode = new Node<FolderData>(currentNode.data, currentNode.parent, currentNode.children?.filter(child => child.data.path !== child.data.path) || [])
+            const folderTree: Node<FolderData> | string = await editAPI.folderTree(projectName)
 
-            setCurrentNode(updatedNode)
+            setFolderTree(folderTree)
+
             return deleteObject.message
         } catch (err) {
             return err

@@ -5,7 +5,7 @@ import ToolsBar from '../components/ToolsBar'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
-import { selectedProjectAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, setIsSelectingAtom, selectedPathsAtom, resultMessagesAtom } from '../utils/atoms'
+import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, setIsSelectingAtom, selectedPathsAtom, resultMessagesAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 
@@ -13,7 +13,7 @@ import { Node } from '../utils/interfaces'
 import type { FolderData, FileItemProps } from '../utils/interfaces'
 
 export default function FolderTree() {
-    const [selectedProject, setSelectedProject] = useAtom(selectedProjectAtom)
+    const [projectName, setProjectName] = useAtom(projectNameAtom)
 
     const [folderTree, setFolderTree] = useAtom(folderTreeAtom)
 
@@ -45,8 +45,7 @@ export default function FolderTree() {
         setCurrentPath(folderPath)
         setFileContent('You selected a folder.') // instead remove the codeEditor.tsx or replace the editor with that text
         setIsOnFile(false)
-
-        console.log('current folderPath:', currentNode.data.path + '/' + currentNode.data.name)
+        console.log(folderPath)
     }
 
     function toggleSelected(path: string) {
@@ -62,10 +61,10 @@ export default function FolderTree() {
     useEffect(() => {
         const fetchTree = async () => {
             localStorage.setItem('Project', 'Dir1')
-            setSelectedProject(localStorage.getItem('Project') || '')
+            setProjectName(localStorage.getItem('Project') || '')
             setIsOnFile(null)
 
-            const folderTree: Node<FolderData> | string = await editAPI.folderTree(selectedProject)
+            const folderTree: Node<FolderData> | string = await editAPI.folderTree(projectName)
             console.log(folderTree, 'FolderTree')
             if (typeof folderTree !== 'string') setFolderTree(folderTree)
         }
@@ -118,7 +117,11 @@ export default function FolderTree() {
                             ''
                         )}
 
-                        <div id="folder" className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'} onClick={() => clickFolder(nextNode.data.path + '/' + nextNode.data.name, nextNode)}>
+                        <div
+                            id="folder"
+                            className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}
+                            onClick={() => clickFolder(nextNode.data.path + '/' + (nextNode.parent != null ? nextNode.data.name : ''), nextNode)}
+                        >
                             {nextNode.data.name}
                         </div>
                     </div>
