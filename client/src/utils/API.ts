@@ -227,7 +227,7 @@ export class editAPI {
                 Accept: 'application/zip',
             },
             body: JSON.stringify({ paths }),
-            credentials: 'include', // optional if your server uses cookies
+            credentials: 'include',
         })
 
         if (!response.ok) throw new Error(`Download failed: ${response.status}`)
