@@ -16,6 +16,14 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 
 ---
 
+## Showcase
+
+![dashboard](./assets/dashboard.png)
+
+![login](./assets/login.png)
+
+![selecting](./assets/selecting.png)
+
 ## 🚀 Quick Start  
 
 1. **Clone and install**
