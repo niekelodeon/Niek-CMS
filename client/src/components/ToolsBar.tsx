@@ -67,13 +67,8 @@ export default function ToolsBar() {
         if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
         // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
 
-        // set currentPath on the renamed file
-
         setIsRenaming(false), setIsAdding(false)
     }
-
-    // option 1:
-    // User clicks on rename, currentAction = RENAME. Then when the user presses ✅ it goes through currentToolState to see what FolderTreeTools function to call.
 
     return (
         <div id="container" className="flex flex-col gap-[1rem]">

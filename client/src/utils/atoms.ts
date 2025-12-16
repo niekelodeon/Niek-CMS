@@ -3,7 +3,7 @@ import { atom } from 'jotai'
 import { Node, Actions } from '../utils/interfaces'
 import type { FolderData } from '../utils/interfaces'
 
-export const projectNameAtom = atom<string>('') // the path relative to the users folder
+export const projectNameAtom = atom<string>('')
 
 export const folderTreeAtom = atom<Node<FolderData>>()
 

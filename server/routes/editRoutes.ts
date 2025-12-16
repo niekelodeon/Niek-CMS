@@ -260,7 +260,6 @@ editRoutes.post('/Delete', async (req: Request, res: Response) => {
 })
 
 editRoutes.post('/Download', async (req: Request, res: Response) => {
-    console.log(req.body)
     try {
         await fsServices.Download(req.body.paths, res)
 

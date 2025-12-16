@@ -36,8 +36,6 @@ export default function FolderTree() {
         setCurrentPath(filePath)
         setFileContent(atob(fileContent.data))
         setIsOnFile(true)
-
-        console.log('current filePath:', filePath, currentNode.data.path + '/' + currentNode.data.name)
     }
 
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
@@ -45,7 +43,6 @@ export default function FolderTree() {
         setCurrentPath(folderPath)
         setFileContent('You selected a folder.') // instead remove the codeEditor.tsx or replace the editor with that text
         setIsOnFile(false)
-        console.log(folderPath)
     }
 
     function toggleSelected(path: string) {
@@ -65,7 +62,6 @@ export default function FolderTree() {
             setIsOnFile(null)
 
             const folderTree: Node<FolderData> | string = await editAPI.folderTree(projectName)
-            console.log(folderTree, 'FolderTree')
             if (typeof folderTree !== 'string') setFolderTree(folderTree)
         }
 
@@ -140,7 +136,6 @@ export default function FolderTree() {
 
     return (
         <div className="h-full flex flex-col justify-between">
-            {/* if the user didnt select a project / there is no project in the cookie then show: 'please select a project in settings' */}
             {folderTree ? renderTree(folderTree) : <div>Loading...</div>}
 
             <div id="container" className="flex flex-col gap-2">
