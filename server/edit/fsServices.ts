@@ -181,27 +181,22 @@ export class fsServices {
         return { function: this.Delete.name, message: results }
     }
 
-    public static async Download(paths: Download[], res: Response) {
+    public static async Download(paths: string[], res: Response) {
         const archive = archiver('zip', { zlib: { level: 9 } })
 
-        res.attachment('download.zip')
+        res.status(200)
+        res.setHeader('Content-Type', 'application/zip')
+        res.setHeader('Content-Disposition', 'attachment; filename="download.zip"')
+
         archive.pipe(res)
 
-        for (const each of paths) {
-            const filePath = each.path
+        for (const filePath of paths) {
+            const stats = fs.statSync(filePath)
 
-            try {
-                if (!fs.existsSync(filePath)) continue
-
-                const stats = fs.statSync(filePath)
-
-                if (stats.isDirectory()) {
-                    archive.directory(filePath, path.basename(filePath))
-                } else if (stats.isFile()) {
-                    archive.file(filePath, { name: path.basename(filePath) })
-                }
-            } catch {
-                // handle error here
+            if (stats.isDirectory()) {
+                archive.directory(filePath, path.basename(filePath))
+            } else if (stats.isFile()) {
+                archive.file(filePath, { name: path.basename(filePath) })
             }
         }
 

@@ -260,20 +260,16 @@ editRoutes.post('/Delete', async (req: Request, res: Response) => {
 })
 
 editRoutes.post('/Download', async (req: Request, res: Response) => {
-    let result = null
-
+    console.log(req.body)
     try {
-        result = await fsServices.Download(req.body.paths, res)
+        await fsServices.Download(req.body.paths, res)
 
-        if (!result.success) {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            // res.status(400).json(result.message)
-        } else {
-            loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            // res.status(200).json(result.message)
-        }
+        loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Download.name, 'Download started')
     } catch (err) {
         loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Download.name, err.message)
-        res.status(500).json('Something went wrong, please try again')
+
+        if (!res.headersSent) {
+            res.status(500).end()
+        }
     }
 })

@@ -174,13 +174,11 @@ export class FolderTreeTools {
         }
     }
 
-    public static async Download(paths: string[]): Promise<string> {
+    public static async Download(paths: string[]): Promise<void> {
         try {
-            const downloadObject: DownloadResponse = await editAPI.Download(paths)
-
-            return downloadObject.message
+            await editAPI.Download(paths)
         } catch (err) {
-            return err
+            console.error(err)
         }
     }
 }

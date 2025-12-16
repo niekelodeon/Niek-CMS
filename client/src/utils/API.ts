@@ -218,18 +218,28 @@ export class editAPI {
         }
     }
 
-    public static async Download(paths: string[]): Promise<DownloadResponse> {
-        const body: any = { paths: paths }
+    public static async Download(paths: string[]): Promise<void> {
+        console.log(paths)
+        const response = await fetch(`${APIBase.baseUrl}/edit/Download`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/zip',
+            },
+            body: JSON.stringify({ paths }),
+            credentials: 'include', // optional if your server uses cookies
+        })
 
-        try {
-            let response = await APIBase.fetchData('/edit/Download', 'POST', body)
+        if (!response.ok) throw new Error(`Download failed: ${response.status}`)
 
-            console.log(response)
+        const blob = await response.blob()
+        const url = URL.createObjectURL(blob)
 
-            return JSON.parse(response)
-        } catch (err) {
-            console.error(`Route: ${this.Download.name} API fetch error: ${err}`)
-            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
-        }
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'download.zip'
+        a.click()
+
+        URL.revokeObjectURL(url)
     }
 }
