@@ -27,9 +27,10 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 ## 🚀 Quick Start  
 
 1. **Clone and install**
-   ```bash
-   git clone <github.com/niekelodeon/Niek-CMS> orbit-cms && cd orbit-cms
-   npm install
+```bash
+git clone <github.com/niekelodeon/Niek-CMS> orbit-cms && cd orbit-cms
+npm install
+```
 
 2. **Create your .env file**
 ```
