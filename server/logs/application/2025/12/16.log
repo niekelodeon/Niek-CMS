@@ -13,3 +13,31 @@
 [32m [INFO] [12/16/2025 11:51] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /Delete | FILE: routes/editRoutes.ts | FUNCTION: Delete | MESSAGE: Succes to delete: [object Object]  [0m 
 [32m [INFO] [12/16/2025 11:51] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
 [32m [INFO] [12/16/2025 11:51] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 11:54] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 11:54] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 11:57] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 11:57] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 11:59] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 11:59] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /Move | FILE: routes/editRoutes.ts | FUNCTION: Move | MESSAGE:   [0m 
+[32m [INFO] [12/16/2025 11:59] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:00] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:01] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:01] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:02] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:02] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:13] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:13] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:15] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:15] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:19] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:19] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:19] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /Download | FILE: routes/editRoutes.ts | FUNCTION: Download | MESSAGE:  Failed to download: [object Object] [0m 
+[32m [INFO] [12/16/2025 12:20] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:20] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:20] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:20] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /Download | FILE: routes/editRoutes.ts | FUNCTION: Download | MESSAGE:  Failed to download: [object Object] [0m 
+[32m [INFO] [12/16/2025 12:20] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /Download | FILE: routes/editRoutes.ts | FUNCTION: Download | MESSAGE:   [0m 
+[32m [INFO] [12/16/2025 12:22] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 
+[32m [INFO] [12/16/2025 12:22] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /Download | FILE: routes/editRoutes.ts | FUNCTION: Download | MESSAGE:  Failed to download: [object Object]. Failed to download: [object Object] [0m 
+[32m [INFO] [12/16/2025 12:24] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /folderTree | FILE: routes/editRoutes.ts | FUNCTION: folderTree | MESSAGE:  [0m 
+[32m [INFO] [12/16/2025 12:24] | USER: niekamperse2@proton.me | IP: ::ffff:127.0.0.1 | ROUTE: /getFile | FILE: routes/editRoutes.ts | FUNCTION: getFile | MESSAGE: File content retrieved [0m 

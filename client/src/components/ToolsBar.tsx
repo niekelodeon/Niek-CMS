@@ -60,9 +60,7 @@ export default function ToolsBar() {
 
     async function handleAction(action: Actions) {
         if (action === Actions.RENAME) await FolderTreeTools.Rename(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath)
-
-        // if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
-
+        if (action === Actions.DOWNLOAD) FolderTreeTools.Download(selectedPaths)
         if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, projectName, setFolderTree)
 
         if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)

@@ -174,7 +174,7 @@ export class FolderTreeTools {
         }
     }
 
-    public static async Download(paths: Delete[]): Promise<string> {
+    public static async Download(paths: string[]): Promise<string> {
         try {
             const downloadObject: DownloadResponse = await editAPI.Download(paths)
 

@@ -94,7 +94,7 @@ editRoutes.post('/folderTree', async (req: Request, res: Response) => {
             path: projectName,
             type: 'directory',
             depth: 0,
-            name: 'root',
+            name: '/',
         })
         rootNode.children = await fsServices.folderTree(projectName, rootNode)
 
@@ -267,10 +267,10 @@ editRoutes.post('/Download', async (req: Request, res: Response) => {
 
         if (!result.success) {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(400).json(result.message)
+            // res.status(400).json(result.message)
         } else {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message.success.join('. ') + ' ' + result.message.failed.join('. '))
-            res.status(200).json(result.message)
+            // res.status(200).json(result.message)
         }
     } catch (err) {
         loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Download.name, err.message)

@@ -218,11 +218,13 @@ export class editAPI {
         }
     }
 
-    public static async Download(paths: Download[]): Promise<DownloadResponse> {
+    public static async Download(paths: string[]): Promise<DownloadResponse> {
         const body: any = { paths: paths }
 
         try {
-            let response = await APIBase.fetchData('/edit/Move', 'POST', body)
+            let response = await APIBase.fetchData('/edit/Download', 'POST', body)
+
+            console.log(response)
 
             return JSON.parse(response)
         } catch (err) {

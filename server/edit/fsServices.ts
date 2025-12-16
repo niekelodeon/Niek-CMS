@@ -182,39 +182,29 @@ export class fsServices {
     }
 
     public static async Download(paths: Download[], res: Response) {
-        const results: Results = {
-            success: [],
-            failed: [],
-        }
-
         const archive = archiver('zip', { zlib: { level: 9 } })
 
         res.attachment('download.zip')
-
         archive.pipe(res)
 
         for (const each of paths) {
             const filePath = each.path
 
             try {
-                if (!fs.existsSync(filePath)) throw new Error(`Path does not exist: ${filePath}`)
+                if (!fs.existsSync(filePath)) continue
 
                 const stats = fs.statSync(filePath)
 
                 if (stats.isDirectory()) {
                     archive.directory(filePath, path.basename(filePath))
-                    results.success.push(`Success to download: ${filePath}`)
                 } else if (stats.isFile()) {
                     archive.file(filePath, { name: path.basename(filePath) })
-                    results.success.push(`Success to download: ${filePath}`)
                 }
-            } catch (err) {
-                results.failed.push(`Failed to download: ${path}`)
+            } catch {
+                // handle error here
             }
         }
 
         await archive.finalize()
-
-        return { function: this.Download.name, message: results }
     }
 }
