@@ -23,7 +23,7 @@ rename, download, delete, add file / folder, or upload under a specific folder.
    git clone <your-fork-url> orbit-cms && cd orbit-cms
    npm install
 
-2. **Add your .env file**
+2. **Create your .env file**
 ```
 # website
 websiteName = your_website_url
