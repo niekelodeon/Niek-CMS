@@ -22,7 +22,7 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 ![login](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/login.png "Login page")
 ![selecting](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/selecting.png "Selecting folder view")
 
-## 🚀 Quick Start  
+## Setup
 
 1. **Clone and install**
 ```bash
