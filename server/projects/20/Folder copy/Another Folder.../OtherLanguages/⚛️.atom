@@ -1,0 +1,30 @@
+'.source.js':
+  'Print Hello World':
+    'prefix': 'hello'
+    'body': 'console.log("Hello, world!");'
+
+'.source.python':
+  'Random List Print':
+    'prefix': 'randlist'
+    'body': '''
+numbers = [1, 2, 3, 4, 5]
+for n in numbers:
+    print(n)
+'''
+
+'.text.html':
+  'Basic HTML Skeleton':
+    'prefix': 'html5'
+    'body': '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${1:Document}</title>
+</head>
+<body>
+    ${0}
+</body>
+</html>
+'''

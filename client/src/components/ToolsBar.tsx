@@ -106,7 +106,7 @@ export default function ToolsBar() {
                     </div>
                 </div>
             ) : isSelecting ? (
-                <div id="container-tools" className="self-center">
+                <div id="container-tools" className="">
                     <div id="tools" className="flex gap-[0.5rem] cursor-pointer">
                         <img
                             onClick={() => {

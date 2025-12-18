@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button {
+    background: #ff6f61;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.2) rotate(-5deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    width: 300px;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow:
+        2px 2px #000,
+        -2px -2px #333;
+    animation: rainbowText 5s infinite linear;
+}
+
+@keyframes rainbowText {
+    0% {
+        color: #ff0000;
+    }
+    20% {
+        color: #ff7f00;
+    }
+    40% {
+        color: #ffff00;
+    }
+    60% {
+        color: #00ff00;
+    }
+    80% {
+        color: #0000ff;
+    }
+    100% {
+        color: #8b00ff;
+    }
+}

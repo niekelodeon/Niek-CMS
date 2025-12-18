@@ -41,7 +41,7 @@ export default function FolderTree() {
     async function clickFolder(folderPath: string, currentNode: Node<FolderData>) {
         setCurrentNode(currentNode)
         setCurrentPath(folderPath)
-        setFileContent('You selected a folder.') // instead remove the codeEditor.tsx or replace the editor with that text
+        setFileContent('You selected a folder.')
         setIsOnFile(false)
     }
 
@@ -57,7 +57,7 @@ export default function FolderTree() {
 
     useEffect(() => {
         const fetchTree = async () => {
-            localStorage.setItem('Project', 'Dir1')
+            // localStorage.setItem('Project', 'Dir1')
             setProjectName(localStorage.getItem('Project') || '')
             setIsOnFile(null)
 
@@ -99,7 +99,7 @@ export default function FolderTree() {
         }
 
         return (
-            <div id="container" className="flex flex-col">
+            <div id="container-tree" className="flex flex-col min-width-[500px]">
                 <div id="container-structure" className="cursor-default" key={nextNode.data.name} draggable>
                     <div id="container-directory" className="flex gap-3 cursor-pointer py-1 rounded transition-all duration-150">
                         {isSelecting ? (
@@ -135,8 +135,8 @@ export default function FolderTree() {
     }
 
     return (
-        <div className="h-full flex flex-col justify-between">
-            {folderTree ? renderTree(folderTree) : <div>Loading...</div>}
+        <div id="container-main" className="flex flex-col gap-5">
+            <div className="flex flex-col justify-between overflow-auto max-h-[75vh] w-[50%]">{folderTree ? renderTree(folderTree) : <div>Loading...</div>}</div>
 
             <div id="container" className="flex flex-col gap-2">
                 <ToolsBar />
