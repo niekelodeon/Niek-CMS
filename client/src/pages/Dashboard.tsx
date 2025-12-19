@@ -4,7 +4,7 @@ import FolderTree from '../components/FolderTree'
 export default function Dashboard() {
     return (
         <div id="container-page" className="max-h-screen overflow-hidden">
-            <div id="container-layout" className="grid grid-cols-2 grid-rows-[1fr_auto] gap-[1rem] pl-[10%] pr-[5%] pt-20 pb-10">
+            <div id="container-layout" className="grid grid-cols-2 grid-rows-[1fr_auto] gap-[1rem] pt-20 pr-[5%] pb-10 pl-[10%]">
                 <div id="container-FolderTree" className="">
                     <FolderTree />
                 </div>
