@@ -129,8 +129,8 @@ export default function FolderTree() {
     }
 
     return (
-        <div id="container-main" className="flex w-fit flex-col gap-5">
-            {folderTree ? <div className="flex max-h-[75vh] w-full flex-col justify-between overflow-auto">{renderTree(folderTree)}</div> : <div>Loading...</div>}
+        <div id="container-main" className="flex w-fit min-w-[50%] flex-col gap-10">
+            {folderTree ? <div className="flex max-h-[75vh] min-h-[75vh] flex-col justify-between overflow-auto">{renderTree(folderTree)}</div> : <div>Loading...</div>}
 
             <ToolsBar />
         </div>
