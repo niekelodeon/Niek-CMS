@@ -44,9 +44,9 @@ export default function CodeEditor() {
     }, [highlightedCode])
 
     return (
-        <div id="container-editor" className="flex flex-col max-h-[85vh] max-w-[90vw]">
-            <div className="overflow-auto bg-[#272334] relative">
-                <pre id="highlighted" ref={preRef} spellCheck="false" className="z-1 min-h-[24px] min-w-[700px] ml-3 mt-3 whitespace-pre-wrap pointer-events-none hljs relative top-0 right-0 bottom-0 wrap-break-word">
+        <div id="container-editor" className="flex max-h-[85vh] max-w-[90vw] flex-col">
+            <div className="relative overflow-auto bg-[#272334]">
+                <pre id="highlighted" ref={preRef} spellCheck="false" className="hljs pointer-events-none relative top-0 right-0 bottom-0 z-1 mt-3 ml-3 min-h-[24px] min-w-[700px] wrap-break-word whitespace-pre-wrap">
                     <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
                 </pre>
 
@@ -56,26 +56,16 @@ export default function CodeEditor() {
                     spellCheck="false"
                     onChange={editorOnChange}
                     value={fileContent}
-                    className="
-                    overflow-hidden z-2
-                    min-h-[24px]
-                    min-w-[700px]
-                    ml-3 mt-3
-                    text-transparent whitespace-pre-wrap
-                    bg-transparent
-                    border-none
-                    resize-none
-                    absolute top-0 left-0 right-0 bottom-0 caret-white outline-none wrap-break-word
-                  "
+                    className="absolute top-0 right-0 bottom-0 left-0 z-2 mt-3 ml-3 min-h-[24px] min-w-[700px] resize-none overflow-hidden border-none bg-transparent wrap-break-word whitespace-pre-wrap text-transparent caret-white outline-none"
                 />
             </div>
 
-            <div id="buttons" className="flex mt-2 gap-2">
-                <button id="button-save" className="px-3 py-1 text-white bg-[#3c3854] rounded hover:bg-[#4a4564]">
+            <div id="buttons" className="mt-2 flex gap-2">
+                <button id="button-save" className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]">
                     Save
                 </button>
 
-                <button id="button-discard" className="px-3 py-1 text-white bg-[#3c3854] rounded hover:bg-[#4a4564]">
+                <button id="button-discard" className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]">
                     Discard
                 </button>
             </div>

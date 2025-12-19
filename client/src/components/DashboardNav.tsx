@@ -9,8 +9,8 @@ export default function DashboardNav() {
 
     return (
         <div id="container" className="">
-            <div id="container-menu" className={'fixed top-[-3rem] left-[-4rem] flex h-full pr-35 group'}>
-                <div id="container-devide" className="flex flex-col justify-center h-full gap-10">
+            <div id="container-menu" className={'group fixed top-[-3rem] left-[-4rem] flex h-full pr-35'}>
+                <div id="container-devide" className="flex h-full flex-col justify-center gap-10">
                     <svg
                         id="code"
                         className={`transition-transform duration-500 ${location.pathname === '/edit/dashboard' ? 'translate-x-20' : 'translate-x-0 group-hover:translate-x-20'}`}

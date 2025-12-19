@@ -52,8 +52,8 @@ export default function ToolsBar() {
         console.log(isRenaming, isAdding)
         console.log(resultMessages)
 
-        if (action === Actions.RENAME || action === Actions.ADDFILE || action === Actions.ADDFOLDER) setIsRenaming(true), setIsAdding(true), setIsSelecting(false)
-        else setIsRenaming(false), setIsAdding(false), setIsSelecting(true)
+        if (action === Actions.RENAME || action === Actions.ADDFILE || action === Actions.ADDFOLDER) (setIsRenaming(true), setIsAdding(true), setIsSelecting(false))
+        else (setIsRenaming(false), setIsAdding(false), setIsSelecting(true))
 
         setCurrentAction(action)
     }
@@ -67,7 +67,7 @@ export default function ToolsBar() {
         if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
         // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
 
-        setIsRenaming(false), setIsAdding(false)
+        ;(setIsRenaming(false), setIsAdding(false))
     }
 
     return (
@@ -80,11 +80,11 @@ export default function ToolsBar() {
                         type="text"
                         id="name"
                         name="name"
-                        className="w-[21.25rem] px-[0.8rem] py-[0.5rem] placeholder-[#868686] border-[#3D3A67] border rounded-md transition-[900ms] focus:border-[#7F7EFF] focus:outline-none"
+                        className="w-[21.25rem] rounded-md border border-[#3D3A67] px-[0.8rem] py-[0.5rem] placeholder-[#868686] transition-[900ms] focus:border-[#7F7EFF] focus:outline-none"
                     />
 
                     <div id="container-tools" className="self-center">
-                        <div id="tools" className="flex gap-[0.5rem] cursor-pointer">
+                        <div id="tools" className="flex cursor-pointer gap-[0.5rem]">
                             <img
                                 onClick={() => {
                                     handleAction(currentAction)
@@ -107,7 +107,7 @@ export default function ToolsBar() {
                 </div>
             ) : isSelecting ? (
                 <div id="container-tools" className="">
-                    <div id="tools" className="flex gap-[0.5rem] cursor-pointer">
+                    <div id="tools" className="flex cursor-pointer gap-[0.5rem]">
                         <img
                             onClick={() => {
                                 handleAction(currentAction)
@@ -131,10 +131,10 @@ export default function ToolsBar() {
                 ''
             )}
 
-            <div id="container-logs" className="flex flex-col font-medium overflow-y-scroll max-h-[120px] gap-1">
+            <div id="container-logs" className="flex max-h-[120px] flex-col gap-1 overflow-y-scroll font-medium">
                 {resultMessages.map((msg, i) => (
                     <div key={i} className="flex gap-[0.5rem]">
-                        <span className="bg-[#D9D9D9] text-[#1B1E24] font-extrabold px-1">log</span>
+                        <span className="bg-[#D9D9D9] px-1 font-extrabold text-[#1B1E24]">log</span>
                         <span>~</span>
                         <span>{msg}</span>
                     </div>
@@ -143,17 +143,17 @@ export default function ToolsBar() {
 
             {/* when it's clicked again: setAction = null */}
             <div id="container-tools" className="flex gap-[1rem]">
-                <div id="tools-file" className={`flex gap-[0.5rem] transition-opacity ${isOnFile === null ? 'opacity-40 cursor-default' : 'opacity-100 cursor-pointer'}`}>
+                <div id="tools-file" className={`flex gap-[0.5rem] transition-opacity ${isOnFile === null ? 'cursor-default opacity-40' : 'cursor-pointer opacity-100'}`}>
                     <img onClick={() => setAction(Actions.RENAME)} src={Rename} alt="rename" />
                     <img onClick={() => setAction(Actions.DOWNLOAD)} src={Download} alt="download" />
                     <img onClick={() => setAction(Actions.DELETE)} src={Erase} alt="erase" />
                 </div>
 
-                <div id="tools-slash" className={`font-extrabold transition-opacity cursor-default ${isOnFile === null ? 'opacity-40' : 'opacity-100'}`}>
+                <div id="tools-slash" className={`cursor-default font-extrabold transition-opacity ${isOnFile === null ? 'opacity-40' : 'opacity-100'}`}>
                     <span>/</span>
                 </div>
 
-                <div id="tools-folder" className={`flex gap-[0.5rem] transition-opacity ${isOnFile === false ? 'opacity-100 cursor-pointer' : 'opacity-40 cursor-default'}`}>
+                <div id="tools-folder" className={`flex gap-[0.5rem] transition-opacity ${isOnFile === false ? 'cursor-pointer opacity-100' : 'cursor-default opacity-40'}`}>
                     <img onClick={() => setAction(Actions.ADDFILE)} src={AddFile} alt="addFile" />
                     <img onClick={() => setAction(Actions.ADDFOLDER)} src={AddFolder} alt="addFolder" />
                     <img onClick={() => setAction(Actions.UPLOAD)} src={Upload} alt="upload" />
