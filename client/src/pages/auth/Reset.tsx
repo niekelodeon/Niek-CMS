@@ -38,15 +38,15 @@ export default function Reset() {
     }
 
     return (
-        <div id="container-page" className="flex w-screen h-screen bg-[linear-gradient(-45deg,#7F7EFF_30%,#1B1E24_40%)] items-center justify-center">
-            <div id="container-reset" className="flex flex-row h-[80%] w-[70%] mx-[5%] bg-[#272334] rounded-3xl">
-                <div id="container-left" className="flex flex-col w-1/2 my-[10%] m-[5%] items-center gap-[15%]">
+        <div id="container-page" className="flex h-screen w-screen items-center justify-center bg-[linear-gradient(-45deg,#7F7EFF_30%,#1B1E24_40%)]">
+            <div id="container-reset" className="mx-[5%] flex h-[80%] w-[70%] flex-row rounded-3xl bg-[#272334]">
+                <div id="container-left" className="m-[5%] my-[10%] flex w-1/2 flex-col items-center gap-[15%]">
                     <h1 id="header-reset" className="text-2xl font-medium text-[#7F7EFF]">
                         Reset
                     </h1>
 
                     <form onSubmit={reset} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
-                        <div id="container-input" className="flex flex-col relative gap-[0.6rem]">
+                        <div id="container-input" className="relative flex flex-col gap-[0.6rem]">
                             <div id="container-passwords" className="flex flex-col gap-[1.875rem]">
                                 <div id="container-password" className="relative flex flex-row">
                                     <input
@@ -55,9 +55,9 @@ export default function Reset() {
                                         type={showPassword ? 'text' : 'password'}
                                         id="password"
                                         name="password"
-                                        className="w-[21.25rem] px-[0.8rem] py-[0.5rem] placeholder-[#868686] border-[#3D3A67] border rounded-md transition-[900ms] focus:border-[#EDC79B] focus:outline-none"
+                                        className="w-[21.25rem] rounded-md border border-[#3D3A67] px-[0.8rem] py-[0.5rem] placeholder-[#868686] transition-[900ms] focus:border-[#EDC79B] focus:outline-none"
                                     />
-                                    <div id="container-showPassword" className="cursor-pointer absolute right-[1rem] top-[0.7rem]">
+                                    <div id="container-showPassword" className="absolute top-[0.7rem] right-[1rem] cursor-pointer">
                                         {showPassword ? (
                                             <svg onClick={toggleShowPassword} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clipPath="url(#clip0_273_61)">
@@ -110,9 +110,9 @@ export default function Reset() {
                                         type={showPassword ? 'text' : 'password'}
                                         id="password"
                                         name="password"
-                                        className="w-[21.25rem] px-[0.8rem] py-[0.5rem] placeholder-[#868686] border-[#3D3A67] border rounded-md transition-[900ms] focus:border-[#EDC79B] focus:outline-none"
+                                        className="w-[21.25rem] rounded-md border border-[#3D3A67] px-[0.8rem] py-[0.5rem] placeholder-[#868686] transition-[900ms] focus:border-[#EDC79B] focus:outline-none"
                                     />
-                                    <div id="container-showPassword" className="cursor-pointer absolute right-[1rem] top-[0.7rem]">
+                                    <div id="container-showPassword" className="absolute top-[0.7rem] right-[1rem] cursor-pointer">
                                         {showPassword ? (
                                             <svg onClick={toggleShowPassword} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clipPath="url(#clip0_273_61)">
@@ -169,7 +169,7 @@ export default function Reset() {
                             </div>
                         </div>
 
-                        <div id="container-reset" className="flex flex-col w-[21.25rem] transition-all gap-[1rem] duration-[900ms]">
+                        <div id="container-reset" className="flex w-[21.25rem] flex-col gap-[1rem] transition-all duration-[900ms]">
                             {success ? (
                                 <div id="message" className="text-sm text-[#63ff80]">
                                     {resetMessage}
@@ -180,14 +180,14 @@ export default function Reset() {
                                 </div>
                             )}
 
-                            <button type="submit" className="flex flex-start w-[21.25rem] px-[2.5rem] py-3 font-medium bg-[#7F7EFF] rounded-md transition-[900ms] cursor-pointer hover:bg-[#5D5CC9]">
+                            <button type="submit" className="flex-start flex w-[21.25rem] cursor-pointer rounded-md bg-[#7F7EFF] px-[2.5rem] py-3 font-medium transition-[900ms] hover:bg-[#5D5CC9]">
                                 Change!
                             </button>
                         </div>
                     </form>
                 </div>
 
-                <div id="container-right" className="flex w-1/2 my-[5%] mx-[5%] justify-center">
+                <div id="container-right" className="mx-[5%] my-[5%] flex w-1/2 justify-center">
                     <div id="container-image" className="h-full w-full rounded-3xl">
                         <Spline scene="https://prod.spline.design/SSrk4wMwV7g-0eW6/scene.splinecode" />
                     </div>

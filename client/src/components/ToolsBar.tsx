@@ -64,9 +64,9 @@ export default function ToolsBar() {
         if (action === Actions.DELETE) FolderTreeTools.Delete(selectedPaths, projectName, setFolderTree)
 
         if (action === Actions.ADDFILE) FolderTreeTools.addFile(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
-        if (action === Actions.ADDFOLDER) FolderTreeTools.addFolder(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
-        // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
-
+        if (action === Actions.ADDFOLDER)
+            FolderTreeTools.addFolder(currentPath, inputValue, currentNode, setCurrentNode, setCurrentPath, setIsOnFile)
+            // if (action === Actions.UPLOAD) FolderTreeTools.Upload(File)
         ;(setIsRenaming(false), setIsAdding(false))
     }
 
