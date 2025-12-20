@@ -73,14 +73,14 @@ export default function ToolsBar() {
     return (
         <div id="container" className="flex flex-col gap-[1rem]">
             {isRenaming || isAdding ? (
-                <div id="container-input" className="flex gap-[1.2rem]">
+                <div id="container-input" className="flex gap-[1.2rem] pr-10">
                     <input
                         onChange={e => setInputValue(e.target.value)}
                         placeholder="name"
                         type="text"
                         id="name"
                         name="name"
-                        className="w-[21.25rem] rounded-md border border-[#3D3A67] px-[0.8rem] py-[0.5rem] placeholder-[#868686] transition-[900ms] focus:border-[#7F7EFF] focus:outline-none"
+                        className="w-full rounded-md border border-[#3D3A67] px-[0.8rem] py-[0.5rem] placeholder-[#868686] transition-[900ms] focus:border-[#7F7EFF] focus:outline-none"
                     />
 
                     <div id="container-tools" className="self-center">

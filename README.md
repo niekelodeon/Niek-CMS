@@ -72,4 +72,4 @@ privateKey = your_jwt_privatekey
 
 ## Setting up a user: 
 
-Go to localhost:(portnumber)/register and create one, if succesfull go to localhost:(portnumber)/login, you will be redirected to localhost:(portnumber)/edit/dashboard and you can start from there!
+Go to localhost:(portnumber)/register and create one, if succesfull go to localhost:(portnumber)/login, you will be redirected to localhost:(portnumber)/edit/dashboard and you are ready to start editing!

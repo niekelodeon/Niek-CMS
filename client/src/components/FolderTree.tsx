@@ -95,7 +95,7 @@ export default function FolderTree() {
         }
 
         return (
-            <div id="container-tree" className="min-width-[500px] flex cursor-default flex-col" key={nextNode.data.name} draggable>
+            <div id="container-tree" className="flex cursor-default flex-col" key={nextNode.data.name} draggable>
                 <div id="container-directory" className="flex w-fit cursor-pointer gap-3 rounded py-1 transition-all duration-150">
                     {isSelecting ? (
                         <input
@@ -129,7 +129,7 @@ export default function FolderTree() {
     }
 
     return (
-        <div id="container-main" className="flex w-fit min-w-[50%] flex-col gap-10">
+        <div id="container-main" className="flex w-full flex-col gap-10">
             {folderTree ? <div className="flex max-h-[75vh] min-h-[75vh] flex-col justify-between overflow-auto">{renderTree(folderTree)}</div> : <div>Loading...</div>}
 
             <ToolsBar />
