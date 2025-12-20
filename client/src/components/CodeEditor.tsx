@@ -61,6 +61,7 @@ export default function CodeEditor() {
             </div>
 
             <div id="buttons" className="mt-2 flex gap-2">
+                {/* Add functionallity to these buttons */}
                 <button id="button-save" className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]">
                     Save
                 </button>

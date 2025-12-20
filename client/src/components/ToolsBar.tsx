@@ -71,6 +71,7 @@ export default function ToolsBar() {
     }
 
     return (
+        // if the action corresponds to the image, highlight it
         <div id="container" className="flex flex-col gap-[1rem]">
             {isRenaming || isAdding ? (
                 <div id="container-input" className="flex gap-[1.2rem] pr-10">
