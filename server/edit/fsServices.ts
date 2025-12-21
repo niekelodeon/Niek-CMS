@@ -53,16 +53,21 @@ export class fsServices {
     }
 
     public static async saveFile(path: string, content: string) {
+        console.log(atob(content))
+
         try {
             if (!fs.existsSync(path)) {
                 return { success: false, function: this.saveFile.name, message: 'File does not exist', logMessage: 'File does not exist' }
             } else {
                 content = atob(content)
 
+                console.log(content)
+
                 await fs.writeFile(path, content)
-                return { success: true, function: this.saveFile.name, message: 'File content changed', logMessage: 'File content changed' }
+                return { success: true, function: this.saveFile.name, message: 'File content saved', logMessage: 'File content saved' }
             }
         } catch (err) {
+            console.log(err)
             const error = await errorHandling.getSpecificError(err.code)
             return { success: false, function: this.saveFile.name, message: error, logMessage: err.message }
         }

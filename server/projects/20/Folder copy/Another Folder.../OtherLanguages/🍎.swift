@@ -32,6 +32,7 @@ for row in matrix {
 struct Person {
     let name: String
     let age: Int
+    let location: String
 }
 
 let person = Person(name: "Alice", age: 30)

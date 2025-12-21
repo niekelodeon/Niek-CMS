@@ -25,7 +25,7 @@ export class Database {
             id: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
-                autoIncrement: true,
+                autoIncrement: true,df
                 primaryKey: true,
             },
             email: {

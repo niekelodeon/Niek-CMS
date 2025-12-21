@@ -31,10 +31,10 @@ export default function FolderTree() {
     const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
 
     async function clickFile(filePath: string, currentNode: Node<FolderData>) {
-        const fileContent: any = await editAPI.getFile(filePath)
+        const fileContent: any = await FolderTreeTools.getFile(filePath)
         setCurrentNode(currentNode)
         setCurrentPath(filePath)
-        setFileContent(atob(fileContent.data))
+        setFileContent(fileContent)
         setIsOnFile(true)
     }
 

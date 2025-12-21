@@ -41,5 +41,6 @@ export class Variables {
         'md',
         'markdown',
         'atom',
+        'test',
     ]
 }

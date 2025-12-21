@@ -16,7 +16,7 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 
 ---
 
-## 🚀 Quick Start  
+## ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Quick Start  
 
 1. **Clone and install**
    ```bash
@@ -29,7 +29,7 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 websiteName = your_website_url
 
 # server
-serverPort = 8000
+serverPort = 8000123
 
 # mail server (setup using mailhog docker image)
 mailHost = 0.0.0.0

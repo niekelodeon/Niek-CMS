@@ -3,6 +3,8 @@ import { useAtom } from 'jotai'
 
 import { currentPathAtom, fileContentAtom, isOnFileAtom } from '../utils/atoms'
 
+import { FolderTreeTools } from '../utils/functions/TreeFunctions'
+
 import { EditorFunctions } from '../utils/functions/EditorFunctions'
 
 import hljs from 'highlight.js'
@@ -30,6 +32,15 @@ export default function CodeEditor() {
         setFileContent(e.target.value)
     }
 
+    async function saveCode(currentPath: string, fileContent: string) {
+        FolderTreeTools.saveFile(currentPath, btoa(fileContent))
+    }
+
+    async function discardCode() {
+        const fileContent: any = FolderTreeTools.getFile(currentPath)
+        setFileContent(fileContent)
+    }
+
     useLayoutEffect(() => {
         if (preRef.current && textareaRef.current) {
             const pre = preRef.current
@@ -44,9 +55,9 @@ export default function CodeEditor() {
     }, [highlightedCode])
 
     return (
-        <div id="container-editor" className="flex max-h-[85vh] w-full flex-col gap-10">
+        <div id="container-editor" className="flex max-h-[85vh] w-full flex-col gap-5">
             <div className="relative max-h-[75vh] min-h-[75vh] overflow-auto bg-[#272334]">
-                <pre id="highlighted" ref={preRef} spellCheck="false" className="hljs pointer-events-none relative top-0 right-0 bottom-0 z-1 mt-3 ml-3 min-h-[24px] min-w-[700px] wrap-break-word whitespace-pre-wrap">
+                <pre id="highlighted" ref={preRef} spellCheck="false" className="hljs pointer-events-none relative top-0 right-0 bottom-0 z-1 mt-3 ml-3 min-h-[24px] min-w-[600px] wrap-break-word whitespace-pre-wrap">
                     <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
                 </pre>
 
@@ -56,17 +67,29 @@ export default function CodeEditor() {
                     spellCheck="false"
                     onChange={editorOnChange}
                     value={fileContent}
-                    className="absolute top-0 right-0 bottom-0 left-0 z-2 mt-3 ml-3 min-h-[24px] min-w-[700px] resize-none overflow-hidden border-none bg-transparent wrap-break-word whitespace-pre-wrap text-transparent caret-white outline-none"
+                    className="absolute top-0 right-0 bottom-0 left-0 z-2 mt-3 ml-3 min-h-[24px] min-w-[60px] resize-none overflow-hidden border-none bg-transparent wrap-break-word whitespace-pre-wrap text-transparent caret-white outline-none"
                 />
             </div>
 
             <div id="buttons" className="mt-2 flex gap-2">
                 {/* Add functionallity to these buttons */}
-                <button id="button-save" className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]">
+                <button
+                    onClick={() => {
+                        saveCode(currentPath, fileContent)
+                    }}
+                    id="button-save"
+                    className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]"
+                >
                     Save
                 </button>
 
-                <button id="button-discard" className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]">
+                <button
+                    onClick={() => {
+                        discardCode()
+                    }}
+                    id="button-discard"
+                    className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]"
+                >
                     Discard
                 </button>
             </div>

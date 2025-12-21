@@ -130,7 +130,7 @@ editRoutes.post('/saveFile', async (req: Request, res: Response) => {
     let result = null
 
     try {
-        result = await fsServices.saveFile(req.body.localDir + req.body.path, req.body.content)
+        result = await fsServices.saveFile(req.body.path, req.body.content)
 
         if (!result.success) {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.logMessage)

@@ -21,7 +21,7 @@
         items = [...items].sort(() => Math.random() - 0.5);
     }
 
-    onMount(() => {
+    onMount(() => {random
         console.log('Svelte component mounted!');
     });
     </script>
@@ -33,7 +33,7 @@
     <button on:click={addItem}>Add Item</button>
     <button on:click={shuffleItems}>Shuffle Items</button>
 
-    {#if items.length > 0}
+    {#if items.length > 0}123
         <ul>
         {#each items as item, index}
             <li style="margin: 0.5rem 0; display: flex; justify-content: space-between; align-items: center;">

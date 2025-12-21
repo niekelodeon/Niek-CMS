@@ -15,24 +15,27 @@ export class FolderTreeTools {
             if (!getFileObject.result) {
                 return getFileObject.message
             } else {
-                return getFileObject.data
+                const content = atob(getFileObject.data)
+                return content
             }
         } catch (err) {
             return err
         }
     }
 
-    public static async saveFile(path: string, editedContent: string): Promise<string> {
+    public static async saveFile(path: string, editedContent: string): Promise<any> {
+        const store = getDefaultStore()
+
         try {
             const saveFileObject: EditAPIResponse = await editAPI.saveFile(path, editedContent)
 
             if (!saveFileObject.result) {
-                return saveFileObject.message
+                store.set(resultMessagesAtom, prev => [...prev, saveFileObject.message])
             } else {
-                return saveFileObject.message
+                store.set(resultMessagesAtom, prev => [...prev, saveFileObject.message])
             }
         } catch (err) {
-            return err
+            store.set(resultMessagesAtom, prev => [...prev, String(err)])
         }
     }
 
