@@ -72,7 +72,6 @@ export default function CodeEditor() {
             </div>
 
             <div id="buttons" className="mt-2 flex gap-2">
-                {/* Add functionallity to these buttons */}
                 <button
                     onClick={() => {
                         saveCode(currentPath, fileContent)
