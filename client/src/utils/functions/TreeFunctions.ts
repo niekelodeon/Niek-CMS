@@ -1,6 +1,6 @@
 import { getDefaultStore } from 'jotai'
 
-import { currentNodeAtom, resultMessagesAtom } from '../atoms'
+import { currentNodeAtom, resultMessageAtom } from '../atoms'
 
 import { editAPI } from '../API'
 
@@ -30,12 +30,12 @@ export class FolderTreeTools {
             const saveFileObject: EditAPIResponse = await editAPI.saveFile(path, editedContent)
 
             if (!saveFileObject.result) {
-                store.set(resultMessagesAtom, prev => [...prev, saveFileObject.message])
+                store.set(resultMessageAtom, saveFileObject.message)
             } else {
-                store.set(resultMessagesAtom, prev => [...prev, saveFileObject.message])
+                store.set(resultMessageAtom, saveFileObject.message)
             }
         } catch (err) {
-            store.set(resultMessagesAtom, prev => [...prev, String(err)])
+            store.set(resultMessageAtom, String(err))
         }
     }
 
@@ -44,7 +44,7 @@ export class FolderTreeTools {
 
         try {
             const renameObject: RenameResponse = await editAPI.Rename(path, newName)
-            store.set(resultMessagesAtom, prev => [...prev, renameObject.message])
+            store.set(resultMessageAtom, renameObject.message)
 
             if (renameObject.result) {
                 currentNode.data.name = newName
@@ -54,7 +54,7 @@ export class FolderTreeTools {
 
             return renameObject.result
         } catch (err) {
-            store.set(resultMessagesAtom, prev => [...prev, String(err)])
+            store.set(resultMessageAtom, String(err))
             return false
         }
     }
@@ -64,7 +64,7 @@ export class FolderTreeTools {
 
         try {
             const addFileObject: EditAPIResponse = await editAPI.addFile(path, fileName)
-            store.set(resultMessagesAtom, prev => [...prev, addFileObject.message])
+            store.set(resultMessageAtom, addFileObject.message)
 
             if (addFileObject.result) {
                 const newPath = path.endsWith('/') ? path + fileName : path + '/' + fileName
@@ -92,7 +92,7 @@ export class FolderTreeTools {
 
             return addFileObject.result
         } catch (err) {
-            store.set(resultMessagesAtom, prev => [...prev, String(err)])
+            store.set(resultMessageAtom, String(err))
             return false
         }
     }
@@ -102,7 +102,7 @@ export class FolderTreeTools {
 
         try {
             const addFileObject: EditAPIResponse = await editAPI.addFolder(path + '/' + folderName)
-            store.set(resultMessagesAtom, prev => [...prev, addFileObject.message])
+            store.set(resultMessageAtom, addFileObject.message)
 
             if (addFileObject.result) {
                 const newPath = path.endsWith('/') ? path + folderName : path + '/' + folderName
@@ -130,7 +130,7 @@ export class FolderTreeTools {
 
             return addFileObject.result
         } catch (err) {
-            store.set(resultMessagesAtom, prev => [...prev, String(err)])
+            store.set(resultMessageAtom, String(err))
             return false
         }
     }

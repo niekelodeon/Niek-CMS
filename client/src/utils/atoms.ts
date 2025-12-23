@@ -19,4 +19,4 @@ export const currentActionAtom = atom<Actions | null>()
 export const setIsSelectingAtom = atom<boolean | null>()
 export const selectedPathsAtom = atom<string[]>([])
 
-export const resultMessagesAtom = atom<string[]>([])
+export const resultMessageAtom = atom<string>()

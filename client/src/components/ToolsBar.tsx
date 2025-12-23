@@ -5,7 +5,7 @@ import { Actions } from '../utils/interfaces'
 
 import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../utils/interfaces'
 
-import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, selectedPathsAtom, setIsSelectingAtom, resultMessagesAtom } from '../utils/atoms'
+import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, selectedPathsAtom, setIsSelectingAtom, resultMessageAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
@@ -40,7 +40,7 @@ export default function ToolsBar() {
     const [isSelecting, setIsSelecting] = useAtom(setIsSelectingAtom)
     const [selectedPaths, setSelectedPaths] = useAtom(selectedPathsAtom)
 
-    const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
+    const [resultMessage, setResultMessage] = useAtom(resultMessageAtom)
 
     const [isRenaming, setIsRenaming] = useState<boolean>(false)
     const [isAdding, setIsAdding] = useState<boolean>(false)
@@ -50,7 +50,7 @@ export default function ToolsBar() {
     function setAction(action: Actions) {
         console.log(action)
         console.log(isRenaming, isAdding)
-        console.log(resultMessages)
+        console.log(resultMessage)
 
         if (action === Actions.RENAME || action === Actions.ADDFILE || action === Actions.ADDFOLDER) (setIsRenaming(true), setIsAdding(true), setIsSelecting(false))
         else (setIsRenaming(false), setIsAdding(false), setIsSelecting(true))
@@ -72,7 +72,7 @@ export default function ToolsBar() {
 
     return (
         // if the action corresponds to the image, highlight it
-        <div id="container" className="flex flex-col gap-[1rem]">
+        <div id="container" className="flex flex-col gap-[1.25rem]">
             {isRenaming || isAdding ? (
                 <div id="container-input" className="flex gap-[1.2rem] pr-10">
                     <input
@@ -132,16 +132,6 @@ export default function ToolsBar() {
                 ''
             )}
 
-            <div id="container-logs" className="flex max-h-[120px] flex-col gap-1 overflow-y-scroll font-medium">
-                {resultMessages.map((msg, i) => (
-                    <div key={i} className="flex gap-[0.5rem]">
-                        <span className="bg-[#D9D9D9] px-1 font-extrabold text-[#1B1E24]">log</span>
-                        <span>~</span>
-                        <span>{msg}</span>
-                    </div>
-                ))}
-            </div>
-
             {/* when it's clicked again: setAction = null */}
             <div id="container-tools" className="flex gap-[1rem]">
                 <div id="tools-file" className={`flex gap-[0.5rem] transition-opacity ${isOnFile === null ? 'cursor-default opacity-40' : 'cursor-pointer opacity-100'}`}>
@@ -158,6 +148,14 @@ export default function ToolsBar() {
                     <img onClick={() => setAction(Actions.ADDFILE)} src={AddFile} alt="addFile" />
                     <img onClick={() => setAction(Actions.ADDFOLDER)} src={AddFolder} alt="addFolder" />
                     <img onClick={() => setAction(Actions.UPLOAD)} src={Upload} alt="upload" />
+                </div>
+            </div>
+
+            <div id="container-logs" className="flex flex-col gap-1 font-medium">
+                <div className="flex gap-[0.5rem]">
+                    <span className="bg-[#D9D9D9] px-1 font-extrabold text-[#1B1E24]">log</span>
+                    <span>~</span>
+                    <span>{resultMessage}</span>
                 </div>
             </div>
         </div>

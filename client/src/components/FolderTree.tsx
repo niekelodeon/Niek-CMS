@@ -5,7 +5,7 @@ import ToolsBar from '../components/ToolsBar'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
 
-import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, setIsSelectingAtom, selectedPathsAtom, resultMessagesAtom } from '../utils/atoms'
+import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, setIsSelectingAtom, selectedPathsAtom, resultMessageAtom } from '../utils/atoms'
 
 import { editAPI } from '../utils/API'
 
@@ -28,7 +28,7 @@ export default function FolderTree() {
     const [isSelecting, setIsSelecting] = useAtom(setIsSelectingAtom)
     const [selectedPaths, setSelectedPaths] = useAtom(selectedPathsAtom)
 
-    const [resultMessages, setResultMessages] = useAtom(resultMessagesAtom)
+    const [resultMessage, setResultMessage] = useAtom(resultMessageAtom)
 
     async function clickFile(filePath: string, currentNode: Node<FolderData>) {
         const fileContent: any = await FolderTreeTools.getFile(filePath)
