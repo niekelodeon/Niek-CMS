@@ -9,7 +9,7 @@ export default function DashboardNav() {
 
     return (
         <div id="container" className="">
-            <div id="container-menu" className={'group fixed top-[-3rem] left-[-4rem] flex h-full pr-35'}>
+            <div id="container-menu" className={'group fixed top-[-3rem] left-[-4rem] flex h-full pr-25'}>
                 <div id="container-devide" className="flex h-full flex-col justify-center gap-10">
                     <svg
                         id="code"

@@ -219,7 +219,6 @@ export default function ToolsBar() {
                                 className="cursor-pointer stroke-current transition-colors hover:text-[#7F7EFF]"
                                 onClick={() => {
                                     handleAction(currentAction)
-                                    setAction(null)
                                 }}
                             >
                                 <path d="M4 12L8.94975 16.9497L19.5568 6.34314" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -253,9 +252,6 @@ export default function ToolsBar() {
                             className="cursor-pointer stroke-current transition-colors hover:text-[#7F7EFF]"
                             onClick={() => {
                                 handleAction(currentAction)
-                                setAction(null)
-                                setIsSelecting(false)
-                                setSelectedPaths([])
                             }}
                         >
                             <path d="M4 12L8.94975 16.9497L19.5568 6.34314" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
