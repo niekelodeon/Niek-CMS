@@ -59,6 +59,7 @@ export class FolderTreeTools {
         }
     }
 
+    // Don't change the currentNode or currentPath, or make it wait half a second and not immediately
     public static async addFile(path: string, fileName: string, parentNode: Node<FolderData>, setCurrentNode: any, setCurrentPath: any, setIsOnFile: any): Promise<boolean> {
         const store = getDefaultStore()
 
@@ -97,6 +98,7 @@ export class FolderTreeTools {
         }
     }
 
+    // Don't change the currentNode or currentPath, or make it wait half a second and not immediately
     public static async addFolder(path: string, folderName: string, parentNode: Node<FolderData>, setCurrentNode: any, setCurrentPath: any, setIsOnFile: any): Promise<boolean> {
         const store = getDefaultStore()
 
