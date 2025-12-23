@@ -58,7 +58,7 @@ export default function FolderTree() {
     useEffect(() => {
         const fetchTree = async () => {
             // localStorage.setItem('Project', 'Dir1')
-            setProjectName(localStorage.getItem('Project') || '')
+            // setProjectName(localStorage.getItem('Project') || '')
             setIsOnFile(null)
 
             const folderTree: Node<FolderData> | string = await editAPI.folderTree(projectName)

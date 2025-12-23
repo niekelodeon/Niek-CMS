@@ -183,7 +183,7 @@ export class fsServices {
             }
         }
 
-        return { function: this.Delete.name, message: results }
+        return { success: true, function: this.Delete.name, message: "Succes to remove items" }
     }
 
     public static async Download(paths: string[], res: Response) {

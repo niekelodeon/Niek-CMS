@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono', monospace;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: #1b1e24;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
