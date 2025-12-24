@@ -71,23 +71,23 @@ export default function CodeEditor() {
                 />
             </div>
 
-            <div id="buttons" className="mt-2 flex gap-2">
+            <div id="buttons" className="mt-2 flex gap-5">
                 <button
+                    id="button-save"
+                    className="cursor-pointer rounded-md bg-[#7F7EFF] px-4 py-1.5 font-medium text-white transition-colors hover:bg-[#5D5CC9]"
                     onClick={() => {
                         saveCode(currentPath, fileContent)
                     }}
-                    id="button-save"
-                    className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]"
                 >
                     Save
                 </button>
 
                 <button
+                    id="button-discard"
+                    className="cursor-pointer rounded-md bg-[#7F7EFF] px-4 py-1.5 font-medium text-white transition-colors hover:bg-[#5D5CC9]"
                     onClick={() => {
                         discardCode()
                     }}
-                    id="button-discard"
-                    className="rounded bg-[#3c3854] px-3 py-1 text-white hover:bg-[#4a4564]"
                 >
                     Discard
                 </button>
