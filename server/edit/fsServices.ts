@@ -179,11 +179,11 @@ export class fsServices {
                 results.success.push(`Succes to delete: ${path}`)
             } catch (err) {
                 const error = await errorHandling.getSpecificError(err.code)
-                results.success.push(`Failed to delete: ${path}`)
+                results.success.push(`Failed to delete: ${path}. ${error}`)
             }
         }
 
-        return { success: true, function: this.Delete.name, message: "Succes to remove items" }
+        return { success: true, function: this.Delete.name, message: "Succes to delete item(s)" }
     }
 
     public static async Download(paths: string[], res: Response) {

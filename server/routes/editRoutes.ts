@@ -249,10 +249,10 @@ editRoutes.post('/Delete', async (req: Request, res: Response) => {
 
         if (!result.success) {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message)
-            res.status(400).json(result.message)
+            res.status(400).json({ message: result.message })
         } else {
             loggerService.Logger('INFO', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), result.function, result.message)
-            res.status(200).json(result.message)
+            res.status(200).json({ message: result.message })
         }
     } catch (err) {
         loggerService.Logger('WARNING', req.body.email, req.ip, req.route.path, GlobalServices.filePath(__dirname, __filename), fsServices.Delete.name, err.message)

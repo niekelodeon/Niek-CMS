@@ -56,7 +56,7 @@ export default function CodeEditor() {
 
     return (
         <div id="container-editor" className="flex max-h-[85vh] w-full flex-col gap-5">
-            <div className="relative max-h-[75vh] min-h-[75vh] overflow-auto bg-[#272334]">
+            <div className="relative max-h-[75vh] min-h-[75vh] overflow-auto rounded-md bg-[#272334]">
                 <pre id="highlighted" ref={preRef} spellCheck="false" className="hljs pointer-events-none relative top-0 right-0 bottom-0 z-1 mt-3 ml-3 min-h-[24px] min-w-[600px] wrap-break-word whitespace-pre-wrap">
                     <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
                 </pre>
