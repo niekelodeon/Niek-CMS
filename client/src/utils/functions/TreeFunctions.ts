@@ -7,6 +7,7 @@ import { editAPI } from '../API'
 import { Node } from '../interfaces'
 import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../interfaces'
 
+// optimize resultMessage return statement
 export class FolderTreeTools {
     public static async getFile(path: string): Promise<string> {
         try {

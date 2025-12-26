@@ -27,7 +27,6 @@ rename, download, delete, add file / folder, or upload under a specific folder.
 1. **Clone and install**
 ```bash
 git clone <github.com/niekelodeon/Niek-CMS> orbit-cms && cd orbit-cms
-npm install
 ```
 
 2. **Create your .env file**
@@ -60,11 +59,15 @@ privateKey = your_jwt_privatekey
 3. **Run the application**
 ```cd server```
 
+```npm install```
+
 ```npm run dev```
 
 **&**
 
 ```cd client```
+
+```npm install```
 
 ```npm run dev```
 

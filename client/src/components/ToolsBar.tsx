@@ -3,8 +3,6 @@ import { useAtom } from 'jotai'
 
 import { Actions } from '../utils/interfaces'
 
-import type { FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, Delete, DeleteResponse, DownloadResponse } from '../utils/interfaces'
-
 import { projectNameAtom, folderTreeAtom, currentPathAtom, currentNodeAtom, fileContentAtom, isOnFileAtom, currentActionAtom, selectedPathsAtom, setIsSelectingAtom, resultMessageAtom } from '../utils/atoms'
 
 import { FolderTreeTools } from '../utils/functions/TreeFunctions'
@@ -277,7 +275,7 @@ export default function ToolsBar() {
 
             <div id="container-logs" className="flex flex-col gap-1 font-medium">
                 <div className="flex gap-[0.5rem]">
-                    <span className="bg-[#D9D9D9] px-1 font-extrabold text-[#1B1E24]">log</span>
+                    <span className="bg-[#D9D9D9] px-1 font-extrabold text-[#272334]">log</span>
                     <span>~</span>
                     <span>{resultMessage}</span>
                 </div>
