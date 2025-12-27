@@ -100,9 +100,11 @@ export interface ResetResponse {
     message: string
 }
 
+// Settings:
 export interface Connection {
     id: number
     userId: number
+    name: string
     host: string
     user: string
     password: string

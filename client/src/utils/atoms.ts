@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 
 import { Node, Actions } from '../utils/interfaces'
-import type { FolderData } from '../utils/interfaces'
+import type { FolderData, Connection } from '../utils/interfaces'
 
 export const projectNameAtom = atom<string>('')
 
@@ -20,3 +20,5 @@ export const setIsSelectingAtom = atom<boolean | null>()
 export const selectedPathsAtom = atom<string[]>([])
 
 export const resultMessageAtom = atom<string>()
+
+export const connectionAtom = atom<Connection>()

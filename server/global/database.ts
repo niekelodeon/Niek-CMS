@@ -66,6 +66,10 @@ export class Database {
                     key: 'id',
                 },
             },
+            name: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
             host: {
                 type: DataTypes.STRING,
                 allowNull: false,
