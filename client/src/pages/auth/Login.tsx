@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { type LoginResponse } from '../../utils/interfaces'
+import { type AuthResponse } from '../../utils/interfaces'
 
 import { authAPI } from '../../utils/API'
 
@@ -24,7 +24,7 @@ export default function Login() {
     async function login(e: any) {
         e.preventDefault()
 
-        const loginObject: LoginResponse = await authAPI.Login(email, password)
+        const loginObject: AuthResponse = await authAPI.Login(email, password)
 
         if (loginObject.result) {
             document.cookie = `token=${loginObject.token}; path=/; max-age=86400; SameSite=Lax`

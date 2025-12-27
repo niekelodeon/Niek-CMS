@@ -1,23 +1,7 @@
 import { parse } from 'flatted'
 
 import { Node } from './interfaces'
-import type {
-    RegisterResponse,
-    LoginResponse,
-    ForgotResponse,
-    ResetResponse,
-    FolderData,
-    EditAPIResponse,
-    RenameResponse,
-    GetFileResponse,
-    Move,
-    MoveResponse,
-    UploadResponse,
-    Delete,
-    DeleteResponse,
-    Download,
-    DownloadResponse,
-} from './interfaces'
+import type { AuthResponse, ResetResponse, FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, UploadResponse, Delete, DeleteResponse, Download, DownloadResponse } from './interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000'
@@ -43,7 +27,7 @@ class APIBase {
 }
 
 export class authAPI {
-    public static async Register(email: string, password: string): Promise<RegisterResponse> {
+    public static async Register(email: string, password: string): Promise<AuthResponse> {
         const body: any = { email: email, password: password }
 
         try {
@@ -56,7 +40,7 @@ export class authAPI {
         }
     }
 
-    public static async Login(email: string, password: string): Promise<LoginResponse> {
+    public static async Login(email: string, password: string): Promise<AuthResponse> {
         const body: any = { email: email, password: password }
 
         try {
@@ -69,7 +53,7 @@ export class authAPI {
         }
     }
 
-    public static async Forgot(email: string): Promise<ForgotResponse> {
+    public static async Forgot(email: string): Promise<ResetResponse> {
         const body: any = { email: email }
 
         try {

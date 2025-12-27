@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { type RegisterResponse } from '../../utils/interfaces'
+import { type AuthResponse } from '../../utils/interfaces'
 
 import { authAPI } from '../../utils/API'
 
@@ -36,7 +36,7 @@ export default function Register() {
         } else {
             setPassword(password)
 
-            const registerObject: RegisterResponse = await authAPI.Register(email, password)
+            const registerObject: AuthResponse = await authAPI.Register(email, password)
 
             if (registerObject.result) {
                 document.cookie = `token=${registerObject.token}; path=/; max-age=86400; SameSite=Lax`

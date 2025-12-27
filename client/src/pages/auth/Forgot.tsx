@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { type ForgotResponse } from '../../utils/interfaces'
+import { type ResetResponse } from '../../utils/interfaces'
 
 import { authAPI } from '../../utils/API'
 
@@ -18,7 +18,7 @@ export default function Forgot() {
     async function forgot(e: any) {
         e.preventDefault()
 
-        const forgotObject: ForgotResponse = await authAPI.Forgot(email)
+        const forgotObject: ResetResponse = await authAPI.Forgot(email)
         setSuccess(forgotObject.result)
         setForgotMessage(forgotObject.message)
     }

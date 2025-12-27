@@ -89,26 +89,22 @@ export interface DownloadResponse {
 }
 
 // Authentication:
-// combine into one
-export interface LoginResponse {
+export interface AuthResponse {
     result: boolean
     message?: string
     token?: string
-}
-
-export interface RegisterResponse {
-    result: boolean
-    message?: string
-    token?: string
-}
-
-// combine into one
-export interface ForgotResponse {
-    result: boolean
-    message: string
 }
 
 export interface ResetResponse {
     result: boolean
     message: string
+}
+
+export interface Connection {
+    id: number
+    userId: number
+    host: string
+    user: string
+    password: string
+    port: number
 }
