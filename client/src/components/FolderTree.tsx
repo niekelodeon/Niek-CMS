@@ -69,6 +69,8 @@ export default function FolderTree() {
     }, [])
 
     function FileItem({ currentNode, clickFile }: FileItemProps) {
+        // className={`cursor-pointer  ${currentAction === Actions.RENAME ? 'text-[#7F7EFF]' : 'text-white'} `}
+        //                         onClick={isOnFile !== null ? () => setAction(Actions.RENAME) : null}
         return (
             <div id="container-item" className={`flex w-fit cursor-pointer gap-3 rounded py-1 transition-all duration-150 ${currentPath === currentNode.data.path + '/' + currentNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}`}>
                 {isSelecting ? (
@@ -82,7 +84,7 @@ export default function FolderTree() {
                     ''
                 )}
 
-                <div id="file" className="" onClick={() => clickFile(currentNode.data.path + '/' + currentNode.data.name, currentNode)}>
+                <div id="file" className="transition-colors hover:text-[#7F7EFF]" onClick={() => clickFile(currentNode.data.path + '/' + currentNode.data.name, currentNode)}>
                     {currentNode.data.name}
                 </div>
             </div>
@@ -110,7 +112,7 @@ export default function FolderTree() {
 
                     <div
                         id="folder"
-                        className={currentPath === nextNode.data.path + '/' + nextNode.data.name ? 'text-[#7F7EFF]' : 'text-white'}
+                        className={`transition-colors hover:text-[#7F7EFF] ${currentPath === `${nextNode.data.path}/${nextNode.data.name}` ? 'text-[#7F7EFF]' : 'text-white'}`}
                         onClick={() => clickFolder(nextNode.data.path + '/' + (nextNode.parent != null ? nextNode.data.name : ''), nextNode)}
                     >
                         {nextNode.data.name}
