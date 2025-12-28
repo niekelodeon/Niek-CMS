@@ -11,9 +11,7 @@ export default function Connections() {
     // Turn into atoms:
     const [connection, setConnection] = useAtom(connectionAtom)
 
-    // fetch the the connection first, if null just show empty on saving the connection, run backend function.
-
-    // on submitting form update the connection with whatever data was provided and change it in the database.
+    // fetch the the connection data first, just show them as empty when displaying if there is none. run backend function settingsFunctions.createConnection when "updating or creating" one.
 
     useEffect(() => {
         console.log(settingsFunctions.getConnection())
