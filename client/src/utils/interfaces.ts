@@ -110,3 +110,8 @@ export interface Connection {
     user: string
     password: string
 }
+
+export interface GetConnectionResponse {
+    message?: string
+    data?: Connection
+}

@@ -1,7 +1,7 @@
 import { parse } from 'flatted'
 
 import { Node } from './interfaces'
-import type { AuthResponse, ResetResponse, FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, UploadResponse, Delete, DeleteResponse, Download, DownloadResponse } from './interfaces'
+import type { AuthResponse, ResetResponse, GetConnectionResponse, FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, UploadResponse, Delete, DeleteResponse, Download, DownloadResponse } from './interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000'
@@ -76,6 +76,19 @@ export class authAPI {
         } catch (err) {
             console.error('API fetch error: ', err)
             return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+}
+
+export class connectionAPI {
+    public static async getConnection(): Promise<GetConnectionResponse> {
+        try {
+            let response = await APIBase.fetchData('/connection/getConnection', 'POST')
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error('API fetch error: ', err)
+            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 }

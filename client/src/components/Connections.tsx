@@ -11,6 +11,8 @@ export default function Connections() {
 
     // fetch the the connection first, if null just show empty on saving the connection, run backend function.
 
+    // on submitting form update the connection with whatever data was provided and change it in the database.
+
     return (
         <div id="container-connection" className="flex flex-col">
             {/* <form onSubmit={login} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]"></form> */}
@@ -81,16 +83,5 @@ export default function Connections() {
                 </div>
             </form>
         </div>
-
-        // Settings:
-        // export interface Connection {
-        //     id: number
-        //     userId: number
-        //     name: string
-        //     host: string
-        //     port: number
-        //     user: string
-        //     password: string
-        // }
     )
 }
