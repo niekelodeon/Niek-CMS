@@ -47,7 +47,7 @@ app.use('/auth/', authRoutes)
 import { editRoutes } from './routes/editRoutes'
 app.use('/edit/', editRoutes)
 
-import { settingsRoutes } from './routes/connectionRoutes'
+import { settingsRoutes } from './routes/settingsRoutes'
 app.use('/settings/', settingsRoutes)
 
 app.listen(port, () => {
