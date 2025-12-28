@@ -106,7 +106,7 @@ export interface Connection {
     userId: number
     name: string
     host: string
+    port: number
     user: string
     password: string
-    port: number
 }

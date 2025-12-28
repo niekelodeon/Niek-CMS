@@ -74,16 +74,16 @@ export class Database {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
+            port: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
             user: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
             password: {
                 type: DataTypes.STRING,
-                allowNull: false,
-            },
-            port: {
-                type: DataTypes.INTEGER,
                 allowNull: false,
             },
         },
