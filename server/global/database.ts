@@ -185,14 +185,15 @@ export class Queries {
     }
 
     // connections
-    public static async createConnection (userId: number, host: string, user: string, password: string, port: number) {
+    public static async createConnection (userId: number, name: string, host: string, port: number, user: string, password: string) {
         try {
             await Database.Connection.create({
                 userId,
+                name,
                 host,
+                port,
                 user,
                 password,
-                port
             })
 
             return true

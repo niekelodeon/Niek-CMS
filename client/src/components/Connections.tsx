@@ -5,6 +5,8 @@ import { connectionAtom } from '../utils/atoms'
 
 import type { Connection } from '../utils/interfaces'
 
+import { settingsFunctions } from '../utils/functions/SettingsFunctions'
+
 export default function Connections() {
     // Turn into atoms:
     const [connection, setConnection] = useAtom(connectionAtom)
@@ -13,9 +15,13 @@ export default function Connections() {
 
     // on submitting form update the connection with whatever data was provided and change it in the database.
 
+    useEffect(() => {
+        console.log(settingsFunctions.getConnection())
+    }, [])
+
     return (
         <div id="container-connection" className="flex flex-col">
-            {/* <form onSubmit={login} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]"></form> */}
+            {/* onSubmit={login} needs to be in there */}
             <form id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
                 <div id="container-input" className="flex flex-col">
                     <input

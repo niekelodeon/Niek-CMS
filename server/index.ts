@@ -36,6 +36,7 @@ app.use('/auth', rateLimiter.authLimiter)
 //     tokenMiddleware.Verify(req, res, next)
 // })
 app.use('/edit', tokenMiddleware.updateBody)
+app.use('/connection', tokenMiddleware.updateBody)
 
 // app.use(MiddlewareLogger as any)
 
@@ -45,6 +46,9 @@ app.use('/auth/', authRoutes)
 
 import { editRoutes } from './routes/editRoutes'
 app.use('/edit/', editRoutes)
+
+import { settingsRoutes } from './routes/connectionRoutes'
+app.use('/settings/', settingsRoutes)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`) // get port trough env, if its not there default to 8000

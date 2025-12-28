@@ -67,6 +67,17 @@ export interface ftpDirectories {
     paths: string []
 }
 
+// settingsServices.ts:
+export interface Connection {
+    id: number
+    userId: number
+    name: string
+    host: string
+    port: number
+    user: string
+    password: string
+}
+
 // logger:
 export interface LogLevels {
     TRACE: string,

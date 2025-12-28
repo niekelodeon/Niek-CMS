@@ -1,11 +1,11 @@
 import path from 'path'
 
 import { loggerService } from '../global/logger'
-import { UploadServices } from '../edit/uploadServices'
+import { UploadServices } from '../services/uploadServices'
 
-import { ftpServices } from '../edit/ftpServices'
-import { fsServices } from '../edit/fsServices'
-import { dashboardServices } from '../edit/dashboardServices'
+import { ftpServices } from '../services/ftpServices'
+import { fsServices } from '../services/fsServices'
+import { dashboardServices } from '../services/dashboardServices'
 import { GlobalServices } from '../global/services'
 
 import { Router, Request, Response } from 'express'
@@ -17,12 +17,6 @@ export const editRoutes = Router()
 
 // renaming middleware
 const memoryUpload = UploadServices.Filter()
-
-// Projects:
-// show the projects the user has
-
-// Settings:
-// show the settings of the user
 
 // ftpServices:
 editRoutes.post('/RemoteStructure', async (req: Request, res: Response) => {
@@ -86,6 +80,7 @@ editRoutes.post('/PublishProject', async (req: Request, res: Response) => {
     }
 })
 
+// fsServices:
 editRoutes.post('/folderTree', async (req: Request, res: Response) => {
     try {
         const projectName = req.body.localDir + req.body.projectName

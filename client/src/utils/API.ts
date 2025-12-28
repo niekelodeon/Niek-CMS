@@ -80,10 +80,12 @@ export class authAPI {
     }
 }
 
-export class connectionAPI {
+export class settingsAPI {
     public static async getConnection(): Promise<GetConnectionResponse> {
         try {
-            let response = await APIBase.fetchData('/connection/getConnection', 'POST')
+            let response = await APIBase.fetchData('/settings/getConnection', 'POST')
+
+            console.log(response)
 
             return JSON.parse(response)
         } catch (err) {
