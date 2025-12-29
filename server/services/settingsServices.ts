@@ -18,6 +18,8 @@ export class settingsServices {
         try {
             const connection: Connection = await Queries.getConnection(id)
 
+            console.log(connection)
+
             return { success: true, function: this.getConnection.name, data: connection, message: 'Connection data retrieved', logMessage: 'Connection data retrieved' }
         } catch (err) {
             return { success: false, function: this.getConnection.name, logMessage: err.message }
@@ -25,13 +27,15 @@ export class settingsServices {
     }
 
     // id should be retrieved through middleware
-    public static async createConnection (id: number, name: string, host: string, port: number, user: string, password: string) {
+    public static async saveConnection (id: number, name: string, host: string, port: number, user: string, password: string) {
         try {
-            const connection: Connection = await Queries.createConnection(id, name, host, port, user, password)
+            const connection: Connection = await Queries.saveConnection(id, name, host, port, user, password)
 
-            return { success: true, function: this.createConnection.name, data: connection, message: 'Connection data updated', logMessage: 'Connection data updated' }
+            console.log(connection)
+
+            return { success: true, function: this.saveConnection.name, data: connection, message: 'Connection data updated', logMessage: 'Connection data updated' }
         } catch (err) {
-            return { success: false, function: this.createConnection.name, logMessage: err.message }
+            return { success: false, function: this.saveConnection.name, logMessage: err.message }
         }
     }
 

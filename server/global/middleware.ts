@@ -28,6 +28,7 @@ export class tokenMiddleware {
 
             const id: string = token.id
 
+            req.body.id = id
             req.body.localDir = `projects/${id}/`
             req.body.email = token.email
 

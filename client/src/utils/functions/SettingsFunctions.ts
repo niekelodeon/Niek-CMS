@@ -14,7 +14,7 @@ export class settingsFunctions {
 
             return getConnectionObject.data
         } catch (err) {
-            // set error message here to a atom
+            // set error message here to a atomc
             return err
         }
     }

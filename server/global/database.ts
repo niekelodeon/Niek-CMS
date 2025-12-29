@@ -68,23 +68,23 @@ export class Database {
             },
             name: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             host: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             port: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             user: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             password: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
             },
         },
         {
@@ -111,16 +111,27 @@ export class Database {
 }
 
 export class Queries {
-    // auth
+    // Auth:
     public static async createUser (email: string, password: string) {
         try {
             const exists = await Database.User.findOne({ where: { email } })
 
             if (exists) return false
             else {
-                await Database.User.create({
+                const user = await Database.User.create({
                     email,
                     password
+                })
+
+                const userId = user.getDataValue('id')
+
+                await Database.Connection.create({
+                    userId: userId,
+                    name: null,
+                    host: null,
+                    port: null,
+                    user: null,
+                    password: null,
                 })
 
                 return true
@@ -184,8 +195,19 @@ export class Queries {
         }        
     }
 
-    // connections
-    public static async createConnection (userId: number, name: string, host: string, port: number, user: string, password: string) {
+    // Connections:
+    public static async getConnection (userId: number) {
+        try {
+            const connection = await Database.Connection.findOne({ where: { userId } })
+
+            if (!connection) return false
+            else return connection
+        } catch (err) {
+            return err
+        }
+    }
+
+    public static async saveConnection (userId: number, name: string, host: string, port: number, user: string, password: string) {
         try {
             await Database.Connection.create({
                 userId,
@@ -201,17 +223,5 @@ export class Queries {
             return err
         }
     }
-
-    public static async getConnection (userId: number) {
-        try {
-            const connection = await Database.Connection.findOne({ where: { userId } })
-
-            if (!connection) return false
-            else return connection
-        } catch (err) {
-            return err
-        }
-    }
-
 }
 

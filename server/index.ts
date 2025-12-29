@@ -36,7 +36,7 @@ app.use('/auth', rateLimiter.authLimiter)
 //     tokenMiddleware.Verify(req, res, next)
 // })
 app.use('/edit', tokenMiddleware.updateBody)
-app.use('/connection', tokenMiddleware.updateBody)
+app.use('/settings', tokenMiddleware.updateBody)
 
 // app.use(MiddlewareLogger as any)
 

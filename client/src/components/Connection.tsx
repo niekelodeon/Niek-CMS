@@ -31,7 +31,11 @@ export default function Connection() {
     }
 
     useEffect(() => {
+        console.log(connection)
+
         getConnection()
+
+        console.log(connection)
     }, [])
 
     return (
@@ -39,7 +43,7 @@ export default function Connection() {
             <form onSubmit={saveConnection} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
                 <div id="container-input" className="flex flex-col">
                     <input
-                        // value={connection.name}
+                        value={connection.name}
                         placeholder="name"
                         type="text"
                         id="name"
@@ -50,7 +54,7 @@ export default function Connection() {
 
                 <div id="container-input" className="flex flex-col">
                     <input
-                        // value={connection.host}
+                        value={connection.host}
                         placeholder="host"
                         type="text"
                         id="host"
@@ -61,7 +65,7 @@ export default function Connection() {
 
                 <div id="container-input" className="flex flex-col">
                     <input
-                        // value={connection.port}
+                        value={connection.port}
                         placeholder="port"
                         type="text"
                         id="port"
@@ -72,7 +76,7 @@ export default function Connection() {
 
                 <div id="container-input" className="flex flex-col">
                     <input
-                        // value={connection.user}
+                        value={connection.user}
                         placeholder="user"
                         type="text"
                         id="user"
@@ -83,7 +87,7 @@ export default function Connection() {
 
                 <div id="container-input" className="flex flex-col">
                     <input
-                        // value={connection.password}
+                        value={connection.password}
                         placeholder="password"
                         type="text"
                         id="password"

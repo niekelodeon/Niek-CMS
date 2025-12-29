@@ -102,8 +102,6 @@ export interface ResetResponse {
 
 // Settings:
 export interface Connection {
-    id: number
-    userId: number
     name: string
     host: string
     port: number
