@@ -111,7 +111,6 @@ export class settingsAPI {
         }
     }
 
-    // type of getConnectionResponse for now, should be "saveConnectionResponse"
     public static async saveConnection(connection: Connection): Promise<SaveConnectionResponse> {
         const body: any = { connection: connection }
 
@@ -123,7 +122,7 @@ export class settingsAPI {
             return JSON.parse(response)
         } catch (err) {
             console.error('API fetch error: ', err)
-            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
+            return { result: false, message: 'Something went wrong. If it keeps happening, contact the admin.' }
         }
     }
 }

@@ -7,7 +7,7 @@ import type { Connection } from '../utils/interfaces'
 
 import { settingsFunctions } from '../utils/functions/SettingsFunctions'
 
-export default function Connections() {
+export default function Connection() {
     // Turn into atoms:
     const [connection, setConnection] = useAtom(connectionAtom)
     const [saveConnectionResult, setSaveConnectionResult] = useAtom(saveConnectionResultAtom)
@@ -28,8 +28,6 @@ export default function Connections() {
 
         setSaveConnectionResult(saveConnectionObject.result)
         setSaveConnectionMessage(saveConnectionObject.message)
-
-        // if / else logic will be in the JSX, message color should be based on result boolean type, false = red, true = green.
     }
 
     useEffect(() => {
