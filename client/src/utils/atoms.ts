@@ -24,7 +24,7 @@ export const resultMessageAtom = atom<string>()
 export const connectionAtom = atom<Connection>({
     name: '',
     host: '',
-    port: 0,
+    port: '',
     user: '',
     password: '',
 })

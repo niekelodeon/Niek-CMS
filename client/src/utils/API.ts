@@ -114,10 +114,12 @@ export class settingsAPI {
     public static async saveConnection(connection: Connection): Promise<SaveConnectionResponse> {
         const body: any = { connection: connection }
 
+        console.log(connection)
+
         try {
             let response = await APIBase.fetchData('/settings/saveConnection', 'POST', body)
 
-            console.log(response)
+            console.log(response, 'from saveConnection')
 
             return JSON.parse(response)
         } catch (err) {

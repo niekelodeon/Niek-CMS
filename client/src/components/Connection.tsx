@@ -21,9 +21,18 @@ export default function Connection() {
         setConnection(getConnectionObject)
     }
 
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = e.target
+        setConnection(prev => ({
+            ...prev,
+            [name]: value,
+        }))
+    }
+
     async function saveConnection(e: any) {
         e.preventDefault()
 
+        console.log(connection)
         const saveConnectionObject = await settingsFunctions.saveConnection(connection)
 
         setSaveConnectionResult(saveConnectionObject.result)
@@ -44,6 +53,7 @@ export default function Connection() {
                 <div id="container-input" className="flex flex-col">
                     <input
                         value={connection.name}
+                        onChange={handleChange}
                         placeholder="name"
                         type="text"
                         id="name"
@@ -55,6 +65,7 @@ export default function Connection() {
                 <div id="container-input" className="flex flex-col">
                     <input
                         value={connection.host}
+                        onChange={handleChange}
                         placeholder="host"
                         type="text"
                         id="host"
@@ -66,6 +77,7 @@ export default function Connection() {
                 <div id="container-input" className="flex flex-col">
                     <input
                         value={connection.port}
+                        onChange={handleChange}
                         placeholder="port"
                         type="text"
                         id="port"
@@ -77,6 +89,7 @@ export default function Connection() {
                 <div id="container-input" className="flex flex-col">
                     <input
                         value={connection.user}
+                        onChange={handleChange}
                         placeholder="user"
                         type="text"
                         id="user"
@@ -88,6 +101,7 @@ export default function Connection() {
                 <div id="container-input" className="flex flex-col">
                     <input
                         value={connection.password}
+                        onChange={handleChange}
                         placeholder="password"
                         type="text"
                         id="password"

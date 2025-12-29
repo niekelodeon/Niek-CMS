@@ -73,7 +73,7 @@ export interface Connection {
     userId: number
     name: string
     host: string
-    port: number
+    port: string
     user: string
     password: string
 }

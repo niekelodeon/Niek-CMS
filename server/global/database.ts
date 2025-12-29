@@ -75,7 +75,7 @@ export class Database {
                 allowNull: true,
             },
             port: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.STRING,
                 allowNull: true,
             },
             user: {
@@ -198,25 +198,33 @@ export class Queries {
     // Connections:
     public static async getConnection (userId: number) {
         try {
-            const connection = await Database.Connection.findOne({ where: { userId } })
+            const connection = await Database.Connection.findOne({
+                where: { userId },
+                attributes: ['userId', 'name', 'host', 'port', 'user', 'password'],
+            })
 
-            if (!connection) return false
-            else return connection
+            if (!connection) return null
+
+            return connection.get({ plain: true })
         } catch (err) {
             return err
         }
     }
 
-    public static async saveConnection (userId: number, name: string, host: string, port: number, user: string, password: string) {
+    public static async saveConnection (userId: number, name: string, host: string, port: string, user: string, password: string) {
         try {
-            await Database.Connection.create({
-                userId,
-                name,
-                host,
-                port,
-                user,
-                password,
-            })
+            await Database.Connection.update(
+                {
+                    name,
+                    host,
+                    port,
+                    user,
+                    password,
+                },
+                {
+                    where: { userId }
+                }
+            )
 
             return true
         } catch (err) {
