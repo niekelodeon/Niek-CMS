@@ -22,5 +22,5 @@ export const selectedPathsAtom = atom<string[]>([])
 export const resultMessageAtom = atom<string>()
 
 export const connectionAtom = atom<Connection>()
-export const connectionResultAtom = atom<boolean>()
-export const connectionMessageAtom = atom<string>()
+export const saveConnectionResultAtom = atom<boolean>()
+export const saveConnectionMessageAtom = atom<string>()

@@ -115,3 +115,8 @@ export interface GetConnectionResponse {
     message?: string
     data?: Connection
 }
+
+export interface SaveConnectionResponse {
+    result: boolean
+    message: string
+}

@@ -6,6 +6,7 @@ import type {
     ResetResponse,
     GetConnectionResponse,
     Connection,
+    SaveConnectionResponse,
     FolderData,
     EditAPIResponse,
     RenameResponse,
@@ -111,7 +112,7 @@ export class settingsAPI {
     }
 
     // type of getConnectionResponse for now, should be "saveConnectionResponse"
-    public static async saveConnection(connection: Connection): Promise<GetConnectionResponse> {
+    public static async saveConnection(connection: Connection): Promise<SaveConnectionResponse> {
         const body: any = { connection: connection }
 
         try {

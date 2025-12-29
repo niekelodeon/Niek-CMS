@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useAtom } from 'jotai'
 
-import { connectionAtom, connectionResultAtom, connectionMessageAtom } from '../utils/atoms'
+import { connectionAtom, saveConnectionResultAtom, saveConnectionMessageAtom } from '../utils/atoms'
 
 import type { Connection } from '../utils/interfaces'
 
@@ -10,8 +10,8 @@ import { settingsFunctions } from '../utils/functions/SettingsFunctions'
 export default function Connections() {
     // Turn into atoms:
     const [connection, setConnection] = useAtom(connectionAtom)
-    const [connectionResult, setConnectionResult] = useAtom(connectionResultAtom)
-    const [connectionMessage, setConnectionMessage] = useAtom(connectionMessageAtom)
+    const [saveConnectionResult, setSaveConnectionResult] = useAtom(saveConnectionResultAtom)
+    const [saveConnectionMessage, setSaveConnectionMessage] = useAtom(saveConnectionMessageAtom)
 
     // fetch the the connection data first, just show them as empty when displaying if there is none. run backend function settingsFunctions.createConnection when "updating or creating" one.
 
@@ -26,13 +26,10 @@ export default function Connections() {
 
         const saveConnectionObject = await settingsFunctions.saveConnection(connection)
 
-        setConnectionResult(saveConnectionObject.result)
-        setConnectionMessage(saveConnectionObject.message)
+        setSaveConnectionResult(saveConnectionObject.result)
+        setSaveConnectionMessage(saveConnectionObject.message)
 
-        if (saveConnectionObject.result) {
-            // logic will be in the JSX, color should be based on result boolean type, false = red, true = green.
-        } else {
-        }
+        // if / else logic will be in the JSX, message color should be based on result boolean type, false = red, true = green.
     }
 
     useEffect(() => {
@@ -41,8 +38,7 @@ export default function Connections() {
 
     return (
         <div id="container-connection" className="flex flex-col">
-            {/* onSubmit={login} needs to be in there */}
-            <form id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
+            <form onSubmit={saveConnection} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
                 <div id="container-input" className="flex flex-col">
                     <input
                         // value={connection.name}
@@ -99,8 +95,8 @@ export default function Connections() {
                 </div>
 
                 <div id="container-button" className="flex w-[21.25rem] flex-col gap-[1rem] transition-all duration-[900ms]">
-                    <div id="message" className="text-sm text-[#ff8082]">
-                        {/* {connectionMessage} */}
+                    <div id="message" className={`text-sm ${saveConnectionResult ? 'text-[#4ade80]' : 'text-[#ff8082]'}`}>
+                        {saveConnectionMessage}
                     </div>
 
                     <button type="submit" className="flex-start flex w-[21.25rem] cursor-pointer rounded-md bg-[#7F7EFF] px-[2.5rem] py-3 font-medium transition-[900ms] hover:bg-[#5D5CC9]">
