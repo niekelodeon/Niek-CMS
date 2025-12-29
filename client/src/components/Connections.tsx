@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useAtom } from 'jotai'
 
-import { connectionAtom } from '../utils/atoms'
+import { connectionAtom, connectionResultAtom, connectionMessageAtom } from '../utils/atoms'
 
 import type { Connection } from '../utils/interfaces'
 
@@ -10,11 +10,33 @@ import { settingsFunctions } from '../utils/functions/SettingsFunctions'
 export default function Connections() {
     // Turn into atoms:
     const [connection, setConnection] = useAtom(connectionAtom)
+    const [connectionResult, setConnectionResult] = useAtom(connectionResultAtom)
+    const [connectionMessage, setConnectionMessage] = useAtom(connectionMessageAtom)
 
     // fetch the the connection data first, just show them as empty when displaying if there is none. run backend function settingsFunctions.createConnection when "updating or creating" one.
 
+    async function getConnection() {
+        const getConnectionObject = await settingsFunctions.getConnection()
+
+        setConnection(getConnectionObject)
+    }
+
+    async function saveConnection(e: any) {
+        e.preventDefault()
+
+        const saveConnectionObject = await settingsFunctions.saveConnection(connection)
+
+        setConnectionResult(saveConnectionObject.result)
+        setConnectionMessage(saveConnectionObject.message)
+
+        if (saveConnectionObject.result) {
+            // logic will be in the JSX, color should be based on result boolean type, false = red, true = green.
+        } else {
+        }
+    }
+
     useEffect(() => {
-        console.log(settingsFunctions.getConnection())
+        getConnection()
     }, [])
 
     return (

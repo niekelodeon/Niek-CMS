@@ -1,7 +1,23 @@
 import { parse } from 'flatted'
 
 import { Node } from './interfaces'
-import type { AuthResponse, ResetResponse, GetConnectionResponse, FolderData, EditAPIResponse, RenameResponse, GetFileResponse, Move, MoveResponse, UploadResponse, Delete, DeleteResponse, Download, DownloadResponse } from './interfaces'
+import type {
+    AuthResponse,
+    ResetResponse,
+    GetConnectionResponse,
+    Connection,
+    FolderData,
+    EditAPIResponse,
+    RenameResponse,
+    GetFileResponse,
+    Move,
+    MoveResponse,
+    UploadResponse,
+    Delete,
+    DeleteResponse,
+    Download,
+    DownloadResponse,
+} from './interfaces'
 
 class APIBase {
     public static baseUrl: string = 'http://localhost:8000'
@@ -84,6 +100,22 @@ export class settingsAPI {
     public static async getConnection(): Promise<GetConnectionResponse> {
         try {
             let response = await APIBase.fetchData('/settings/getConnection', 'POST')
+
+            console.log(response)
+
+            return JSON.parse(response)
+        } catch (err) {
+            console.error('API fetch error: ', err)
+            return { message: 'Something went wrong. If it keeps happening, contact the admin.' }
+        }
+    }
+
+    // type of getConnectionResponse for now, should be "saveConnectionResponse"
+    public static async saveConnection(connection: Connection): Promise<GetConnectionResponse> {
+        const body: any = { connection: connection }
+
+        try {
+            let response = await APIBase.fetchData('/settings/saveConnection', 'POST', body)
 
             console.log(response)
 

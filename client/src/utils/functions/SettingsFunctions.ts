@@ -18,4 +18,16 @@ export class settingsFunctions {
             return err
         }
     }
+
+    // Unfinished, type of getConnectionResponse for now, should be "saveConnectionResponse" but don't know what type response it will give yet. result & message probably.
+    public static async saveConnection(connection: Connection): Promise<any> {
+        try {
+            const getConnectionObject: GetConnectionResponse = await settingsAPI.saveConnection(connection)
+
+            return getConnectionObject
+        } catch (err) {
+            // set error message here to a atom
+            return err
+        }
+    }
 }
