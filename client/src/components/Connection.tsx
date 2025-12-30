@@ -8,12 +8,9 @@ import type { Connection } from '../utils/interfaces'
 import { settingsFunctions } from '../utils/functions/SettingsFunctions'
 
 export default function Connection() {
-    // Turn into atoms:
     const [connection, setConnection] = useAtom(connectionAtom)
     const [saveConnectionResult, setSaveConnectionResult] = useAtom(saveConnectionResultAtom)
     const [saveConnectionMessage, setSaveConnectionMessage] = useAtom(saveConnectionMessageAtom)
-
-    // fetch the the connection data first, just show them as empty when displaying if there is none. run backend function settingsFunctions.createConnection when "updating or creating" one.
 
     async function getConnection() {
         const getConnectionObject = await settingsFunctions.getConnection()
@@ -40,11 +37,7 @@ export default function Connection() {
     }
 
     useEffect(() => {
-        console.log(connection)
-
         getConnection()
-
-        console.log(connection)
     }, [])
 
     return (
