@@ -24,7 +24,7 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 
 ## Showcase
 
-![dashboard](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/dashboard.png "Dashboard page")
+![dashboard](https://github.com/niekelodeon/Orbit/blob/main/assets/dashboard.png "Dashboard page")
 ![login](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/login.png "Login page")
 ![selecting](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/selecting.png "Selecting folder view")
 
@@ -81,4 +81,6 @@ privateKey = your_jwt_privatekey
 
 ## Setting up a user: 
 
-Go to localhost:(portnumber)/register and create one, if succesfull go to localhost:(portnumber)/login, you will be redirected to localhost:(portnumber)/edit/dashboard and you are ready to start editing!
+Open: http://localhost:<port>/register and create a user.
+Open: http://localhost:<port>/login and login.
+You’ll be redirected to: http://localhost:<port>/edit/dashboard and you are ready to start editing!
