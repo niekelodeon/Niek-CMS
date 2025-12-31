@@ -2,8 +2,6 @@
 
 **Orbit CMS** is a web-based code editor that has all file system functionallity you expect.  
 
----
-
 ## Overview
 
 Orbit CMS is a self-hosted, web-based code editor designed for developers who want direct access to a remote filesystem through a browser.
@@ -28,8 +26,6 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 
 - Self-hosted by design
 
----
-
 ## Showcase
 
 ![dashboard](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/dashboard.png "Dashboard page")
@@ -37,8 +33,6 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 ![selecting](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/selecting.png "Selecting folder view")
 
 [Figma design](https://www.figma.com/design/Gd2qxspnrKTQLjloc0GOSF/Niek-CMS?node-id=2-1712&t=xS2UVMMV6y8GXald-1)
-
----
 
 ## Setup
 
@@ -88,8 +82,6 @@ privateKey = your_jwt_privatekey
 ```npm install```
 
 ```npm run dev```
-
----
 
 ## Setting up a user: 
 
