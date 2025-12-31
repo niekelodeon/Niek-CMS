@@ -12,7 +12,7 @@ User can then post it back using FTP.
 All folder / file functions are available: 
 rename, download, delete, add file / folder, or upload under a specific folder.
 
-The goal is so users can host this themselfs with docker
+The goal is so users can host this themselfs with docker or proxmox. This way users can always have access to it, create more users in a team
 
 [Figma design](https://www.figma.com/design/Gd2qxspnrKTQLjloc0GOSF/Niek-CMS?node-id=2-1712&t=xS2UVMMV6y8GXald-1)
 
