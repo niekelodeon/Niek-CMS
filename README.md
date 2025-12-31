@@ -10,13 +10,9 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 
 ## Features 
 
-- Web-based code editor
+- Web-based code editor with tree-based folder navigation
 
-- Tree-based folder navigation
-
-- Full filesystem operations:
-
-- Create / rename / delete files & folders
+- Full filestystem functionallity, create / rename / delete files & folders
 
 - Upload and download files
 
