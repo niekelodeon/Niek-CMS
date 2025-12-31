@@ -10,7 +10,23 @@ Orbit CMS is a self-hosted, web-based code editor designed for developers who wa
 
 It runs entirely on your own infrastructure and is intended to be deployed via Docker, Proxmox, or a bare server.
 
-[Figma design](https://www.figma.com/design/Gd2qxspnrKTQLjloc0GOSF/Niek-CMS?node-id=2-1712&t=xS2UVMMV6y8GXald-1)
+## Features 
+
+- Web-based code editor
+
+- Tree-based folder navigation
+
+- Full filesystem operations:
+
+- Create / rename / delete files & folders
+
+- Upload and download files
+
+- FTP push back to the remote server
+
+- Multi-user support
+
+- Self-hosted by design
 
 ---
 
@@ -19,6 +35,10 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 ![dashboard](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/dashboard.png "Dashboard page")
 ![login](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/login.png "Login page")
 ![selecting](https://github.com/niekelodeon/Niek-CMS/blob/main/assets/selecting.png "Selecting folder view")
+
+[Figma design](https://www.figma.com/design/Gd2qxspnrKTQLjloc0GOSF/Niek-CMS?node-id=2-1712&t=xS2UVMMV6y8GXald-1)
+
+---
 
 ## Setup
 
