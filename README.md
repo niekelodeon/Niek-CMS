@@ -1,6 +1,6 @@
 # Orbit CMS
 
-**Orbit CMS** is a web-based code editor that has all file system functionallity you expect.  
+**Orbit CMS** is a web-based code editor that has all file system functionallity you expect. 
 
 ## Overview
 
@@ -34,7 +34,7 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 
 1. **Clone and install**
 ```bash
-git clone <github.com/niekelodeon/Niek-CMS> orbit-cms && cd orbit-cms
+git clone <github.com/niekelodeon/orbit> orbit-cms && cd orbit-cms
 ```
 
 2. **Create your .env file**
@@ -61,7 +61,7 @@ password = your_database_password
 # token
 privateKey = your_jwt_privatekey
 
-# file server (not implemmented yet)
+# separate file server (not implemmented yet)
 ```
 
 3. **Run the application**
