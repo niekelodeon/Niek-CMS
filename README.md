@@ -16,6 +16,8 @@ It runs entirely on your own infrastructure and is intended to be deployed via D
 
 - Tree-based folder navigation
 
+- Full filesystem operations:
+
 - Create / rename / delete files & folders
 
 - Upload and download files
