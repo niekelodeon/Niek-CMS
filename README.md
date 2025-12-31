@@ -6,13 +6,9 @@
 
 ## Overview
 
-Users are able to login, then they can pull a specific directory on a webserver. This directory will be saved to the local disk so the users can edit the files using the folder tree view.
-User can then post it back using FTP.
+Orbit CMS is a self-hosted, web-based code editor designed for developers who want direct access to a remote filesystem through a browser.
 
-All folder / file functions are available: 
-rename, download, delete, add file / folder, or upload under a specific folder.
-
-The goal is so users can host this themselfs with docker or proxmox. This way users can always have access to it, create more users in a team
+It runs entirely on your own infrastructure and is intended to be deployed via Docker, Proxmox, or a bare server.
 
 [Figma design](https://www.figma.com/design/Gd2qxspnrKTQLjloc0GOSF/Niek-CMS?node-id=2-1712&t=xS2UVMMV6y8GXald-1)
 
