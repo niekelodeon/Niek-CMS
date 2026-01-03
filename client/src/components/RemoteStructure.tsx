@@ -12,7 +12,7 @@ export default function RemoteStructure() {
     const [remoteStructureResult, setRemoteStructureResult] = useAtom(remoteStructureResultAtom)
     const [remoteStructureMessage, setRemoteStructureMessage] = useAtom(remoteStructureMessageAtom)
 
-    async function remoteStructure(e: any) {
+    async function getRemoteStructure(e: any) {
         e.preventDefault()
 
         const remoteStructureObject = await settingsFunctions.remoteStructure()
@@ -24,7 +24,7 @@ export default function RemoteStructure() {
 
     return (
         <div id="container-button" className="flex w-[21.25rem] flex-col gap-[1rem] transition-all duration-[900ms]">
-            <form onSubmit={remoteStructure} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
+            <form onSubmit={getRemoteStructure} id="container-inputs" className="flex flex-col items-center gap-[1.875rem]">
                 <button type="submit" className="flex-start flex w-[21.25rem] cursor-pointer rounded-md bg-[#7F7EFF] px-[2.5rem] py-3 font-medium transition-[900ms] hover:bg-[#5D5CC9]">
                     Get Structure!
                 </button>

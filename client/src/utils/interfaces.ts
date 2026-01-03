@@ -122,4 +122,5 @@ export interface SaveConnectionResponse {
 export interface RemoteStructureResponse {
     result: boolean
     message: string
+    data: Node<FolderData> // for now
 }

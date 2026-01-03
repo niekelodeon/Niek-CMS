@@ -4,7 +4,7 @@ import { saveConnectionResultAtom, saveConnectionMessageAtom, remoteStructureAto
 
 import { settingsAPI } from '../API'
 
-import type { Connection, GetConnectionResponse, SaveConnectionResponse, RemoteConnectionResponse } from '../interfaces'
+import type { Connection, GetConnectionResponse, SaveConnectionResponse, RemoteStructureResponse } from '../interfaces'
 
 export class settingsFunctions {
     public static async getConnection(): Promise<Connection> {
@@ -30,7 +30,7 @@ export class settingsFunctions {
         }
     }
 
-    public static async remoteStructure(): Promise<RemoteConnectionResponse> {
+    public static async remoteStructure(): Promise<RemoteStructureResponse> {
         const store = getDefaultStore()
 
         try {
