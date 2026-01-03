@@ -109,7 +109,7 @@ export default function Connection() {
                     </div>
 
                     <button type="submit" className="flex-start flex w-[21.25rem] cursor-pointer rounded-md bg-[#7F7EFF] px-[2.5rem] py-3 font-medium transition-[900ms] hover:bg-[#5D5CC9]">
-                        Connect!
+                        Save Connection!
                     </button>
                 </div>
             </form>

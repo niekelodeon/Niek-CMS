@@ -1,10 +1,10 @@
 import { getDefaultStore } from 'jotai'
 
-import { saveConnectionResultAtom, saveConnectionMessageAtom } from '../atoms'
+import { saveConnectionResultAtom, saveConnectionMessageAtom, checkConnectionResultAtom, checkConnectionMessageAtom } from '../atoms'
 
 import { settingsAPI } from '../API'
 
-import type { Connection, GetConnectionResponse, SaveConnectionResponse } from '../interfaces'
+import type { Connection, GetConnectionResponse, SaveConnectionResponse, CheckConnectionResponse } from '../interfaces'
 
 export class settingsFunctions {
     public static async getConnection(): Promise<Connection> {
@@ -27,6 +27,16 @@ export class settingsFunctions {
         } catch (err) {
             store.set(saveConnectionResultAtom, Boolean(false))
             store.set(saveConnectionMessageAtom, String(err))
+        }
+    }
+
+    public static async checkConnection(): Promise<CheckConnectionResponse> {
+        const store = getDefaultStore()
+
+        try {
+            // return the message here
+        } catch (err) {
+            // set checkConnection message here
         }
     }
 }

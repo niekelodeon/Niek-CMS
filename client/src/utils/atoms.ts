@@ -30,3 +30,6 @@ export const connectionAtom = atom<Connection>({
 })
 export const saveConnectionResultAtom = atom<boolean>()
 export const saveConnectionMessageAtom = atom<string>()
+
+export const checkConnectionResultAtom = atom<boolean>()
+export const checkConnectionMessageAtom = atom<string>()
