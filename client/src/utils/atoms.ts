@@ -28,8 +28,10 @@ export const connectionAtom = atom<Connection>({
     user: '',
     password: '',
 })
+
 export const saveConnectionResultAtom = atom<boolean>()
 export const saveConnectionMessageAtom = atom<string>()
 
-export const checkConnectionResultAtom = atom<boolean>()
-export const checkConnectionMessageAtom = atom<string>()
+export const remoteStructureAtom = atom<Node<FolderData>>()
+export const remoteStructureResultAtom = atom<boolean>()
+export const remoteStructureMessageAtom = atom<string>()

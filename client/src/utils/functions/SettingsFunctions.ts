@@ -1,10 +1,10 @@
 import { getDefaultStore } from 'jotai'
 
-import { saveConnectionResultAtom, saveConnectionMessageAtom, checkConnectionResultAtom, checkConnectionMessageAtom } from '../atoms'
+import { saveConnectionResultAtom, saveConnectionMessageAtom, remoteStructureAtom, remoteStructureResultAtom, remoteStructureMessageAtom } from '../atoms'
 
 import { settingsAPI } from '../API'
 
-import type { Connection, GetConnectionResponse, SaveConnectionResponse, CheckConnectionResponse } from '../interfaces'
+import type { Connection, GetConnectionResponse, SaveConnectionResponse, RemoteConnectionResponse } from '../interfaces'
 
 export class settingsFunctions {
     public static async getConnection(): Promise<Connection> {
@@ -30,13 +30,13 @@ export class settingsFunctions {
         }
     }
 
-    public static async checkConnection(): Promise<CheckConnectionResponse> {
+    public static async remoteStructure(): Promise<RemoteConnectionResponse> {
         const store = getDefaultStore()
 
         try {
             // return the message here
         } catch (err) {
-            // set checkConnection message here
+            // set remoteStructure message here
         }
     }
 }

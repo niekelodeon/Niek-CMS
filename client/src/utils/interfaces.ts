@@ -119,7 +119,7 @@ export interface SaveConnectionResponse {
     message: string
 }
 
-export interface CheckConnectionResponse {
+export interface RemoteStructureResponse {
     result: boolean
     message: string
 }
